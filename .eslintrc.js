@@ -25,5 +25,6 @@ module.exports = {
     'max-len': 'off',
     camelcase: 'off',
     'arrow-body-style': ['error', 'never'],
+    'no-undef': 'off',
   },
 };
