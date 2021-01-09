@@ -3,6 +3,9 @@ import styled, { createGlobalStyle } from 'styled-components'
 const TopTitle = styled.h2`
   font-size: 2rem;
   color: ${(props) => props.color || '#000'};
+
+  text-align: center;
+  padding: 1.5rem 0;
 `
 
 const HeadTitle = styled.h3`

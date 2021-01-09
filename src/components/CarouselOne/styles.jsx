@@ -1,12 +1,13 @@
 import styled from 'styled-components'
 
-const Img = styled.div`
+const Box = styled.div`
   width: 400px;
   height: 290px;
 
   position: relative;
 
-  background: ${props => `url(${props.background}) no-repeat top center`};
+  /* background: ${props => `url(${props.background}) no-repeat top center`}; */
+  background-color: rgba(0, 0, 0, 0.4);
 
   display: flex;
   justify-content: center;
@@ -20,6 +21,9 @@ const Chef = styled.p`
   bottom: 20px;
 
   font-size: 18px;
+
+  color: #fff
 `;
 
-export {Img, Chef}
+
+export {Box, Chef}

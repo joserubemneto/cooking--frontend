@@ -7,9 +7,9 @@ import CarouselOne from './components/CarouselOne/CarouselOne'
 const App = () => (
   <ThemeProvider theme={theme}>
     <GlobalStyle font={theme.fonts.body} />
-    <TopTitle color={theme.colors.title}>Top Receitas</TopTitle>
+    {/* <TopTitle color={theme.colors.title}>Top Receitas</TopTitle>
     <SlideTitle color={theme.colors.subTitle}>Ovos e Bacon</SlideTitle>
-    <HeadTitle color={theme.colors.subTitle}>Bolo de Trigo</HeadTitle>
+    <HeadTitle color={theme.colors.subTitle}>Bolo de Trigo</HeadTitle> */}
     <CarouselOne />
   </ThemeProvider>
 )
