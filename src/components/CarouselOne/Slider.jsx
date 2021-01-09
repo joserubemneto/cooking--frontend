@@ -8,12 +8,13 @@ function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
     <div
+      id="oneNext"
       className={className}
       style={{ ...style,
         display: "block",
-        background: "red",
         position: "relative",
         top: "45px",
+        padding: "0",
         }}
       onClick={onClick}
     />
@@ -24,12 +25,13 @@ function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
   return (
     <div
+      id="onePrev"
       className={className}
       style={{ ...style,
         display: "block",
-        background: "red",
         position: "relative",
         top: "355px",
+        padding: "0",
         }}
       onClick={onClick}
     />
@@ -47,7 +49,7 @@ export default class MultipleItems extends Component {
             padding: "0"
           }}
         >
-          <ul id="one" style={{ margin: "-10px" }}> {dots} </ul>
+          <ul id="oneDot" style={{ margin: "-10px" }}> {dots} </ul>
         </div>
       ),
       infinite: true,

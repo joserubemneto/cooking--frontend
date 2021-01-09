@@ -1,4 +1,4 @@
-#one li button:before {
+#oneDot li button:before {
     font-size: 6px;
     line-height: 20px;
     position: absolute;
@@ -12,7 +12,7 @@
     color: #D64D27;
 }
 
-#one .slick-active button:before {
+#oneDot .slick-active button:before {
     font-size: 10px;
     line-height: 20px;
     position: absolute;
@@ -24,4 +24,9 @@
     text-align: center;
     opacity: 1;
     color: #D64D27;
+}
+
+#onePrev:before {
+  content: '';
+  background-image: url('../../assets/Arrow\ Left.svg');
 }
