@@ -3,6 +3,7 @@ import Slider from './Slider'
 import { TopTitle, GlobalStyle } from '../MainStyles'
 import { ThemeContext } from 'styled-components'
 import { Grid, GridItem } from "@chakra-ui/react"
+import './Slider.css'
 
 
 const CarouselOne = () => {
@@ -18,7 +19,7 @@ const CarouselOne = () => {
         <TopTitle color={colors.title}>Receitas mais procuradas</TopTitle>
     </GridItem>
     <GridItem rowSpan={2} colStart={2}>
-        <Slider  />
+        <Slider />
     </GridItem>
     </Grid>
   )

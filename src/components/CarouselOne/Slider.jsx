@@ -1,20 +1,61 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
 import SingleSlide from "./SingleSlide";
+import Right from '../../assets/Arrow Right.svg'
+import './Slider.css'
+
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block", background: "red" }}
+      onClick={onClick}
+    />
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style,
+        display: "block",
+        background: "red",
+        position: "absolute",
+        top: "200px",
+        right: "100%",
+        }}
+      onClick={onClick}
+    />
+  );
+}
 
 export default class MultipleItems extends Component {
   render() {
     const settings = {
       dots: true,
-      arrow: true,
+      appendDots: dots => (
+        <div
+          style={{
+            backgroundColor: "transparent",
+            padding: "0"
+          }}
+        >
+          <ul id="one" style={{ margin: "-10px" }}> {dots} </ul>
+        </div>
+      ),
       infinite: true,
       speed: 500,
       slidesToShow: 3,
       slidesToScroll: 3,
+      nextArrow: <SampleNextArrow />,
+      prevArrow: <SamplePrevArrow />
     };
     return (
       <>
-        <Slider {...settings}>
+        <Slider id="one" {...settings}>
           <SingleSlide />
           <SingleSlide />
           <SingleSlide />
