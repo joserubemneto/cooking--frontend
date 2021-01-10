@@ -29,6 +29,8 @@ const Banner = () => {
         colStart={2}
         rowStart={2}
         mr="75px"
+        mt="30px"
+        mb="15px"
         >
           <Text>Conectamos pessoas incríveis a <Text display="inline" fontWeight="bold">receitas capazes de serem realizadas.</Text> Do avançado à quem mora sozinho e precisa cozinhar :) </Text>
         </GridItem>
