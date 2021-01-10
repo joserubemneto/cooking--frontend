@@ -7,6 +7,7 @@ export const Head = styled.div`
   border-radius: 4px;
   background-position: ${({ large }) => large ? "100% 85%" : "100% 100%"};
   background-repeat: no-repeat no-repeat;
+  z-index: 100;
 
   @media (max-width: 768px) {
     background-position: 100% 80%;
@@ -77,6 +78,7 @@ export const NavLinks = styled.div`
       align-items: center;
       margin-top: 15rem;
     }
+    z-index: 100;
     display: ${({ open }) => open ? 'visible' : 'none'};
     flex-flow: column nowrap;
     justify-content: space-between;
