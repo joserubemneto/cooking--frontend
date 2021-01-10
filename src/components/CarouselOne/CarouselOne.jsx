@@ -23,7 +23,6 @@ const CarouselOne = () => {
     </GridItem>
     <GridItem rowSpan={2} colStart={2}>
         {large ? <Slider /> : <SliderMobile /> }
-
     </GridItem>
     </Grid>
   )
