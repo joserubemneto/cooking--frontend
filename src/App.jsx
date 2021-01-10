@@ -3,7 +3,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 import { ChakraProvider } from '@chakra-ui/react'
 import Header from './components/Header'
-import { GlobalStyle } from './components/MainStyles'
+import Footer from './components/Footer'
+import { GlobalStyle, Container } from './components/MainStyles'
 import theme from './theme'
 
 const App = () => (
@@ -11,10 +12,13 @@ const App = () => (
     <ThemeProvider theme={theme}>
       <GlobalStyle font={theme.fonts.body} />
       <BrowserRouter>
-        <Header />
-        <Switch>
-          <Route path="/"/>
-        </Switch>
+        <Container>
+          <Header />
+          <Switch>
+            <Route path="/"/>
+          </Switch>
+          <Footer/>
+        </Container>
       </BrowserRouter>
     </ThemeProvider>
   </ChakraProvider>
