@@ -62,7 +62,7 @@ const Nav = styled.nav`
 
 const Logo = styled.div`
   margin-right: 4rem;
-  font-size: 1.75rem;
+  font-size: ${({ fontSize }) => fontSize || '2.375rem'};
   & {
     font-family: ${({ font }) => font}
   }
