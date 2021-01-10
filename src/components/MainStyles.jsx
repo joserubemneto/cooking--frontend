@@ -15,12 +15,16 @@ const SlideTitle = styled(TopTitle)`
 
 `
 const Head = styled.div`
-  margin: 2px 4px;
   padding: 1px 2px;
-  background: ${({ mobile }) => mobile ? "linear-gradient(201.73deg, #EE6737 -7.35%, #F73C2C 103.6%)" : 'none'};
+  background-image: url("${(props) => props.url}");
   border-radius: 4px;
-`
+  background-position: 100% 75%;
+  background-repeat: no-repeat no-repeat;
 
+  @media (max-width: 768px) {
+    background-position: 100% 80%;
+  }
+`
 const Nav = styled.nav`
   display: flex;
   max-width: 1120px;
@@ -38,7 +42,7 @@ const Logo = styled.div`
   & {
     font-family: ${({ font }) => font}
   }
-  color: ${({ color, mobile }) => mobile ? '#fff' : color};
+  color: ${({ color, open }) => open ? '#fff' : color};
 `
 
 const NavLinks = styled.div`
@@ -59,6 +63,7 @@ const NavLinks = styled.div`
 
   li a:hover {
     color: ${({hover}) => hover};
+    font-weight: bold;
   }
 
   @media (max-width: 768px) {
