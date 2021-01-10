@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'
 import { ThemeContext } from 'styled-components'
 import { Flex, Box, Text } from '@chakra-ui/react'
 import useMedia from '../../hooks/useMedia'
-import { ReactComponent as Bloob } from '../../assets/Footer1.svg'
-import { ReactComponent as Bloob2 } from '../../assets/Footer2.svg'
+import { ReactComponent as Bloob } from '../../assets/Vetor Footer 2.svg'
+import { ReactComponent as Bloob2 } from '../../assets/Vetor Footer 1.svg'
 
 const Footer = () => {
   const { fonts, colors } = useContext(ThemeContext)
@@ -53,6 +53,7 @@ const Footer = () => {
     <Box
       boxShadow={`0 -5px 5px -5px #C3C3C3`}
       pt={"2.75rem"}
+      mt={"7rem"}
     >
       {!mobile ? (
       <Flex
@@ -77,14 +78,14 @@ const Footer = () => {
             >
               Aprenda a cozinhar <Text display="inline" color={colors.subTitle}>de verdade</Text>.
             </Box>
-            <Flex>
+            <Box mt={"1rem"}>
               <Box width="10px">
                 <Bloob2/>
               </Box>
-              <Box width="10px" ml="4rem">
+              <Box width="10px" ml="3rem">
                 <Bloob/>
               </Box>
-            </Flex>
+            </Box>
           </Box>
           <Flex
             justifyContent="space-between"
@@ -98,7 +99,7 @@ const Footer = () => {
                   key={page.page}
                   fontSize={"0.9rem"}
                   pt={"1rem"}
-                  _hover={{ color: `{colors.subTitle}`, fontWeight: "bold" }}
+                  _hover={{ fontWeight: "bold", transition: 'all 600ms' }}
                 >
                   <Link to={`/${page.page}`}>{page.title}</Link>
                 </Box>
@@ -111,7 +112,7 @@ const Footer = () => {
                   key={page.page}
                   fontSize={"0.9rem"}
                   pt={"1rem"}
-                  _hover={{ color: `{colors.subTitle}`, fontWeight: "bold" }}
+                  _hover={{ fontWeight: "bold", transition: 'all 600ms' }}
                 >
                   <Link to={`/${page.page}`}>{page.title}</Link>
                 </Box>
@@ -119,12 +120,17 @@ const Footer = () => {
             </Box>
           </Flex>
         </Flex>
-        <Box pt="10px">
+        <Box pt="30px">
           <Text fontSize={"0.75rem"}>© Cooking™, 2021. All rights reserved.</Text>
         </Box>
       </Flex>
       ) : (
-        <Flex alignItems="center" justifyContent="space-between" padding={"1rem 3rem"} borderRadius="4px" bgGradient={"linear(201.73deg, #EE6737 -7.35%, #F73C2C 103.6%)"}>
+        <Flex
+          alignItems="center"
+          justifyContent="space-between"
+          padding={"1rem 3rem"}
+          borderRadius="4px"
+          bgGradient={"linear(201.73deg, #EE6737 -7.35%, #F73C2C 103.6%)"}>
           <Logo
             color={colors.text}
             open={true}
