@@ -4,6 +4,7 @@ const TopTitle = styled.h2`
   font-size: 2rem;
   color: ${(props) => props.color || '#000'};
 
+  font-weight: ${(props) => props.weight || 'normal' };
   text-align: center;
   padding: 1.5rem 0;
 `
@@ -17,6 +18,26 @@ const SlideTitle = styled(TopTitle)`
   color: ${(props) => props.color || '#000'};
 
 `
+
+const Btn = styled.button`
+  & {
+    background: linear-gradient(262.91deg, #EE6737 5.69%, #F73C2C 94.63%);
+    border-radius: 2rem;
+    color: #fff;
+    padding: 0.2rem 1rem;
+    min-width: 240px;
+    font-weight: bold;
+    outline: none;
+    transition: .3s;
+    }
+
+  &:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(262.91deg, #F73C2C -32.44%, #EE6737 136.54%);
+
+  }
+`
+
 const Head = styled.div`
   padding: 1px 2px;
   background-image: url("${(props) => props.url}");
@@ -58,10 +79,16 @@ const NavLinks = styled.div`
 
   li {
     padding-left: 1.5rem;
+    transition: 0.3s;
+  }
+
+  li:hover{
+    transform: translateY(-3px);
   }
 
   li a {
     color: ${({color}) => color};
+    transition: 0.3s;
   }
 
   li a:hover {
@@ -187,4 +214,4 @@ const StyledBurger = styled.div`
   }
 `
 
-export { TopTitle, HeadTitle, SlideTitle, Head, Logo, Nav, NavLinks, StyledBurger, GlobalStyle }
+export { TopTitle, HeadTitle, SlideTitle, Head, Logo, Nav, NavLinks, StyledBurger, GlobalStyle, Btn }

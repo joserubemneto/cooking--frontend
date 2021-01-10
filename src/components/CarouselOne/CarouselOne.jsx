@@ -19,7 +19,7 @@ const CarouselOne = () => {
     >
     <GlobalStyle />
     <GridItem rowSpan={1} colStart={2}>
-        <TopTitle color={colors.title}>Receitas mais procuradas</TopTitle>
+        <TopTitle weight="bold" color={colors.title}>Receitas mais procuradas</TopTitle>
     </GridItem>
     <GridItem rowSpan={2} colStart={2}>
         {large ? <Slider /> : <SliderMobile /> }

@@ -6,7 +6,7 @@ import Header from './components/Header'
 import { GlobalStyle } from './components/MainStyles'
 import theme from './theme'
 import CarouselOne from './components/CarouselOne/CarouselOne'
-import Banner from './components/Banner/Banner'
+import Banner from './components/Banner'
 
 const App = () => (
   <ChakraProvider>
