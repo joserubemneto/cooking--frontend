@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { ThemeContext } from 'styled-components'
-import { Head, Nav, NavLinks, StyledBurger } from './styles'
+import { Head, Nav, NavLinks, StyledBurger, BloobBox } from './styles'
 import { SearchBar } from './SearchBar'
 import { Logo } from '../MainStyles'
 import { Bloob } from './Bloob'
@@ -11,7 +11,7 @@ import bloob3 from '../../assets/Vetor Header 1.svg'
 const Header = () => {
   const { fonts, colors } = useContext(ThemeContext)
   const [burguerOpen, setBurgerOpen] = useState(false)
-  const [scroll, setScroll] = useState(null)
+  const [scroll, setScroll] = useState(false)
   const mobile = useMedia('(max-width: 48rem)')
   const large = useMedia('(min-width: 62.5rem)')
 
@@ -66,9 +66,12 @@ const Header = () => {
         )}
       </Nav>
 
-      {!mobile && !scroll && (
-        <Bloob/>
+      {!mobile && (
+        <BloobBox scroll={scroll} mobile={mobile}>
+          <Bloob/>
+        </BloobBox>
       )}
+
     </Head>
   )
 }

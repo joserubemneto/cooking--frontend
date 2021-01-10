@@ -7,6 +7,8 @@ export const Head = styled.div`
   border-radius: 4px;
   background-position: ${({ large }) => large ? "100% 85%" : "100% 100%"};
   background-repeat: no-repeat no-repeat;
+  z-index: 100;
+  transition: ease-in-out 1s;
 
   @media (max-width: 768px) {
     background-position: 100% 80%;
@@ -24,7 +26,16 @@ export const Head = styled.div`
     background-color: #fff;
     background-image: none;
   `}
+
 `
+
+export const BloobBox = styled.div`
+  transition: ease-in-out 1s;
+  ${({ scroll, mobile }) => scroll && css`
+    display: none;
+  `}
+`
+
 export const Nav = styled.nav`
   display: flex;
   align-items: center;
@@ -77,6 +88,7 @@ export const NavLinks = styled.div`
       align-items: center;
       margin-top: 15rem;
     }
+    z-index: 100;
     display: ${({ open }) => open ? 'visible' : 'none'};
     flex-flow: column nowrap;
     justify-content: space-between;
