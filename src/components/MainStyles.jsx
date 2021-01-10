@@ -12,6 +12,16 @@ const HeadTitle = styled.h3`
 
 const SlideTitle = styled(TopTitle)`
   color: ${(props) => props.color || '#000'};
+
+`
+
+const Logo = styled.div`
+  margin-right: 4rem;
+  font-size: 1.75rem;
+  & {
+    font-family: ${({ font }) => font}
+  }
+  color: ${({ color, mobile }) => mobile ? '#fff' : color};
 `
 
 const GlobalStyle = createGlobalStyle`
@@ -38,6 +48,14 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     list-style: none;
   }
+
+  a {
+    text-decoration: none;
+  }
+
+  input {
+    outline: none;
+  }
 `
 
-export { TopTitle, HeadTitle, SlideTitle, GlobalStyle }
+export { TopTitle, HeadTitle, SlideTitle, Logo, GlobalStyle }
