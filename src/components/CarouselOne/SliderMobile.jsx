@@ -59,23 +59,20 @@ export default class MultipleItems extends Component {
       ),
       infinite: true,
       speed: 500,
-      slidesToShow: 3,
-      slidesToScroll: 3,
+      slidesToShow: 1,
+      slidesToScroll: 1,
       nextArrow: <SampleNextArrow />,
       prevArrow: <SamplePrevArrow />
     };
     return (
       <>
         <Slider id="one" {...settings}>
-          <SingleSlide />
-          <SingleSlide />
-          <SingleSlide />
-          <SingleSlide />
-          <SingleSlide />
-          <SingleSlide />
-          <SingleSlide />
-          <SingleSlide />
-          <SingleSlide />
+          <SingleSlide mode="true"/>
+          <SingleSlide mode="true"/>
+          <SingleSlide mode="true"/>
+          <SingleSlide mode="true"/>
+          <SingleSlide mode="true"/>
+          <SingleSlide mode="true"/>
         </Slider>
       </>
     );
