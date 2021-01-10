@@ -11,7 +11,7 @@ import bloob3 from '../../assets/Vetor Header 1.svg'
 const Header = () => {
   const { fonts, colors } = useContext(ThemeContext)
   const [burguerOpen, setBurgerOpen] = useState(false)
-  const [scroll, setScroll] = useState(null)
+  const [scroll, setScroll] = useState(false)
   const mobile = useMedia('(max-width: 48rem)')
   const large = useMedia('(min-width: 62.5rem)')
 
@@ -66,9 +66,12 @@ const Header = () => {
         )}
       </Nav>
 
-      {!mobile && !scroll && (
-        <Bloob/>
+      {!mobile && (
+        <div className="bloob" scroll={scroll} mobile={mobile}>
+          <Bloob/>
+        </div>
       )}
+
     </Head>
   )
 }

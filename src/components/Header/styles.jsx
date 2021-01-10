@@ -8,6 +8,7 @@ export const Head = styled.div`
   background-position: ${({ large }) => large ? "100% 85%" : "100% 100%"};
   background-repeat: no-repeat no-repeat;
   z-index: 100;
+  transition: ease-in-out 1s;
 
   @media (max-width: 768px) {
     background-position: 100% 80%;
@@ -25,6 +26,12 @@ export const Head = styled.div`
     background-color: #fff;
     background-image: none;
   `}
+
+  .bloob {
+    ${({ scroll, mobile }) => scroll && css`
+      display: none;
+    `}
+  }
 `
 export const Nav = styled.nav`
   display: flex;
