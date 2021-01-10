@@ -1,0 +1,58 @@
+.slick-slide * {
+margin: 0;
+}
+
+#oneDot {
+  position: relative;
+  right: 0;
+}
+
+#oneDot li button:before {
+    font-size: 6px;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    content: '•';
+    text-align: center;
+    opacity: 0.5;
+    color: #D64D27;
+}
+
+#oneDot .slick-active button:before {
+    font-size: 10px;
+    line-height: 20px;
+    position: absolute;
+    top: 1px;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    content: '•';
+    text-align: center;
+    opacity: 1;
+    color: #D64D27;
+}
+
+#onePrev, #oneNext {
+  background: transparent;
+  width: 40px;
+  height: 20px;
+  background: url(../../assets/Arrow\ Right.svg) no-repeat center center;
+  background-size: cover;
+  margin: 0;
+}
+
+#onePrev {
+  background: url(../../assets/Arrow\ Left.svg) no-repeat center center;
+  background-size: cover;
+
+}
+
+
+#onePrev:before, #oneNext:before {
+  content: "";
+}
+
+

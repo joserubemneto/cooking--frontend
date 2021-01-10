@@ -5,6 +5,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 import Header from './components/Header/index'
 import { GlobalStyle } from './components/MainStyles'
 import theme from './theme'
+import CarouselOne from './components/CarouselOne/CarouselOne'
 
 const App = () => (
   <ChakraProvider>
@@ -12,6 +13,7 @@ const App = () => (
       <GlobalStyle font={theme.fonts.body} />
       <BrowserRouter>
           <Header />
+          <CarouselOne />
           <Switch>
             <Route path="/"/>
           </Switch>
