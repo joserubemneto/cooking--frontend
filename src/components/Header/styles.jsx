@@ -27,12 +27,15 @@ export const Head = styled.div`
     background-image: none;
   `}
 
-  .bloob {
-    ${({ scroll, mobile }) => scroll && css`
-      display: none;
-    `}
-  }
 `
+
+export const BloobBox = styled.div`
+  transition: ease-in-out 1s;
+  ${({ scroll, mobile }) => scroll && css`
+    display: none;
+  `}
+`
+
 export const Nav = styled.nav`
   display: flex;
   align-items: center;

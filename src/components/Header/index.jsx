@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { ThemeContext } from 'styled-components'
-import { Head, Nav, NavLinks, StyledBurger } from './styles'
+import { Head, Nav, NavLinks, StyledBurger, BloobBox } from './styles'
 import { SearchBar } from './SearchBar'
 import { Logo } from '../MainStyles'
 import { Bloob } from './Bloob'
@@ -67,9 +67,9 @@ const Header = () => {
       </Nav>
 
       {!mobile && (
-        <div className="bloob" scroll={scroll} mobile={mobile}>
+        <BloobBox scroll={scroll} mobile={mobile}>
           <Bloob/>
-        </div>
+        </BloobBox>
       )}
 
     </Head>
