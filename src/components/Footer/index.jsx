@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
-import { Logo } from './MainStyles'
+import { Logo } from '../MainStyles'
 import { Link } from 'react-router-dom'
 import { ThemeContext } from 'styled-components'
 import { Flex, Box, Text } from '@chakra-ui/react'
-import useMedia from '../hooks/useMedia'
-import { ReactComponent as Bloob } from '../assets/Footer1.svg'
-import { ReactComponent as Bloob2 } from '../assets/Footer2.svg'
+import useMedia from '../../hooks/useMedia'
+import { ReactComponent as Bloob } from '../../assets/Footer1.svg'
+import { ReactComponent as Bloob2 } from '../../assets/Footer2.svg'
 
 const Footer = () => {
   const { fonts, colors } = useContext(ThemeContext)
@@ -52,9 +52,9 @@ const Footer = () => {
   return (
     <Box
       boxShadow={`0 -5px 5px -5px #C3C3C3`}
+      pt={"2.75rem"}
     >
       {!mobile ? (
-
       <Flex
         flexDirection="column"
         m={"1.625rem 4rem"}
@@ -124,12 +124,13 @@ const Footer = () => {
         </Box>
       </Flex>
       ) : (
-        <Flex alignItems="center" justifyContent="space-between" padding={"1rem"} borderRadius="4px" bgGradient={"linear(201.73deg, #EE6737 -7.35%, #F73C2C 103.6%)"}>
+        <Flex alignItems="center" justifyContent="space-between" padding={"1rem 3rem"} borderRadius="4px" bgGradient={"linear(201.73deg, #EE6737 -7.35%, #F73C2C 103.6%)"}>
           <Logo
             color={colors.text}
             open={true}
             fontSize={"1.75rem"}
             font={fonts.logo}
+            mobile={mobile}
           >
             Cooking
           </Logo>
