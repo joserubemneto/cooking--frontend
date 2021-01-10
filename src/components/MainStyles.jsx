@@ -38,7 +38,7 @@ const Nav = styled.nav`
 
 const Logo = styled.div`
   margin-right: 4rem;
-  font-size: 1.75rem;
+  font-size: ${({ fontSize }) => fontSize || '2.375rem'};
   & {
     font-family: ${({ font }) => font}
   }
@@ -184,4 +184,10 @@ const StyledBurger = styled.div`
   }
 `
 
-export { TopTitle, HeadTitle, SlideTitle, Head, Logo, Nav, NavLinks, StyledBurger, GlobalStyle }
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`
+
+export { TopTitle, HeadTitle, SlideTitle, Head, Logo, Nav, NavLinks, StyledBurger, Container, GlobalStyle }
