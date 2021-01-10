@@ -1,15 +1,23 @@
 import React from 'react'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
-import { TopTitle, HeadTitle, SlideTitle, GlobalStyle } from './components/MainStyles'
+import { ChakraProvider } from '@chakra-ui/react'
+import Header from './components/Header'
+import { GlobalStyle } from './components/MainStyles'
 import theme from './theme'
 
 const App = () => (
-  <ThemeProvider theme={theme}>
-    <GlobalStyle font={theme.fonts.body} />
-    <TopTitle color={theme.colors.title}>Top Receitas</TopTitle>
-    <SlideTitle color={theme.colors.subTitle}>Ovos e Bacon</SlideTitle>
-    <HeadTitle color={theme.colors.subTitle}>Bolo de Trigo</HeadTitle>
-  </ThemeProvider>
+  <ChakraProvider>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle font={theme.fonts.body} />
+      <BrowserRouter>
+        <Header />
+        <Switch>
+          <Route path="/"/>
+        </Switch>
+      </BrowserRouter>
+    </ThemeProvider>
+  </ChakraProvider>
 )
 
 export default App
