@@ -1,13 +1,12 @@
 import styled from 'styled-components'
 
 const Box = styled.div`
-  width: 400px;
+  width: 28vw;
   height: 290px;
 
   position: relative;
 
-  /* background: ${props => `url(${props.background}) no-repeat top center`}; */
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.5);
 
   display: flex;
   justify-content: center;

@@ -10,12 +10,12 @@ const SingleSlide = () => {
 
   return (
     <>
-      <Box background={Back}>
+      <Box>
         <SlideTitle color={theme.colors.slide}>bacon e ovos</SlideTitle>
         <Image
     boxSize="100%"
     objectFit="cover"
-    src="https://bit.ly/dan-abramov"
+    src={Back}
     alt="Dan Abramov"
     position="absolute"
     zIndex="-1"

@@ -26,7 +26,20 @@
     color: #D64D27;
 }
 
+#onePrev, #oneNext {
+  background: transparent;
+  width: 40px;
+}
+
+
+#onePrev:before, #oneNext:before {
+  font-size: 20px;
+  line-height: 1;
+  opacity: .75;
+  background: url(../../assets/Arrow\ Right.svg) no-repeat center center;
+  color: transparent;
+}
+
 #onePrev:before {
-  content: '';
-  background-image: url('../../assets/Arrow\ Left.svg');
+  background: url(../../assets/Arrow\ Left.svg) no-repeat center center;
 }
