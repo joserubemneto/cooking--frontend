@@ -1,3 +1,12 @@
+.slick-slide * {
+margin: 0;
+}
+
+#oneDot {
+  position: relative;
+  right: 0;
+}
+
 #oneDot li button:before {
     font-size: 6px;
     line-height: 20px;
@@ -29,17 +38,21 @@
 #onePrev, #oneNext {
   background: transparent;
   width: 40px;
+  height: 20px;
+  background: url(../../assets/Arrow\ Right.svg) no-repeat center center;
+  background-size: cover;
+  margin: 0;
+}
+
+#onePrev {
+  background: url(../../assets/Arrow\ Left.svg) no-repeat center center;
+  background-size: cover;
+
 }
 
 
 #onePrev:before, #oneNext:before {
-  font-size: 20px;
-  line-height: 1;
-  opacity: .75;
-  background: url(../../assets/Arrow\ Right.svg) no-repeat center center;
-  color: transparent;
+  content: "";
 }
 
-#onePrev:before {
-  background: url(../../assets/Arrow\ Left.svg) no-repeat center center;
-}
+
