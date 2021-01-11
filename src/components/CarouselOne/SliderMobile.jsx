@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
+import useMedia from "../../hooks/useMedia";
 import SingleSlide from "./SingleSlide";
 import './Slider.css'
 
@@ -25,6 +26,8 @@ function SampleNextArrow(props) {
 
 function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
+  const small = useMedia('(max-width: 410px)');
+
   return (
     <div
       id="onePrev"
@@ -33,7 +36,7 @@ function SamplePrevArrow(props) {
         display: "block",
         position: "relative",
         top: "357px",
-        left: "17%",
+        left: small ? "5%" : "17%",
         padding: "0",
         margin: "0",
         zIndex: "2",

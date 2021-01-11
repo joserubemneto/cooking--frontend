@@ -22,12 +22,19 @@ const SlideTitle = styled(TopTitle)`
 const Btn = styled.button`
   & {
     background: linear-gradient(262.91deg, #EE6737 5.69%, #F73C2C 94.63%);
-    border-radius: 2rem;
     color: #fff;
+
+    border-radius: 2rem;
+
     padding: 0.2rem 1rem;
+
+    width: 70%;
     min-width: 240px;
+    height: 35px;
+
     font-weight: bold;
     outline: none;
+
     transition: .3s;
     }
 
