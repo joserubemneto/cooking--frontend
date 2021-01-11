@@ -7,6 +7,7 @@ import Header from './components/Header/index'
 import { GlobalStyle } from './components/MainStyles'
 import theme from './theme'
 import CarouselOne from './components/CarouselOne/CarouselOne'
+import Banner from './components/Banner'
 
 const App = () => (
   <ChakraProvider>
@@ -14,6 +15,7 @@ const App = () => (
       <GlobalStyle font={theme.fonts.body} />
       <BrowserRouter>
           <Header />
+          <Banner />
           <CarouselOne />
           <Switch>
             <Route path="/"/>

@@ -4,6 +4,7 @@ const TopTitle = styled.h2`
   font-size: 2rem;
   color: ${(props) => props.color || '#000'};
 
+  font-weight: ${(props) => props.weight || 'normal' };
   text-align: center;
   padding: 1.5rem 0;
 `
@@ -16,6 +17,54 @@ const HeadTitle = styled.h3`
 const SlideTitle = styled(TopTitle)`
   color: ${(props) => props.color || '#000'};
 
+`
+
+const Btn = styled.button`
+  & {
+    background: linear-gradient(262.91deg, #EE6737 5.69%, #F73C2C 94.63%);
+    color: #fff;
+
+    border-radius: 2rem;
+
+    padding: 0.2rem 1rem;
+
+    width: 70%;
+    min-width: 240px;
+    height: 35px;
+
+    font-weight: bold;
+    outline: none;
+
+    transition: .3s;
+    }
+
+  &:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(262.91deg, #F73C2C -32.44%, #EE6737 136.54%);
+
+  }
+`
+
+const Head = styled.div`
+  padding: 1px 2px;
+  background-image: url("${(props) => props.url}");
+  border-radius: 4px;
+  background-position: 100% 75%;
+  background-repeat: no-repeat no-repeat;
+
+  @media (max-width: 768px) {
+    background-position: 100% 80%;
+  }
+`
+const Nav = styled.nav`
+  display: flex;
+  max-width: 1120px;
+  align-items: center;
+  margin: 1.625rem 4rem;
+  justify-content: space-between;
+  > :nth-child(1) {
+    z-index: 999;
+  }
 `
 
 const Logo = styled.div`
@@ -61,4 +110,4 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-export { TopTitle, HeadTitle, SlideTitle, Logo, GlobalStyle }
+export { TopTitle, HeadTitle, SlideTitle, Logo, GlobalStyle, Btn }
