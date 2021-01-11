@@ -6,6 +6,8 @@ import './Slider.css'
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
+  const small = useMedia('(max-width: 410px)');
+
   return (
     <div
       id="oneNext"
@@ -14,7 +16,7 @@ function SampleNextArrow(props) {
         display: "block",
         position: "relative",
         top: "47px",
-        right: "-75%",
+        right: small ? "-83%" : "-75%",
         padding: "0",
         margin: "0",
         zIndex: "2",
@@ -36,7 +38,7 @@ function SamplePrevArrow(props) {
         display: "block",
         position: "relative",
         top: "357px",
-        left: small ? "5%" : "17%",
+        left: small ? "2%" : "15%",
         padding: "0",
         margin: "0",
         zIndex: "2",
