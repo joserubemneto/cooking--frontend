@@ -28,7 +28,7 @@ const Header = () => {
     <Head mobile={mobile} url={bloob3} scroll={scroll} large={large}>
       <Nav mobile={mobile} scroll={scroll}>
         <Link to="/">
-          <Logo color={colors.text} mobile={mobile} fontSize={mobile ? "1.75rem" : "2.375rem"} font={fonts.logo}>Cooking</Logo>
+          <Logo color={colors.text} mobile={mobile} font={fonts.logo}>Cooking</Logo>
         </Link>
         <NavLinks color={colors.text} hover={colors.subTitle} open={burguerOpen}>
           <ul>

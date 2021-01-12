@@ -21,8 +21,8 @@ const SlideTitle = styled(TopTitle)`
 
 const Btn = styled.button`
   & {
-    background: linear-gradient(262.91deg, #EE6737 5.69%, #F73C2C 94.63%);
-    color: #fff;
+    background: ${({ background }) => background || "linear-gradient(262.91deg, #EE6737 5.69%, #F73C2C 94.63%)"} ;
+    color: ${({ color }) => color || "#fff"};
 
     border-radius: 2rem;
 
@@ -40,7 +40,7 @@ const Btn = styled.button`
 
   &:hover {
     transform: translateY(-5px);
-    background: linear-gradient(262.91deg, #F73C2C -32.44%, #EE6737 136.54%);
+    background: ${({ bgHover }) => bgHover || "linear-gradient(262.91deg, #F73C2C -32.44%, #EE6737 136.54%)"} ;
 
   }
 `
