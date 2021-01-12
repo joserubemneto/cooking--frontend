@@ -8,6 +8,7 @@ import { GlobalStyle } from './components/MainStyles'
 import theme from './theme'
 import CarouselOne from './components/CarouselOne/CarouselOne'
 import Banner from './components/Banner'
+import Highlights from './components/Highlights'
 
 const App = () => (
   <ChakraProvider>
@@ -17,6 +18,7 @@ const App = () => (
           <Header />
           <Banner />
           <CarouselOne />
+          <Highlights/>
           <Switch>
             <Route path="/"/>
           </Switch>
