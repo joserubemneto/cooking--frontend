@@ -1,5 +1,6 @@
 import React from 'react'
 import CarouselOne from '../CarouselOne/CarouselOne'
+import {TopTitle} from '../MainStyles'
 
 const Recipes = () => {
   const title = [
@@ -9,6 +10,7 @@ const Recipes = () => {
   return (
     <>
       <CarouselOne title={title[0]}/>
+      <TopTitle>Categorias</TopTitle>
     </>
   )
 }

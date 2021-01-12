@@ -9,6 +9,7 @@ import theme from './theme'
 import CarouselOne from './components/CarouselOne/CarouselOne'
 import Banner from './components/Banner'
 import Highlights from './components/Highlights'
+import Recipes from './components/Recipes/Recipes'
 
 const App = () => (
   <ChakraProvider>
@@ -19,6 +20,7 @@ const App = () => (
           <Banner />
           <CarouselOne title="Receitas"/>
           <Highlights/>
+          <Recipes />
           <Switch>
             <Route path="/"/>
           </Switch>
