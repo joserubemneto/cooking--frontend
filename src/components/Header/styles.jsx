@@ -15,8 +15,6 @@ export const Head = styled.div`
   }
 
   ${({ scroll }) => scroll && css`
-    position: fixed;
-    top: 0;
     background-image: none;
     background-color: #fff;
     padding: 0px;
