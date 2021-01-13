@@ -17,7 +17,7 @@ const App = () => (
       <BrowserRouter>
           <Header />
           <Banner />
-          <CarouselOne />
+          <CarouselOne title="Receitas"/>
           <Highlights/>
           <Switch>
             <Route path="/"/>

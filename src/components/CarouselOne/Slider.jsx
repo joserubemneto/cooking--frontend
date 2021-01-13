@@ -67,15 +67,16 @@ export default class MultipleItems extends Component {
     return (
       <>
         <Slider id="one" {...settings}>
-          <SingleSlide />
-          <SingleSlide />
-          <SingleSlide />
-          <SingleSlide />
-          <SingleSlide />
-          <SingleSlide />
-          <SingleSlide />
-          <SingleSlide />
-          <SingleSlide />
+          <SingleSlide titleSlide="lucas e lucas" />
+          <SingleSlide titleSlide="lucas e lucas" />
+          <SingleSlide titleSlide="lucas e lucas" />
+          <SingleSlide titleSlide="lucas e lucas" />
+          <SingleSlide titleSlide="lucas e lucas" />
+          <SingleSlide titleSlide="lucas e lucas" />
+          <SingleSlide titleSlide="lucas e lucas" />
+          <SingleSlide titleSlide="lucas e lucas" />
+          <SingleSlide titleSlide="lucas e lucas" />
+
         </Slider>
       </>
     );

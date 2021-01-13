@@ -8,7 +8,7 @@ import './Slider.css'
 import useMedia from '../../hooks/useMedia'
 
 
-const CarouselOne = () => {
+const CarouselOne = ({title}) => {
   const {font, colors} = useContext(ThemeContext)
   const large = useMedia('(min-width: 62.5rem)')
 
@@ -19,7 +19,7 @@ const CarouselOne = () => {
     >
     <GlobalStyle />
     <GridItem rowSpan={1} colStart={2}>
-        <TopTitle weight="bold" color={colors.title}>Receitas mais procuradas</TopTitle>
+        <TopTitle weight="bold" color={colors.title}>{title}</TopTitle>
     </GridItem>
     <GridItem rowSpan={2} colStart={2}>
         {large ? <Slider /> : <SliderMobile /> }
