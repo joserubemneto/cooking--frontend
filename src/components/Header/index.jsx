@@ -11,21 +11,11 @@ import bloob3 from '../../assets/Vetor Header 1.svg'
 const Header = () => {
   const { fonts, colors } = useContext(ThemeContext)
   const [burguerOpen, setBurgerOpen] = useState(false)
-  const [scroll, setScroll] = useState(false)
   const mobile = useMedia('(max-width: 48rem)')
   const large = useMedia('(min-width: 62.5rem)')
 
-  const handleScroll = () => {
-    if (window.pageYOffset > 0) setScroll(true);
-    else setScroll(false)
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-  }, []);
-
   return (
-    <Head mobile={mobile} url={bloob3} scroll={scroll} large={large}>
+    <Head mobile={mobile} url={bloob3} large={large}>
       <Nav mobile={mobile} scroll={scroll}>
         <Link to="/">
           <Logo color={colors.text} mobile={mobile} font={fonts.logo}>Cooking</Logo>
@@ -67,9 +57,7 @@ const Header = () => {
       </Nav>
 
       {!mobile && (
-        <BloobBox scroll={scroll} mobile={mobile}>
-          <Bloob/>
-        </BloobBox>
+        <Bloob/>
       )}
 
     </Head>

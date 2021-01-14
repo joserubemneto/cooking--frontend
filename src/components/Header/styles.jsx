@@ -14,24 +14,11 @@ export const Head = styled.div`
     background-position: 100% 80%;
   }
 
-  ${({ scroll }) => scroll && css`
-    background-image: none;
-    background-color: #fff;
-    padding: 0px;
-  `}
-
   ${({ mobile }) => mobile && css`
     background-color: #fff;
     background-image: none;
   `}
 
-`
-
-export const BloobBox = styled.div`
-  transition: ease-in-out 1s;
-  ${({ scroll, mobile }) => scroll && css`
-    display: none;
-  `}
 `
 
 export const Nav = styled.nav`
@@ -42,10 +29,6 @@ export const Nav = styled.nav`
   > :nth-child(1) {
     z-index: 999;
   }
-
-  ${({ scroll }) => scroll && css`
-    margin: 1rem 4rem;
-  `}
 
   ${({ mobile }) => mobile && css`
     background: linear-gradient(201.73deg, #EE6737 -7.35%, #F73C2C 103.6%);
