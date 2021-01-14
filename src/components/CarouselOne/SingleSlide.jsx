@@ -6,12 +6,12 @@ import Back from '../../assets/Image4.jpg'
 import { Image } from "@chakra-ui/react"
 
 
-const SingleSlide = ({mode}) => {
+const SingleSlide = ({mode, titleSlide}) => {
 
   return (
     <>
       <Box mobile={mode}>
-        <SlideTitle color={theme.colors.slide}>bacon e ovos</SlideTitle>
+        <SlideTitle color={theme.colors.slide}>{titleSlide}</SlideTitle>
         <Image
     boxSize="100%"
     objectFit="cover"
