@@ -12,7 +12,6 @@ const Highlights = () => {
       mt="12.5rem"
       borderRadius="0 150px"
       bgGradient="linear(262.91deg, #F73C2C -32.44%, #EE6737 136.54%)"
-      border="1px solid #000"
     >
       <Heading
         mt="4rem"
