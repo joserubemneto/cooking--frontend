@@ -5,13 +5,15 @@ const TopTitle = styled.h2`
   color: ${(props) => props.color || '#000'};
 
   font-weight: ${(props) => props.weight || 'normal' };
-  text-align: center;
+  text-align: ${(props) => props.Talign || 'center' };
   padding: 1.5rem 0;
 `
 
 const HeadTitle = styled.h3`
   font-size: 1.625rem;
   color: ${(props) => props.color || '#000'};
+  font-weight: ${(props) => props.weight || 'normal' };
+
 `
 
 const SlideTitle = styled(TopTitle)`
