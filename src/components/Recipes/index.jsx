@@ -1,5 +1,5 @@
 import React from 'react'
-import CarouselOne from '../CarouselOne/CarouselOne'
+import CarouselOne from '../CarouselOne'
 
 const Recipes = () => {
   const title = [

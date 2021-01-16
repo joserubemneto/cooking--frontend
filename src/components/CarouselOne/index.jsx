@@ -14,8 +14,8 @@ const CarouselOne = ({title}) => {
 
   return (
     <Grid
-    templateColumns="7% 86% 7%"
-    templateRows="auto auto"
+      templateColumns="7% 86% 7%"
+      templateRows="auto auto"
     >
     <GlobalStyle />
     <GridItem rowSpan={1} colStart={2}>
