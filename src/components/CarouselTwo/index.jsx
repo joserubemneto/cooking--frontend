@@ -7,7 +7,7 @@ import Slider from '../CarouselTwo/Slider'
 import SliderMobile from '../CarouselTwo/SliderMobile'
 
 
-const CarouselTwo = ({ title }) => {
+const CarouselTwo = ({ title, first }) => {
   const {fonts, colors} = useContext(ThemeContext)
   const large = useMedia('(min-width: 62.5rem)')
 
@@ -18,6 +18,7 @@ const CarouselTwo = ({ title }) => {
     >
     <GlobalStyle />
     <GridItem
+      mt={first ? "2rem" : "8rem"}
       rowSpan={1}
       colStart={2}
     >
