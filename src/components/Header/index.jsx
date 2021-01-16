@@ -26,10 +26,10 @@ const Header = () => {
               <Link to="/">Início</Link>
             </li>
             <li>
-              <Link to="/receitas">Receitas</Link>
+              <Link to="/recipes">Receitas</Link>
             </li>
             <li>
-              <Link to="/destaques">Destaques</Link>
+              <Link to="/highlights">Destaques</Link>
             </li>
             <li>
               <Link to="/chefs">Chefs</Link>
@@ -37,9 +37,9 @@ const Header = () => {
           </ul>
           {mobile && (
             <div>
-              <Link to="/quem-somos">QUEM SOMOS</Link>
-              <Link to="/contato">CONTATO</Link>
-              <Link to="/termos">TERMOS</Link>
+              <Link to="/about">QUEM SOMOS</Link>
+              <Link to="/about">CONTATO</Link>
+              <Link to="/about">TERMOS</Link>
             </div>
           )}
         </NavLinks>
