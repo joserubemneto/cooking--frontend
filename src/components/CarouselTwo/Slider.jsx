@@ -17,7 +17,7 @@ const SampleNextArrow = (props) => {
       h="20px"
       position="absolute"
       top="18.2rem"
-      left="30%"
+      left="29%"
       bgImage={`url("${ArrowRight}")`}
       onClick={onClick}
       bgSize="cover"
@@ -68,6 +68,7 @@ const CenterMode = () => {
         bgColor="transparent"
         p="0"
         m="-5px"
+        ml="8rem"
       >
         <UnorderedList
           id="oneDot"
