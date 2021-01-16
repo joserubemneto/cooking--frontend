@@ -2,13 +2,11 @@ import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 import { ChakraProvider } from '@chakra-ui/react'
-import Footer from './components/Footer/index'
-import Header from './components/Header/index'
 import { GlobalStyle } from './components/MainStyles'
 import theme from './theme'
-import CarouselOne from './components/CarouselOne/CarouselOne'
-import Banner from './components/Banner'
-import Highlights from './components/Highlights'
+import Footer from './components/Footer'
+import Header from './components/Header'
+import Landing from './pages'
 
 const App = () => (
   <ChakraProvider>
@@ -16,11 +14,16 @@ const App = () => (
       <GlobalStyle font={theme.fonts.body} />
       <BrowserRouter>
           <Header />
-          <Banner />
-          <CarouselOne title="Receitas"/>
-          <Highlights/>
           <Switch>
-            <Route path="/"/>
+            <Route exact path="/">
+              <Landing/>
+            </Route>
+            <Route path="/about"></Route>
+            <Route path="recipes"></Route>
+            <Route path="recipe/:id"></Route>
+            <Route path="highlights"></Route>
+            <Route path="chefs"></Route>
+            <Route path="chef/:id"></Route>
           </Switch>
           <Footer/>
       </BrowserRouter>
