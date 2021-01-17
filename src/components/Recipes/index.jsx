@@ -1,14 +1,10 @@
 import React from 'react'
-import CarouselOne from '../CarouselOne/CarouselOne'
 import {TopTitle, HeadTitle} from '../MainStyles'
 import { Grid, GridItem } from "@chakra-ui/react"
 import theme from '../../theme'
 import {Box} from '../CarouselOne/styles'
 
-const Recipes = () => {
-  const title = [
-    "Receitas mais acessadass"
-  ]
+const RecipesComponent = () => {
 
   const categories = [
     "Bolos e Tortas", "Camarões", "Carnes", "Empanados", "Microondas", "Petiscos", "Bebidas", "Bolos e Tortas", "Camarões", "Carnes", "Empanados", "Doces", "Veganos"
@@ -16,7 +12,6 @@ const Recipes = () => {
 
   return (
     <>
-      <CarouselOne title={title[0]}/>
       <Grid
       templateColumns="11% 78% 11%"
       templateRows="repeat(4, auto)"
@@ -63,4 +58,4 @@ const Recipes = () => {
   )
 }
 
-export default Recipes
+export default RecipesComponent

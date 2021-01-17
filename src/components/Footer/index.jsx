@@ -130,16 +130,19 @@ const Footer = () => {
           justifyContent="space-between"
           padding={"1rem 3rem"}
           borderRadius="4px"
-          bgGradient={"linear(201.73deg, #EE6737 -7.35%, #F73C2C 103.6%)"}>
-          <Logo
-            color={colors.text}
-            open={true}
-            fontSize={"1.75rem"}
-            font={fonts.logo}
-            mobile={mobile}
-          >
-            Cooking
-          </Logo>
+          bgGradient={"linear(201.73deg, #EE6737 -7.35%, #F73C2C 103.6%)"}
+        >
+          <Box mr="4rem">
+            <Logo
+              color={colors.text}
+              open={true}
+              fontSize={"1.75rem"}
+              font={fonts.logo}
+              mobile={mobile}
+            >
+              Cooking
+            </Logo>
+          </Box>
           <Text color="#FFF">© Cooking™, 2021. All rights reserved.</Text>
         </Flex>
       )}
