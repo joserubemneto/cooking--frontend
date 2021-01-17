@@ -7,9 +7,10 @@ import Highlights from '../components/Highlights'
 const Landing = () => {
   return (
     <Box>
-      <Banner/>
+      <Banner />
       <CarrouselOne title="Receitas"/>
       <Highlights/>
+      <CarrouselOne title="Chefs"/>
     </Box>
   )
 }

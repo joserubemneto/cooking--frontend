@@ -4,6 +4,7 @@ import { Grid, GridItem, Image, Text } from "@chakra-ui/react"
 import Cook from '../assets/Ilustração Banner.png'
 import { Btn } from './MainStyles'
 import useMedia from '../hooks/useMedia'
+import { Link } from 'react-router-dom'
 
 
 const Banner = () => {
@@ -48,7 +49,8 @@ if (mobile) {
         mt="30px"
         mb="20px"
         >
-          <Btn>acessar receitas</Btn>
+          <Link to="/receitas"><Btn>acessar receitas</Btn></Link>
+
         </GridItem>
         <GridItem
         colStart={2}
@@ -95,7 +97,8 @@ if (mobile) {
         rowStart={3}
         mt={laptop ? "20px" : "30px"}
         >
-          <Btn>acessar receitas</Btn>
+          <Link to="/receitas"><Btn>acessar receitas</Btn></Link>
+
         </GridItem>
         <GridItem
         colStart={3}
