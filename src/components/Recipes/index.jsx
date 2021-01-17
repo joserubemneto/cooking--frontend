@@ -2,13 +2,39 @@ import React from 'react'
 import {TopTitle, HeadTitle} from '../MainStyles'
 import { Grid, GridItem } from "@chakra-ui/react"
 import theme from '../../theme'
+import {CategoryTitle} from './styles'
 import {Box} from '../CarouselOne/styles'
+import Elipse from '../../assets/Ellipse75.svg'
 
 const RecipesComponent = () => {
-
   const categories = [
     "Bolos e Tortas", "Camarões", "Carnes", "Empanados", "Microondas", "Petiscos", "Bebidas", "Bolos e Tortas", "Camarões", "Carnes", "Empanados", "Doces", "Veganos"
-  ]
+  ];
+
+
+  function CreateCategories(props){
+    const myCategories = props.name.map((category, index) => {
+      if(index === 0){
+        return <CategoryTitle>{category}</CategoryTitle>
+      } else if (index % 2 == 0){
+        return (
+        <>
+       <img src={Elipse} alt=""/>
+       <CategoryTitle>{category}</CategoryTitle>
+       </>
+        )
+      } else if (index % 2 != 0){
+        return (
+        <>
+       <img src={Elipse} alt=""/>
+       <CategoryTitle weight="600">{category}</CategoryTitle>
+       </>
+        )
+      }
+    });
+
+    return myCategories;
+  }
 
   return (
     <>
@@ -26,7 +52,7 @@ const RecipesComponent = () => {
         colStart={2}
         rowStart={2}
         >
-
+          <CreateCategories name={categories} />
         </GridItem>
         <GridItem
         colStart={2}

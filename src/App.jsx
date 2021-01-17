@@ -20,7 +20,7 @@ const App = () => (
               <Landing/>
             </Route>
             <Route path="/about"></Route>
-            <Route path="/recipes">
+            <Route path="/receitas">
               <Recipes />
             </Route>
             <Route path="recipe/:id"></Route>
