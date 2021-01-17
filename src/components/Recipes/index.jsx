@@ -1,10 +1,14 @@
 import React from 'react'
 import {TopTitle, HeadTitle} from '../MainStyles'
-import { Grid, GridItem } from "@chakra-ui/react"
+import { Grid, GridItem, Image } from "@chakra-ui/react"
 import theme from '../../theme'
 import {CategoryTitle} from './styles'
 import {Box} from '../CarouselOne/styles'
 import Elipse from '../../assets/Ellipse75.svg'
+import { Flex, Spacer } from "@chakra-ui/react"
+import {SlideTitle} from '../MainStyles'
+import Back from '../../assets/Image4.jpg'
+
 
 const RecipesComponent = () => {
   const categories = [
@@ -52,31 +56,97 @@ const RecipesComponent = () => {
         colStart={2}
         rowStart={2}
         >
+          <Flex>
           <CreateCategories name={categories} />
+          </Flex>
         </GridItem>
         <GridItem
         colStart={2}
         rowStart={3}
+        mt="30px"
         >
           <HeadTitle weight="600" color={theme.colors.subTitle}>Mais acessadas</HeadTitle>
         </GridItem>
         <GridItem
         colStart={2}
         rowStart={4}
+        mt="30px"
         >
           <Grid
             templateColumns="1fr 1fr 1fr"
             templateRows="auto auto"
             gap="20px"
           >
-            <h1>oi</h1>
-            <h1>oi</h1>
-            <h1>oi</h1>
-            <h1>oi</h1>
-            <h1>oi</h1>
-            <h1>oi</h1>
-
-
+            <Box mobile={true}>
+            <SlideTitle color={theme.colors.slide}>{categories[0]}</SlideTitle>
+              <Image
+                boxSize="100%"
+                objectFit="cover"
+                src={Back}
+                alt="Dan Abramov"
+                position="absolute"
+                zIndex="-1"
+                borderRadius="2rem"
+              />
+            </Box>
+            <Box mobile={true}>
+            <SlideTitle color={theme.colors.slide}>{categories[1]}</SlideTitle>
+              <Image
+                boxSize="100%"
+                objectFit="cover"
+                src={Back}
+                alt="Dan Abramov"
+                position="absolute"
+                zIndex="-1"
+                borderRadius="2rem"
+              />
+            </Box>
+            <Box mobile={true}>
+            <SlideTitle color={theme.colors.slide}>{categories[2]}</SlideTitle>
+              <Image
+                boxSize="100%"
+                objectFit="cover"
+                src={Back}
+                alt="Dan Abramov"
+                position="absolute"
+                zIndex="-1"
+                borderRadius="2rem"
+              />
+            </Box>
+            <Box mobile={true}>
+            <SlideTitle color={theme.colors.slide}>{categories[3]}</SlideTitle>
+              <Image
+                boxSize="100%"
+                objectFit="cover"
+                src={Back}
+                alt="Dan Abramov"
+                position="absolute"
+                zIndex="-1"
+                borderRadius="2rem"
+              />
+            </Box>
+            <Box mobile={true}>
+            <SlideTitle color={theme.colors.slide}>{categories[4]}</SlideTitle>
+              <Image
+                boxSize="100%"
+                objectFit="cover"
+                src={Back}
+                alt="Dan Abramov"
+                position="absolute"
+                zIndex="-1"
+                borderRadius="2rem"
+              />
+            </Box>
+            <Box mobile={true}><SlideTitle color={theme.colors.slide}>{categories[5]}</SlideTitle>
+              <Image
+                boxSize="100%"
+                objectFit="cover"
+                src={Back}
+                alt="Dan Abramov"
+                position="absolute"
+                zIndex="-1"
+                borderRadius="2rem"
+              /></Box>
           </Grid>
         </GridItem>
       </Grid>
