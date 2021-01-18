@@ -33,7 +33,7 @@ const Footer = () => {
   const aboutPages = [
     {
       title: "Quem Somos",
-      page: "quem-somos",
+      page: "about",
     },
     {
       title: "Contato",
