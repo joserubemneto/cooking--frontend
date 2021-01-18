@@ -53,6 +53,7 @@ const RecipesComponent = () => {
         >
           <TopTitle weight="600" color={theme.colors.title}Talign='left'>Categorias</TopTitle>
         </GridItem>
+
         <GridItem
         colStart={2}
         rowStart={2}
@@ -61,6 +62,7 @@ const RecipesComponent = () => {
           <CreateCategories name={categories} />
           </Flex>
         </GridItem>
+
         <GridItem
         colStart={2}
         rowStart={3}
