@@ -23,7 +23,6 @@ const App = () => (
             <Route exact path="/">
               <Landing/>
             </Route>
-<<<<<<< HEAD
             <Route path="/about"></Route>
             <Route path="/recipes"></Route>
             <Route path="/recipe/:id"></Route>
@@ -32,16 +31,6 @@ const App = () => (
             </Route>
             <Route path="/chefs"></Route>
             <Route path="/chef/:id"></Route>
-=======
-            <Route path="/about">
-              <About/>
-            </Route>
-            <Route path="recipes"></Route>
-            <Route path="recipe/:id"></Route>
-            <Route path="highlights"></Route>
-            <Route path="chefs"></Route>
-            <Route path="chef/:id"></Route>
->>>>>>> 44f09e288277e6e8c98fc33f7252e096083f29ad
           </Switch>
           <Footer/>
       </BrowserRouter>
