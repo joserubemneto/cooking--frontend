@@ -37,15 +37,15 @@ const Footer = () => {
     },
     {
       title: "Contato",
-      page: "contato",
+      page: "about",
     },
     {
       title: "Guia",
-      page: "guia",
+      page: "about",
     },
     {
       title: "Termos de uso e política de privacidade",
-      page: "termos",
+      page: "about",
     },
   ]
 
