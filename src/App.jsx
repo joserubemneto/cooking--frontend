@@ -7,11 +7,8 @@ import theme from './theme'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import Landing from './pages'
-<<<<<<< HEAD
 import Highlights from './pages/highlights'
-=======
 import About from './pages/about'
->>>>>>> 44f09e288277e6e8c98fc33f7252e096083f29ad
 
 const App = () => (
   <ChakraProvider>
@@ -23,13 +20,16 @@ const App = () => (
             <Route exact path="/">
               <Landing/>
             </Route>
-            <Route path="/about"></Route>
+            <Route path="/about">
+              <About/>
+            </Route>
             <Route path="/recipes"></Route>
             <Route path="/recipe/:id"></Route>
             <Route path="/highlights">
               <Highlights/>
             </Route>
-            <Route path="/chefs"></Route>
+            <Route path="/chefs">
+            </Route>
             <Route path="/chef/:id"></Route>
           </Switch>
           <Footer/>
