@@ -17,22 +17,23 @@ const RecipesComponent = () => {
 
 
   function CreateCategories(props){
+
     const myCategories = props.name.map((category, index) => {
       if(index === 0){
         return <CategoryTitle>{category}</CategoryTitle>
       } else if (index % 2 == 0){
         return (
-        <>
+        <Flex>
        <img src={Elipse} alt=""/>
        <CategoryTitle>{category}</CategoryTitle>
-       </>
+       </Flex>
         )
       } else if (index % 2 != 0){
         return (
-        <>
+        <Flex>
        <img src={Elipse} alt=""/>
        <CategoryTitle weight="600">{category}</CategoryTitle>
-       </>
+       </Flex>
         )
       }
     });
