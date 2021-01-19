@@ -6,47 +6,56 @@ import { SlideTitle } from '../MainStyles'
 import Elipse from '../../assets/Ellipse75.svg'
 import Back from '../../assets/Image4.jpg'
 
-
 const RecipesComponent = () => {
 
   const categories = [
     {
+      id: "1",
       name: "Bolos",
       tag: "yes"
     },
     {
+      id: "2",
       name: "Tortas",
       tag: "yes"
     },
     {
+      id: "3",
       name: "Carnes",
       tag: "yes"
     },
     {
+      id: "4",
       name: "Camarões",
       tag: "yes"
     },
     {
+      id: "5",
       name: "Empanados",
       tag: "yes"
     },
     {
+      id: "6",
       name: "Doces",
       tag: "yes"
     },
     {
+      id: "7",
       name: "Veganos",
       tag: "no"
     },
     {
+      id: "8",
       name: "Aves",
       tag: "no"
     },
     {
+      id: "9",
       name: "Hambúrguer",
       tag: "no"
     },
     {
+      id: "10",
       name: "Pizzas",
       tag: "no"
     },
@@ -81,7 +90,7 @@ const RecipesComponent = () => {
         >
           {categories.map((category, index) => (
             <Flex
-              key={category.name}
+              key={category.id}
               align="center"
               justify="space-between"
             >
@@ -135,6 +144,7 @@ const RecipesComponent = () => {
                 justify="center"
                 align="center"
                 borderRadius="2rem"
+                cursor="pointer"
               >
                 <SlideTitle color={theme.colors.slide}>
                   {category.name}
