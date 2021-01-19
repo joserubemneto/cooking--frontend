@@ -47,6 +47,7 @@ const Category = () => {
         colStart={2}
         colSpan={2}
         mt="35px"
+        marginBottom="30px"
         >
           <Box bg="transparent" mobile='true'>
                   <Image
@@ -68,16 +69,21 @@ const Category = () => {
           templateColumns="1fr 1fr"
           >
             <GridItem
-            margin=" 0 25px"
+            margin=" 0 30px"
             >
           <CategoryCard Name="lucas melo" />
             </GridItem>
             <GridItem
-            margin="0 25px"
+            margin="0 30px"
             >
           <CategoryCard Name="lucas melo" />
             </GridItem><GridItem
-            margin="0 25px"
+            margin="0 30px"
+            >
+          <CategoryCard Name="lucas melo" />
+            </GridItem>
+            <GridItem
+            margin="0 30px"
             >
           <CategoryCard Name="lucas melo" />
             </GridItem>
