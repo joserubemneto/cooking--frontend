@@ -5,13 +5,15 @@ const TopTitle = styled.h2`
   color: ${(props) => props.color || '#000'};
 
   font-weight: ${(props) => props.weight || 'normal' };
-  text-align: center;
+  text-align: ${(props) => props.Talign || 'center' };
   padding: 1.5rem 0;
 `
 
 const HeadTitle = styled.h3`
   font-size: 1.625rem;
   color: ${(props) => props.color || '#000'};
+  font-weight: ${(props) => props.weight || 'normal' };
+
 `
 
 const SlideTitle = styled(TopTitle)`
@@ -23,6 +25,8 @@ const Btn = styled.button`
   & {
     background: ${({ background }) => background || "linear-gradient(262.91deg, #EE6737 5.69%, #F73C2C 94.63%)"} ;
     color: ${({ color }) => color || "#fff"};
+
+    margin-top: ${({ margin }) => margin || ""};
 
     border-radius: 2rem;
 
@@ -42,6 +46,21 @@ const Btn = styled.button`
     transform: translateY(-5px);
     background: ${({ bgHover }) => bgHover || "linear-gradient(262.91deg, #F73C2C -32.44%, #EE6737 136.54%)"} ;
 
+  }
+`
+
+const myBack =  styled.button`
+  outline: none;
+
+  height: 30px;
+  width: 30px;
+
+  margin-left: 10px;
+
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-3px);
   }
 `
 
@@ -109,4 +128,4 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-export { TopTitle, HeadTitle, SlideTitle, Logo, GlobalStyle, Btn }
+export { TopTitle, HeadTitle, SlideTitle, Logo, GlobalStyle, Btn, myBack }

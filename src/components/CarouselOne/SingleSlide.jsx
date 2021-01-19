@@ -21,7 +21,7 @@ const SingleSlide = ({mode, titleSlide}) => {
     zIndex="-1"
     borderRadius="2rem"
   />
-        <Chef>Chef Lucas</Chef>
+        {/* <Chef>Chef Lucas</Chef> */}
       </Box>
     </>
   )
