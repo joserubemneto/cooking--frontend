@@ -7,8 +7,10 @@ import theme from './theme'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import Landing from './pages'
-import Recipes from './pages/Recipes'
-import Recipe from './pages/Recipe'
+import Recipes from './pages/recipes'
+import Recipe from './pages/recipe'
+import Highlights from './pages/highlights'
+import About from './pages/about'
 
 const App = () => (
   <ChakraProvider>
@@ -20,16 +22,23 @@ const App = () => (
             <Route exact path="/">
               <Landing/>
             </Route>
-            <Route path="/about"></Route>
-            <Route path="/receitas">
-              <Recipes />
+            <Route path="/about">
+              <About/>
             </Route>
-            <Route path="/receita:id">
-              <Recipe />
+            <Route path="/recipes">
+              <Recipes/>
             </Route>
-            <Route path="destaques"></Route>
-            <Route path="chefs"></Route>
-            <Route path="chef/:id"></Route>
+            <Route path="/recipe/:id">
+              <Recipe/>
+            </Route>
+            <Route path="/highlights">
+              <Highlights/>
+            </Route>
+            <Route path="/chefs">
+            </Route>
+            <Route path="/chef/:id">
+
+            </Route>
           </Switch>
           <Footer/>
       </BrowserRouter>
