@@ -11,6 +11,7 @@ import Recipes from './pages/recipes'
 import Recipe from './pages/recipe'
 import Highlights from './pages/highlights'
 import About from './pages/about'
+import Chefs from './pages/chefs'
 
 const App = () => (
   <ChakraProvider>
@@ -35,6 +36,7 @@ const App = () => (
               <Highlights/>
             </Route>
             <Route path="/chefs">
+              <Chefs/>
             </Route>
             <Route path="/chef/:id">
 
