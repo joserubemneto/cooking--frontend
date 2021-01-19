@@ -47,6 +47,21 @@ const Btn = styled.button`
   }
 `
 
+const myBack =  styled.button`
+  outline: none;
+
+  height: 30px;
+  width: 30px;
+
+  margin-left: 10px;
+
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+`
+
 const Head = styled.div`
   padding: 1px 2px;
   background-image: url("${(props) => props.url}");
@@ -111,4 +126,4 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-export { TopTitle, HeadTitle, SlideTitle, Logo, GlobalStyle, Btn }
+export { TopTitle, HeadTitle, SlideTitle, Logo, GlobalStyle, Btn, myBack }

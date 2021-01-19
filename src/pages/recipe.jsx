@@ -1,8 +1,9 @@
 import React from 'react'
-import { Grid, GridItem, Image, Flex, Spacer } from "@chakra-ui/react"
+import { Grid, GridItem, Image, Flex, Spacer, Img } from "@chakra-ui/react"
 import {TopTitle} from '../components/MainStyles'
 import theme from '../theme'
-import { ReactComponent as Back } from '../assets/back.svg'
+import Back from '../assets/back.svg'
+import {myBack} from '../components/MainStyles'
 
 const Recipe = (id) => {
 
@@ -23,8 +24,11 @@ const Recipe = (id) => {
           <TopTitle color={theme.colors.title}>oi</TopTitle>
           <Spacer />
           <Flex>
-              <p>voltar para {category[0]}</p>
-              <button><Back /></button>
+              <p>voltar para </p><p style={{display: 'inline-block', marginLeft: '7px', color:`${theme.colors.subTitle}`}} >{category[0]}</p>
+              <myBack>
+                <Img
+                src={Back}
+                ></Img></myBack>
           </Flex>
         </Flex>
       </GridItem>
