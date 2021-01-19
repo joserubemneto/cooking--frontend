@@ -10,6 +10,7 @@ import Landing from './pages'
 import Highlights from './pages/highlights'
 import About from './pages/about'
 import Chefs from './pages/chefs'
+import Chef from './pages/chef'
 
 const App = () => (
   <ChakraProvider>
@@ -32,7 +33,9 @@ const App = () => (
             <Route path="/chefs">
               <Chefs/>
             </Route>
-            <Route path="/chef/:id"></Route>
+            <Route path="/chef/:id">
+              <Chef/>
+            </Route>
           </Switch>
           <Footer/>
       </BrowserRouter>
