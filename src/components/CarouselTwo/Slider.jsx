@@ -68,7 +68,7 @@ const CenterMode = () => {
         bgColor="transparent"
         p="0"
         m="-5px"
-        ml="8rem"
+        ml="5rem"
       >
         <UnorderedList
           id="oneDot"
