@@ -9,6 +9,7 @@ import Header from './components/Header'
 import Landing from './pages'
 import Highlights from './pages/highlights'
 import About from './pages/about'
+import Chefs from './pages/chefs'
 
 const App = () => (
   <ChakraProvider>
@@ -29,6 +30,7 @@ const App = () => (
               <Highlights/>
             </Route>
             <Route path="/chefs">
+              <Chefs/>
             </Route>
             <Route path="/chef/:id"></Route>
           </Switch>
