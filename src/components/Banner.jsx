@@ -49,7 +49,7 @@ if (mobile) {
         mt="30px"
         mb="20px"
         >
-          <Link to="/receitas"><Btn>acessar receitas</Btn></Link>
+          <Link to="/"><Btn>acessar receitas</Btn></Link>
 
         </GridItem>
         <GridItem
