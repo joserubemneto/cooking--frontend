@@ -96,7 +96,7 @@ const Footer = () => {
               <Text color={colors.subTitle} fontWeight={"bold"}>Especiais</Text>
               {especialRecipesPages.map((page) => (
                 <Box
-                  key={page.page}
+                  key={page.title}
                   fontSize={"0.9rem"}
                   pt={"1rem"}
                   _hover={{ fontWeight: "bold", transition: 'all 600ms' }}
@@ -109,7 +109,7 @@ const Footer = () => {
               <Text color={colors.subTitle} fontWeight={"bold"}>Sobre</Text>
               {aboutPages.map((page) => (
                 <Box
-                  key={page.page}
+                  key={page.title}
                   fontSize={"0.9rem"}
                   pt={"1rem"}
                   _hover={{ fontWeight: "bold", transition: 'all 600ms' }}
