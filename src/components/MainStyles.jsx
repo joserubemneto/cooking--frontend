@@ -26,6 +26,8 @@ const Btn = styled.button`
     background: ${({ background }) => background || "linear-gradient(262.91deg, #EE6737 5.69%, #F73C2C 94.63%)"} ;
     color: ${({ color }) => color || "#fff"};
 
+    margin-top: ${({ margin }) => margin || ""};
+
     border-radius: 2rem;
 
     padding: 0.2rem 1rem;

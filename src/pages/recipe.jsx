@@ -126,6 +126,12 @@ const Recipe = (id) => {
       </GridItem>
       <GridItem
       colStart={2}
+      >
+        <TopTitle Talign="left" color={theme.colors.subTitle}>Resumo</TopTitle>
+        <Text fontSize="18px" lineHeight="27px">resumo do resumo do resumo do resumo resumo do resumo do resumo do resumoresumo do resumo do resumo do resumoresumo do resumo do resumo do resumoresumo do resumo do resumo do resumoresumo do resumo do resumo do resumoresumo do resumo do resumo do resumoresumo do resumo do resumo do resumo</Text>
+      </GridItem>
+      <GridItem
+      colStart={2}
       mt='20px'
       >
       <TopTitle Talign="left" color={theme.colors.subTitle}>Ingredientes</TopTitle>
