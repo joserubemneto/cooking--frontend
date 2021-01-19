@@ -31,7 +31,7 @@ const App = () => (
             <Route path="/recipes">
               <Recipes/>
             </Route>
-            <Route path="/category">
+            <Route path="/category/:id">
               <Category />
             </Route>
             <Route path="/recipe/:id">
