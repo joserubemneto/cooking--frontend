@@ -6,6 +6,7 @@ import Back from '../assets/back.svg'
 import Photo from '../assets/Image5.jpg'
 import Elipse from '../assets/Ellipse75.svg'
 import CarouselOne from '../components/CarouselOne'
+import { Link } from 'react-router-dom'
 
 const Recipe = (id) => {
 
@@ -93,6 +94,7 @@ const Recipe = (id) => {
           alignItems="center"
           >
               <p>voltar para </p><p style={{display: 'inline-block', marginLeft: '7px', color:`${theme.colors.subTitle}`}} >{category[0]}</p>
+              <Link to="/recipes">
               <Image
                 boxSize="35px"
                 objectFit="cover"
@@ -103,6 +105,7 @@ const Recipe = (id) => {
                 borderRadius="2rem"
                 ml='10px'
               />
+              </Link>
           </Flex>
         </Flex>
       </GridItem>
