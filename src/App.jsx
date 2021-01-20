@@ -14,8 +14,10 @@ import About from './pages/about'
 import Chefs from './pages/chefs'
 import Chef from './pages/chef'
 import Category from './pages/category'
+import useMedia from './hooks/useMedia'
 
 const App = () => (
+
   <ChakraProvider>
     <ThemeProvider theme={theme}>
       <GlobalStyle font={theme.fonts.body} />

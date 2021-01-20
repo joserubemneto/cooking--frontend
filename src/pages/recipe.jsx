@@ -7,9 +7,10 @@ import Photo from '../assets/Image5.jpg'
 import Elipse from '../assets/Ellipse75.svg'
 import CarouselOne from '../components/CarouselOne'
 import { Link } from 'react-router-dom'
+import useMedia from '../hooks/useMedia'
 
 const Recipe = (id) => {
-
+  const large = useMedia('(min-width: 62.5rem)')
   const category = ["Amores"];
 
   const recipe = "Paz";
@@ -78,7 +79,7 @@ const Recipe = (id) => {
   return (
     <>
     <Grid
-    templateColumns="11% 51% 27% 11%"
+    templateColumns={large ? "11% 51% 27% 11%" : "7% 55% 31% 7%"}
     templateRows="repeat(6, auto)"
     >
       <GridItem
