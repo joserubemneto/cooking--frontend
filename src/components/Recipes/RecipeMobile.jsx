@@ -1,10 +1,14 @@
 import React from 'react'
 import CategoryCard from '../CategoryCard'
-import { Grid, GridItem, Flex, Spacer, Select } from "@chakra-ui/react"
+import { Grid, GridItem, Flex, Spacer } from "@chakra-ui/react"
 import {TopTitle} from '../MainStyles'
 import theme from '../../theme'
+import {Select} from '../MainStyles'
 
 const RecipeMobile = () => {
+
+  const categories = ["Bolos e Tortas", "Camarões", "Carnes", "Empanados"];
+
   return (
     <>
       <Grid
@@ -18,23 +22,18 @@ const RecipeMobile = () => {
           >
           <TopTitle color={theme.colors.title}>Nossas Receitas</TopTitle>
           <Spacer />
-          <Select placeholder="Filtros"
-          variant="filled"
-          maxWidth="150px"
-          borderRadius="1rem"
-          bg="linear-gradient(201.73deg, #EE6737 -7.35%, #F73C2C 103.6%);"
-          color="white"
-          >
-            <option value="option1">Option 1</option>
-            <option value="option2">Option 2</option>
-            <option value="option3">Option 3</option>
+          <Select>
+            <option value="disabled">Filtros</option>
+            {categories.map((category, index) => (
+              <option value={index}>{category}</option>
+            ))}
           </Select>
           </Flex>
         </GridItem>
         <GridItem
         colStart={2}
         >
-          <CategoryCard />
+          <CategoryCard Name="Gelo"/>
           <CategoryCard />
           <CategoryCard />
           <CategoryCard />

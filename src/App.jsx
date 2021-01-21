@@ -33,7 +33,7 @@ const App = () => (
             <Route path="/recipes">
               <Recipes/>
             </Route>
-            <Route path="/category">
+            <Route path="/category/:id">
               <Category />
             </Route>
             <Route path="/recipe/:id">
@@ -47,6 +47,9 @@ const App = () => (
             </Route>
             <Route path="/chef/:id">
               <Chef/>
+            </Route>
+            <Route path="/chef/:id">
+
             </Route>
           </Switch>
           <Footer/>

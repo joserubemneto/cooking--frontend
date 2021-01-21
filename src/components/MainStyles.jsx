@@ -21,6 +21,21 @@ const SlideTitle = styled(TopTitle)`
 
 `
 
+const Select = styled.select`
+  background: linear-gradient(201.73deg, #EE6737 -7.35%, #F73C2C 103.6%);
+  max-width: 150px;
+  border-radius: .7rem;
+  outline: none;
+  padding: .5rem;
+  color: white;
+
+  &:focus{
+    outline: none;
+    border: 1px solid #f73c2c;
+  }
+
+`
+
 const Btn = styled.button`
   & {
     background: ${({ background }) => background || "linear-gradient(262.91deg, #EE6737 5.69%, #F73C2C 94.63%)"} ;
@@ -128,4 +143,4 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-export { TopTitle, HeadTitle, SlideTitle, Logo, GlobalStyle, Btn, myBack }
+export { TopTitle, HeadTitle, SlideTitle, Logo, GlobalStyle, Btn, myBack, Select }
