@@ -10,6 +10,7 @@ const Highlights = () => {
       align="center"
       direction="column"
       mt="12.5rem"
+      mb="5rem"
       borderRadius="0 150px"
       bgGradient="linear(262.91deg, #F73C2C -32.44%, #EE6737 136.54%)"
     >

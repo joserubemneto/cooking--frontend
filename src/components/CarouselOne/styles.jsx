@@ -1,12 +1,12 @@
 import styled from 'styled-components'
 
 const Box = styled.div`
-  width: ${({ mobile }) => mobile ? '100%' : '28vw'};;
+  width: ${({ mobile }) => mobile ? '100%' : '28vw'};
   height: 290px;
 
   position: relative;
 
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: ${(props) => props.bg || 'rgba(0, 0, 0, 0.5);' };
 
   display: flex;
   justify-content: center;
