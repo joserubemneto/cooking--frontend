@@ -23,9 +23,10 @@ const RecipeMobile = () => {
           <TopTitle color={theme.colors.title}>Nossas Receitas</TopTitle>
           <Spacer />
           <Select>
-            <option value="disabled">Filtros</option>
+            <option disabled selected>Filtros</option>
+            <option option="none">Nenhum</option>
             {categories.map((category, index) => (
-              <option value={index}>{category}</option>
+              <option value={category}>{category}</option>
             ))}
           </Select>
           </Flex>
