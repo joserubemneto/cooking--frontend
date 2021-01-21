@@ -15,7 +15,7 @@ const Header = () => {
   const large = useMedia("(min-width: 62.5rem)")
 
   return (
-    <Head mobile={mobile} url={bloob3} large={large}>
+    <Head mobile={mobile} url={bloob3} burguerOpen={burguerOpen} large={large}>
       <Nav mobile={mobile} scroll={scroll}>
         <Link to="/">
           <Logo color={colors.text} mobile={mobile} font={fonts.logo}>
@@ -29,23 +29,37 @@ const Header = () => {
         >
           <ul>
             <li>
-              <Link to="/">Início</Link>
+              <Link to="/" onClick={() => setBurgerOpen(false)}>
+                Início
+              </Link>
             </li>
             <li>
-              <Link to="/receitas">Receitas</Link>
+              <Link to="/receitas" onClick={() => setBurgerOpen(false)}>
+                Receitas
+              </Link>
             </li>
             <li>
-              <Link to="/destaques">Destaques</Link>
+              <Link to="/destaques" onClick={() => setBurgerOpen(false)}>
+                Destaques
+              </Link>
             </li>
             <li>
-              <Link to="/chefs">Chefs</Link>
+              <Link to="/chefs" onClick={() => setBurgerOpen(false)}>
+                Chefs
+              </Link>
             </li>
           </ul>
           {mobile && (
             <div>
-              <Link to="/sobre">QUEM SOMOS</Link>
-              <Link to="/sobre">CONTATO</Link>
-              <Link to="/sobre">TERMOS</Link>
+              <Link to="/sobre" onClick={() => setBurgerOpen(false)}>
+                QUEM SOMOS
+              </Link>
+              <Link to="/sobre" onClick={() => setBurgerOpen(false)}>
+                CONTATO
+              </Link>
+              <Link to="/sobre" onClick={() => setBurgerOpen(false)}>
+                TERMOS
+              </Link>
             </div>
           )}
         </NavLinks>
