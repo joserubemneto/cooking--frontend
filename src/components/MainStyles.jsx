@@ -4,29 +4,29 @@ const TopTitle = styled.h2`
   font-size: 2rem;
   color: ${(props) => props.color || '#000'};
 
-  font-weight: ${(props) => props.weight || 'normal' };
-  text-align: ${(props) => props.Talign || 'center' };
+  font-weight: ${(props) => props.weight || 'normal'};
+  text-align: ${(props) => props.Talign || 'center'};
   padding: 1.5rem 0;
 `
 
 const HeadTitle = styled.h3`
   font-size: 1.625rem;
   color: ${(props) => props.color || '#000'};
-  font-weight: ${(props) => props.weight || 'normal' };
-
+  font-weight: ${(props) => props.weight || 'normal'};
 `
 
 const SlideTitle = styled(TopTitle)`
   color: ${(props) => props.color || '#000'};
-
 `
 
 const Btn = styled.button`
   & {
-    background: ${({ background }) => background || "linear-gradient(262.91deg, #EE6737 5.69%, #F73C2C 94.63%)"} ;
-    color: ${({ color }) => color || "#fff"};
+    background: ${({ background }) =>
+      background ||
+      'linear-gradient(262.91deg, #EE6737 5.69%, #F73C2C 94.63%)'};
+    color: ${({ color }) => color || '#fff'};
 
-    margin-top: ${({ margin }) => margin || ""};
+    margin-top: ${({ margin }) => margin || ''};
 
     border-radius: 2rem;
 
@@ -39,17 +39,18 @@ const Btn = styled.button`
     font-weight: bold;
     outline: none;
 
-    transition: .3s;
-    }
+    transition: 0.3s;
+  }
 
   &:hover {
     transform: translateY(-5px);
-    background: ${({ bgHover }) => bgHover || "linear-gradient(262.91deg, #F73C2C -32.44%, #EE6737 136.54%)"} ;
-
+    background: ${({ bgHover }) =>
+      bgHover ||
+      'linear-gradient(262.91deg, #F73C2C -32.44%, #EE6737 136.54%)'};
   }
 `
 
-const myBack =  styled.button`
+const myBack = styled.button`
   outline: none;
 
   height: 30px;
@@ -66,7 +67,7 @@ const myBack =  styled.button`
 
 const Head = styled.div`
   padding: 1px 2px;
-  background-image: url("${(props) => props.url}");
+  background-image: url('${(props) => props.url}');
   border-radius: 4px;
   background-position: 100% 75%;
   background-repeat: no-repeat no-repeat;
@@ -89,9 +90,9 @@ const Nav = styled.nav`
 const Logo = styled.div`
   font-size: ${({ fontSize }) => fontSize || '2.375rem'};
   & {
-    font-family: ${({ font }) => font}
+    font-family: ${({ font }) => font};
   }
-  color: ${({ color, mobile }) => mobile ? '#fff' : color};
+  color: ${({ color, mobile }) => (mobile ? '#fff' : color)};
 `
 
 const GlobalStyle = createGlobalStyle`

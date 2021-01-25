@@ -1,11 +1,11 @@
-import styled, { css } from "styled-components"
+import styled, { css } from 'styled-components'
 
 export const Head = styled.div`
   width: 100%;
   padding: 1px 2px;
-  background-image: url("${(props) => props.url}");
+  background-image: url('${(props) => props.url}');
   border-radius: 4px;
-  background-position: ${({ large }) => (large ? "100% 85%" : "100% 100%")};
+  background-position: ${({ large }) => (large ? '100% 85%' : '100% 100%')};
   background-repeat: no-repeat no-repeat;
   z-index: 100;
   transition: ease-in-out 1s;
@@ -48,7 +48,7 @@ export const Nav = styled.nav`
     `}
 
   @media (max-width: 62.5rem) {
-    justify-content: ${({ mobile }) => (mobile ? "space-between" : "initial")};
+    justify-content: ${({ mobile }) => (mobile ? 'space-between' : 'initial')};
   }
 `
 export const NavLinks = styled.div`
@@ -79,7 +79,7 @@ export const NavLinks = styled.div`
       margin-top: 15rem;
     }
     z-index: 100;
-    display: ${({ open }) => (open ? "visible" : "none")};
+    display: ${({ open }) => (open ? 'visible' : 'none')};
     flex-flow: column nowrap;
     justify-content: space-between;
     align-items: center;
@@ -143,14 +143,14 @@ export const StyledBurger = styled.div`
     transition: all 0.3s linear;
 
     &:nth-child(1) {
-      transform: ${({ open }) => (open ? "rotate(45deg)" : "rotate(0)")};
+      transform: ${({ open }) => (open ? 'rotate(45deg)' : 'rotate(0)')};
     }
     &:nth-child(2) {
-      transform: ${({ open }) => (open ? "translateX(100%)" : "translateX(0)")};
-      display: ${({ open }) => (open ? "none" : "visible")};
+      transform: ${({ open }) => (open ? 'translateX(100%)' : 'translateX(0)')};
+      display: ${({ open }) => (open ? 'none' : 'visible')};
     }
     &:nth-child(3) {
-      transform: ${({ open }) => (open ? "rotate(-45deg)" : "rotate(0)")};
+      transform: ${({ open }) => (open ? 'rotate(-45deg)' : 'rotate(0)')};
     }
   }
 `

@@ -1,46 +1,46 @@
-import React from "react"
-import { BrowserRouter, Route, Switch } from "react-router-dom"
-import Footer from "./components/Footer"
-import Header from "./components/Header"
-import Landing from "./pages"
-import Recipes from "./pages/recipes"
-import Recipe from "./pages/recipe"
-import Highlights from "./pages/highlights"
-import About from "./pages/about"
-import Chefs from "./pages/chefs"
-import Chef from "./pages/chef"
-import Category from "./pages/category"
+import React from 'react'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import Footer from './components/Footer'
+import Header from './components/Header'
+import Landing from './pages'
+import Recipes from './pages/recipes'
+import Recipe from './pages/recipe'
+import Highlights from './pages/highlights'
+import About from './pages/about'
+import Chefs from './pages/chefs'
+import Chef from './pages/chef'
+import Category from './pages/category'
 
 const Routes = () => {
   return (
     <BrowserRouter>
       <Header />
       <Switch>
-        <Route exact path="/">
+        <Route exact path='/'>
           <Landing />
         </Route>
-        <Route path="/sobre">
+        <Route path='/sobre'>
           <About />
         </Route>
-        <Route path="/receitas">
+        <Route path='/receitas'>
           <Recipes />
         </Route>
-        <Route path="/categoria/:id">
+        <Route path='/categoria/:id'>
           <Category />
         </Route>
-        <Route path="/receita/:id">
+        <Route path='/receita/:id'>
           <Recipe />
         </Route>
-        <Route path="/destaques">
+        <Route path='/destaques'>
           <Highlights />
         </Route>
-        <Route path="/chefs">
+        <Route path='/chefs'>
           <Chefs />
         </Route>
-        <Route path="/chef/:id">
+        <Route path='/chef/:id'>
           <Chef />
         </Route>
-        <Route path="/chef/:id"></Route>
+        <Route path='/chef/:id'></Route>
       </Switch>
       <Footer />
     </BrowserRouter>
