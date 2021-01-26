@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import React, { useState, useEffect, useCallback } from 'react'
+import { getChefs } from '../services/api'
 import useMedia from '../hooks/useMedia'
 import { SimpleGrid, Box } from '@chakra-ui/react'
 import CarouselOne from '../components/CarouselOne'
@@ -9,14 +9,13 @@ import { ReactComponent as BackToTop } from '../assets/back to top.svg'
 const Chefs = () => {
   const [chefs, setChefs] = useState([])
 
+  const requestChefs = useCallback(async () => {
+    const { data: chefsData } = await getChefs()
+    setChefs(chefsData)
+  })
+
   useEffect(() => {
-    ;(async () => {
-      const response = await axios.get(
-        'https://cooking--api.herokuapp.com/chefs'
-      )
-      const data = await response.data
-      setChefs(data)
-    })()
+    requestChefs()
   }, [])
 
   const large = useMedia('(min-width: 62.5rem)')
@@ -31,7 +30,6 @@ const Chefs = () => {
             chefName={chef.name}
             description={'Gosta de fazer hambúrguer'}
             id={chef.id}
-            avatar_url={chef.avatar_url}
           />
         ))}
       </SimpleGrid>
