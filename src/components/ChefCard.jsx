@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Box, Heading, Text, Link, Image } from '@chakra-ui/react'
+import { Flex, Box, Heading, Text, Link } from '@chakra-ui/react'
 import { Link as ReachLink } from 'react-router-dom'
 
 const ChefCard = ({ chefName, description, avatar_url, id }) => {
@@ -9,9 +9,7 @@ const ChefCard = ({ chefName, description, avatar_url, id }) => {
         {chefName}
       </Heading>
 
-      <Box maxWidth='250px' w='100%' h='250px' mt='2rem'>
-        <Image w='100%' src={avatar_url} />
-      </Box>
+      <Box maxWidth='250px' w='100%' h='250px' mt='2rem' bg='#C5C5C5'></Box>
 
       <Text mt='2rem' fontSize='1.125rem' maxWidth='350px'>
         {description}
