@@ -8,9 +8,9 @@ const Landing = () => {
   return (
     <Box>
       <Banner />
-      <CarrouselOne title="Receitas"/>
-      <Highlights/>
-      <CarrouselOne title="Chefs"/>
+      <CarrouselOne title='Receitas' />
+      <Highlights />
+      <CarrouselOne title='Chefs' />
     </Box>
   )
 }

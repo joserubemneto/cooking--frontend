@@ -1,60 +1,64 @@
-import React, { Component } from "react";
-import Slider from "react-slick";
-import SingleSlide from "./SingleSlide";
+import React, { Component } from 'react'
+import Slider from 'react-slick'
+import SingleSlide from './SingleSlide'
 import './Slider.css'
 
 function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
+  const { className, style, onClick } = props
   return (
     <div
-      id="oneNext"
+      id='oneNext'
       className={className}
-      style={{ ...style,
-        display: "block",
-        position: "relative",
-        top: "47px",
-        right: "-63%",
-        padding: "0",
-        margin: "0",
-        zIndex: "2",
-        }}
+      style={{
+        ...style,
+        display: 'block',
+        position: 'relative',
+        top: '47px',
+        right: '-63%',
+        padding: '0',
+        margin: '0',
+        zIndex: '2',
+      }}
       onClick={onClick}
     />
-  );
+  )
 }
 
 function SamplePrevArrow(props) {
-  const { className, style, onClick } = props;
+  const { className, style, onClick } = props
   return (
     <div
-      id="onePrev"
+      id='onePrev'
       className={className}
-      style={{ ...style,
-        display: "block",
-        position: "relative",
-        top: "357px",
-        left: "33%",
-        padding: "0",
-        margin: "0",
-        zIndex: "2",
-        }}
+      style={{
+        ...style,
+        display: 'block',
+        position: 'relative',
+        top: '357px',
+        left: '33%',
+        padding: '0',
+        margin: '0',
+        zIndex: '2',
+      }}
       onClick={onClick}
     />
-  );
+  )
 }
 
 export default class MultipleItems extends Component {
   render() {
     const settings = {
       dots: true,
-      appendDots: dots => (
+      appendDots: (dots) => (
         <div
           style={{
-            backgroundColor: "transparent",
-            padding: "0"
-          }}
-        >
-          <ul id="oneDot" style={{ margin: "-10px" }}> {dots} </ul>
+            backgroundColor: 'transparent',
+            padding: '0',
+          }}>
+          <ul id='oneDot' style={{ margin: '-10px' }}>
+            {' '}
+            {dots}{' '}
+          </ul>
         </div>
       ),
       infinite: true,
@@ -62,23 +66,22 @@ export default class MultipleItems extends Component {
       slidesToShow: 3,
       slidesToScroll: 3,
       nextArrow: <SampleNextArrow />,
-      prevArrow: <SamplePrevArrow />
-    };
+      prevArrow: <SamplePrevArrow />,
+    }
     return (
       <>
-        <Slider id="one" {...settings}>
-          <SingleSlide titleSlide="lucas e lucas" />
-          <SingleSlide titleSlide="lucas e lucas" />
-          <SingleSlide titleSlide="lucas e lucas" />
-          <SingleSlide titleSlide="lucas e lucas" />
-          <SingleSlide titleSlide="lucas e lucas" />
-          <SingleSlide titleSlide="lucas e lucas" />
-          <SingleSlide titleSlide="lucas e lucas" />
-          <SingleSlide titleSlide="lucas e lucas" />
-          <SingleSlide titleSlide="lucas e lucas" />
-
+        <Slider id='one' {...settings}>
+          <SingleSlide titleSlide='lucas e lucas' />
+          <SingleSlide titleSlide='lucas e lucas' />
+          <SingleSlide titleSlide='lucas e lucas' />
+          <SingleSlide titleSlide='lucas e lucas' />
+          <SingleSlide titleSlide='lucas e lucas' />
+          <SingleSlide titleSlide='lucas e lucas' />
+          <SingleSlide titleSlide='lucas e lucas' />
+          <SingleSlide titleSlide='lucas e lucas' />
+          <SingleSlide titleSlide='lucas e lucas' />
         </Slider>
       </>
-    );
+    )
   }
 }
