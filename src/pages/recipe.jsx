@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
 import { Grid, GridItem, Image, Flex, Spacer, Text } from '@chakra-ui/react'
 import { TopTitle, HeadTitle } from '../components/MainStyles'
 import theme from '../theme'
@@ -8,79 +8,27 @@ import Elipse from '../assets/Ellipse75.svg'
 import CarouselOne from '../components/CarouselOne'
 import { Link } from 'react-router-dom'
 import useMedia from '../hooks/useMedia'
+import { getRecipes } from '../services/api'
 
-const Recipe = (id) => {
-  const category = ['Amores']
+const Recipe = () => {
+  const [recipes, setRecipes] = useState([]);
 
-  const recipe = 'Paz'
+  const requestRecipes = useCallback(async () => {
+    const { data: recipesData } = await getRecipes()
+    setRecipes(recipesData)
+    console.log(recipes[0]);
+  })
 
-  const ingredients = [
-    {
-      id: '1',
-      name: 'amor',
-      tag: 'yes',
-    },
-    {
-      id: '2',
-      name: 'carinho',
-      tag: 'yes',
-    },
-    {
-      id: '3',
-      name: 'dengo',
-      tag: 'yes',
-    },
-    {
-      id: '4',
-      name: 'paciencia',
-      tag: 'yes',
-    },
-    {
-      id: '5',
-      name: 'calma',
-      tag: 'yes',
-    },
-    {
-      id: '6',
-      name: 'fé',
-      tag: 'yes',
-    },
-  ]
-
-  const preparation = [
-    {
-      id: '1',
-      name: 'perai po faz com calma',
-      tag: 'yes',
-    },
-    {
-      id: '2',
-      name: 'pensa no outro c carinho',
-      tag: 'yes',
-    },
-    {
-      id: '3',
-      name: 'evita briga pq isso so vai te desgastar',
-      tag: 'yes',
-    },
-    {
-      id: '4',
-      name: 'e #fé pq tu tem q seguir em frente',
-      tag: 'yes',
-    },
-    {
-      id: '5',
-      name: 'é sobre isso empatia',
-      tag: 'yes',
-    },
-  ]
+  useEffect(() => {
+    requestRecipes()
+  }, [])
 
   return (
     <>
       <Grid templateColumns='11% 51% 27% 11%' templateRows='repeat(6, auto)'>
         <GridItem colStart={2} colSpan={2}>
           <Flex>
-            <TopTitle color={theme.colors.title}>{recipe}</TopTitle>
+            <TopTitle color={theme.colors.title}>{recipes[0].title}</TopTitle>
             <Spacer />
             <Flex alignItems='center'>
               <p>voltar para </p>
@@ -90,7 +38,7 @@ const Recipe = (id) => {
                   marginLeft: '7px',
                   color: `${theme.colors.subTitle}`,
                 }}>
-                {category[0]}
+                {recipes[0].chef_name}
               </p>
               <Link to='/recipes'>
                 <Image
@@ -136,11 +84,11 @@ const Recipe = (id) => {
             Ingredientes
           </TopTitle>
           <div>
-            {ingredients.map((ingredient) => (
+            {recipes[0].ingredients.map((ingredient) => (
               <Flex key={ingredient.id} align='center' mt='5px'>
                 <Image src={Elipse} alt={'Elipse'} p='0 1rem' />
                 <Text fontWeight='medium' fontSize='1.3rem'>
-                  {ingredient.name}
+                  {ingredient}
                 </Text>
               </Flex>
             ))}
@@ -151,13 +99,13 @@ const Recipe = (id) => {
             Modo de Preparo
           </TopTitle>
           <div>
-            {preparation.map((preparation, index) => (
+            {recipes[0].preparation.map((preparation, index) => (
               <Flex key={preparation.id} align='center' mt='20px' ml='15px'>
                 <Text fontSize='1.7rem' color={theme.colors.title}>
                   {index + 1}.
                 </Text>
                 <Text fontSize='1.3rem' ml='20px' fontWeight='light'>
-                  {preparation.name}
+                  {preparation}
                 </Text>
               </Flex>
             ))}

@@ -7,7 +7,7 @@ export const getChefs = async () => {
 }
 
 export const getRecipes = async () => {
-  return await axios.get(`${BASE_URL}/recipes`)
+  return await axios.get(`https://cooking--api.herokuapp.com/recipes`)
 }
 
 export const getCategories = async () => {
