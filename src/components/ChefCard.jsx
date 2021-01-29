@@ -2,7 +2,7 @@ import React from 'react'
 import { Flex, Box, Heading, Text, Link } from '@chakra-ui/react'
 import { Link as ReachLink } from 'react-router-dom'
 
-const ChefCard = ({ chefName, description, avatar_url, id }) => {
+const ChefCard = ({ chefName, description, id }) => {
   return (
     <Flex direction='column' justifyContent='center' align='center'>
       <Heading fontSize='1.625rem' color='#EE6737'>
