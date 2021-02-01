@@ -33,7 +33,7 @@ const RecipesComponent = ({ data }) => {
                 fontWeight={index % 2 !== 0 && 'bold'}
                 textTransform='uppercase'
                 fontSize='1.2rem'>
-                {data.category_name}
+                {data.name}
               </Text>
             </Flex>
           ))}
@@ -47,8 +47,8 @@ const RecipesComponent = ({ data }) => {
       <GridItem colStart={2} rowStart={4} mt='1rem'>
         <Grid templateColumns='1fr 1fr 1fr' templateRows='auto auto' gap='20px'>
           {data.map(
-            (data) =>
-              data.tag === 'yes' && (
+            (data, intex) =>
+                 (
                 <Flex
                   w={'100%'}
                   h='290px'
@@ -59,7 +59,7 @@ const RecipesComponent = ({ data }) => {
                   borderRadius='2rem'
                   cursor='pointer'>
                   <SlideTitle color={theme.colors.slide}>
-                    oi
+                    {data.name}
                   </SlideTitle>
 
                   <Image
