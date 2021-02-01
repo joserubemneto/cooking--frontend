@@ -1,86 +1,107 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import axios from 'axios'
+import { useRequest } from '../context/Request'
+import { getChef } from '../services/api'
 import { Flex, Box, Heading, Text, Link, Image } from '@chakra-ui/react'
 import { Link as ReactLink, useParams } from 'react-router-dom'
 import CarouselOne from '../components/CarouselOne'
+import Loading from '../components/Loading'
+import Error from '../components/Error'
 import { ReactComponent as Back } from '../assets/back.svg'
 
 const Chef = () => {
   const [chef, setChef] = useState([])
   const { id } = useParams()
+  const { loading, setLoading, error, setError } = useRequest()
+  console.log(chef)
+
+  const requestChef = useCallback(async () => {
+    try {
+      setLoading(true)
+      const { data: chefData } = await getChef(id)
+      setChef(chefData)
+      setLoading(false)
+    } catch (error) {
+      setError(true)
+      console.log(error)
+    }
+  })
 
   useEffect(() => {
-    (async () => {
-      const response = await axios.get(
-        `https://cooking--api.herokuapp.com/chef/${id}`
-      )
-      setChef([response.data])
-    })()
+    requestChef()
   }, [])
 
   return (
-    <Box>
-      <Flex
-        direction='column'
-        align='flex-start'
-        justify='flex-start'
-        p={['4rem 2rem', '4rem 2rem', '4rem 5rem', '4rem 8rem']}>
-        <Flex w='100%' justify='space-between' align='center'>
-          <Heading color='#F73C2C' fontSize='1.5rem'>
-            {chef[0].name}
-          </Heading>
-
+    <>
+      {!loading && !error && (
+        <Box>
           <Flex
-            justify='center'
-            align='center'
-            direction={['column-reverse', 'column-reverse', 'row', 'row']}>
-            <Box
-              fontSize='1.125rem'
-              mr={'2rem'}
-              display={['none', 'none', 'block', 'block']}
-              visibility={['hidden', 'hidden', 'visible', 'visible']}>
-              voltar para{' '}
-              <Text color='#D64D27' display='inline'>
-                Chefs
-              </Text>
-            </Box>
-            <Link as={ReactLink} to='/chefs'>
-              <Back />
-            </Link>
-          </Flex>
-        </Flex>
+            direction='column'
+            align='flex-start'
+            justify='flex-start'
+            p={['4rem 2rem', '4rem 2rem', '4rem 5rem', '4rem 8rem']}>
+            <Flex w='100%' justify='space-between' align='center'>
+              <Heading color='#F73C2C' fontSize='1.5rem'>
+                {chef.name}
+              </Heading>
 
-        <Box mt='2rem' maxWidth='300px' h='300px'>
-          <Image w='100%' src={chef[0].avatar_url} borderRadius='50%' />
-        </Box>
+              <Flex
+                justify='center'
+                align='center'
+                direction={['column-reverse', 'column-reverse', 'row', 'row']}>
+                <Box
+                  fontSize='1.125rem'
+                  mr={'2rem'}
+                  display={['none', 'none', 'block', 'block']}
+                  visibility={['hidden', 'hidden', 'visible', 'visible']}>
+                  voltar para{' '}
+                  <Text color='#D64D27' display='inline'>
+                    Chefs
+                  </Text>
+                </Box>
+                <Link as={ReactLink} to='/chefs'>
+                  <Back />
+                </Link>
+              </Flex>
+            </Flex>
 
-        <Text mt='3rem' maxWidth='500px'>
-          {chef[0].resume}
-        </Text>
+            <Box mt='2rem' w='300px' h='300px' bg='#c5c5c5' />
 
-        <Flex mt='1.25rem' justify='center' align='center'>
-          <Box
-            position='relative'
-            bgGradient='linear(201.73deg, #EE6737 -7.35%, #F73C2C 103.6%)'
-            borderRadius='50%'>
-            <Text
-              p='0.5rem 1rem'
-              fontSize='1.25rem'
-              color='#FFF'
-              fontWeight='bold'
-              textAlign='center'>
-              {chef[0].recipes.length}
+            <Text mt='3rem' maxWidth='500px'>
+              {chef.resume}
             </Text>
-          </Box>
 
-          <Text ml='1rem' fontSize='1.25rem' color='#D64D27' fontWeight='bold'>
-            Receitas no cooking
-          </Text>
-        </Flex>
-      </Flex>
+            <Flex mt='1.25rem' justify='center' align='center'>
+              <Box
+                position='relative'
+                bgGradient='linear(201.73deg, #EE6737 -7.35%, #F73C2C 103.6%)'
+                borderRadius='50%'>
+                <Text
+                  p='0.5rem 1rem'
+                  fontSize='1.25rem'
+                  color='#FFF'
+                  fontWeight='bold'
+                  textAlign='center'>
+                  {chef.recipes && chef.recipes.length}
+                </Text>
+              </Box>
 
-      <CarouselOne title='Receitas do chef' />
-    </Box>
+              <Text
+                ml='1rem'
+                fontSize='1.25rem'
+                color='#D64D27'
+                fontWeight='bold'>
+                Receitas no cooking
+              </Text>
+            </Flex>
+          </Flex>
+
+          <CarouselOne title='Receitas do chef' />
+        </Box>
+      )}
+      {loading && !error && <Loading />}
+      {error && <Error />}
+    </>
   )
 }
 
