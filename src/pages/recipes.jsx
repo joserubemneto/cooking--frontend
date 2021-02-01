@@ -1,44 +1,48 @@
-import React from 'react'
+import React, {useState, useCallback, useEffect} from 'react'
 import CarouselOne from '../components/CarouselOne'
+import Loading from '../components/Loading'
 import RecipesComponent from '../components/Recipes'
 import RecipeMobile from '../components/Recipes/RecipeMobile'
+import { useRequest } from '../context/Request'
 import useMedia from '../hooks/useMedia'
+import { getRecipes } from '../services/api'
+import Error from '../components/Error'
 
 const Recipes = () => {
-  const title = ['Receitas mais acessadass']
   const large = useMedia('(min-width: 62.5rem)');
+  const [recipes, setRecipes] = useState([])
+  const { loading, setLoading, error, setError } = useRequest()
+  console.log(recipes)
 
-  const categories = [
-    'Bolos e Tortas',
-    'Camarões',
-    'Carnes',
-    'Empanados',
-    'Microondas',
-    'Petiscos',
-    'Bebidas',
-    'Bolos e Tortas',
-    'Camarões',
-    'Carnes',
-    'Empanados',
-    'Doces',
-    'Veganos',
-  ]
+  const requestChef = useCallback(async () => {
+    try {
+      setLoading(true)
+      const { data: recipeData } = await getRecipes()
+      setRecipes(recipeData)
+      setLoading(false)
+    } catch (error) {
+      setError(true)
+      console.log(error)
+    }
+  })
 
- if(large) {
+  useEffect(() => {
+    requestChef()
+  }, [])
+
   return (
     <>
-      <CarouselOne title={title[0]} />
-      <RecipesComponent />
+      {!loading && !error && (
+          large ? (<>
+            <CarouselOne title="Receitas mais acessadas" data={recipes} />
+            <RecipesComponent data={recipes} />
+          </>) :
+          <RecipeMobile data={recipes} />
+      )}
+      {loading && !error && <Loading />}
+      {error && <Error />}
     </>
   )
- } else {
-  return (
-    <>
-      <RecipeMobile />
-    </>
-  )
-
- }
 }
 
 export default Recipes

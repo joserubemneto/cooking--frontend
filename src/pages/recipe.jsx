@@ -7,21 +7,31 @@ import Photo from '../assets/Image5.jpg'
 import Elipse from '../assets/Ellipse75.svg'
 import CarouselOne from '../components/CarouselOne'
 import { Link } from 'react-router-dom'
-import useMedia from '../hooks/useMedia'
 import { getRecipes } from '../services/api'
+import { useRequest } from '../context/Request'
 
 const Recipe = () => {
-  const [recipes, setRecipes] = useState([]);
+  const [recipes, setRecipes] = useState([])
+  const { id } = useParams()
+  const { loading, setLoading, error, setError } = useRequest()
+  console.log(chef)
 
-  const requestRecipes = useCallback(async () => {
-    const { data: recipesData } = await getRecipes()
-    setRecipes(recipesData)
-    console.log(recipes[0]);
+  const requestChef = useCallback(async () => {
+    try {
+      setLoading(true)
+      const { data: recipeData } = await getRecipes(id)
+      setRecipes(recipeData)
+      setLoading(false)
+    } catch (error) {
+      setError(true)
+      console.log(error)
+    }
   })
 
   useEffect(() => {
-    requestRecipes()
+    requestChef()
   }, [])
+
 
   return (
     <>
