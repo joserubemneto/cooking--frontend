@@ -5,12 +5,13 @@ import RecipesComponent from '../components/Recipes'
 import RecipeMobile from '../components/Recipes/RecipeMobile'
 import { useRequest } from '../context/Request'
 import useMedia from '../hooks/useMedia'
-import { getCategories } from '../services/api'
+import { getCategories, getRecipes } from '../services/api'
 import Error from '../components/Error'
 
 const Recipes = () => {
   const large = useMedia('(min-width: 62.5rem)');
   const [categories, setCategories] = useState([])
+  const [recipes, setRecipes] = useState([]);
   const { loading, setLoading, error, setError } = useRequest()
 
   const requestChef = useCallback(async () => {
@@ -18,6 +19,8 @@ const Recipes = () => {
       setLoading(true)
       const { data: categoryData } = await getCategories()
       setCategories(categoryData)
+      const { data: recipeData } = await getRecipes()
+      setRecipes(recipeData)
       setLoading(false)
     } catch (error) {
       setError(true)
@@ -33,7 +36,7 @@ const Recipes = () => {
     <>
       {!loading && !error && (
           large ? (<>
-            <CarouselOne title="Receitas mais acessadas" data={categories} />
+            <CarouselOne title="Receitas mais acessadas" data={recipes} />
             <RecipesComponent data={categories} />
           </>) :
           <RecipeMobile data={categories} />

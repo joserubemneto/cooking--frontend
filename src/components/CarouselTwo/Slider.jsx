@@ -84,9 +84,9 @@ const CenterMode = () => {
   return (
     <Box>
       <Slider {...settings}>
-        <SingleSlide />
-        <SingleSlide />
-        <SingleSlide />
+      {this.props.data.map((data, index) => (
+            <SingleSlide data={data.recipes[index]} />
+          ))}
       </Slider>
     </Box>
   )

@@ -4,7 +4,7 @@ import { Box, Image, Flex, Text, Button } from '@chakra-ui/react'
 import { ThemeContext } from 'styled-components'
 import Picture from '../../assets/Image1.jpg'
 
-const SingleSlide = () => {
+const SingleSlide = ({ data }) => {
   const { fonts, colors } = useContext(ThemeContext)
   const small = useMedia('(max-width: 544px)')
 
@@ -27,11 +27,10 @@ const SingleSlide = () => {
       </Box>
       <Flex direction='column' justifyContent='space-between' m='2rem'>
         <Text fontSize='1.375rem' color={colors.subTitle} fontWeight='bold'>
-          bacon e ovos
+          {data[0].title}
         </Text>
         <Text mt='1rem' fontSize='0.875rem'>
-          resumo da receita resumo da receitaresumo da receita resumo da receita
-          resumo da receita resumo resumo da receita resumo
+          {data[0].title}
         </Text>
         <Button
           alignSelf='flex-start'

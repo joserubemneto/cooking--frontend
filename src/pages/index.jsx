@@ -32,6 +32,7 @@ const Landing = () => {
 
   useEffect(() => {
     requestData()
+    setLoading(true)
   }, [])
 
   return (
@@ -41,7 +42,7 @@ const Landing = () => {
         <Banner />
         <CarrouselOne title='Top Receitas' data={recipes} />
         <Highlights data={highlights} />
-        <CarrouselOne title='Top Chefs' data={chefs} />
+        <CarrouselOne title='Top Chefs' data={recipes} />
        </Box>
       )}
       {loading && !error && <Loading />}

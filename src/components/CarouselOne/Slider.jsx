@@ -72,7 +72,7 @@ export default class MultipleItems extends Component {
       <>
         <Slider id='one' {...settings}>
           {this.props.data.map((data) => (
-            <SingleSlide titleSlide={data.title} />
+            <SingleSlide titleSlide={data.title || data.name} />
           ))}
         </Slider>
       </>

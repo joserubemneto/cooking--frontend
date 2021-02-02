@@ -1,6 +1,7 @@
 import React from 'react'
 import { Grid, Flex, Heading, Box, Text, SimpleGrid } from '@chakra-ui/react'
 import { Btn } from './MainStyles'
+import { Link as ReachLink } from 'react-router-dom'
 
 const Highlights = ({ data }) => {
   return (
@@ -55,9 +56,13 @@ const Highlights = ({ data }) => {
             {data[0].resume}
           </Text>
           <Box pt='1.8rem'>
-            <Btn background='#fff' bgHover='#fff' color='#333'>
-              ver destaque
-            </Btn>
+            <ReachLink
+            to={`destaques`}
+            >
+              <Btn background='#fff' bgHover='#fff' color='#333'>
+                ver destaque
+              </Btn>
+            </ReachLink>
           </Box>
         </Flex>
 
