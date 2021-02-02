@@ -15,7 +15,7 @@ export const getRecipes = async () => {
 }
 
 export const getRecipe = async (id) => {
-  return await axios.get(`${BASE_URL}/receita/${id}`)
+  return await axios.get(`${BASE_URL}/recipe/${id}`)
 }
 
 export const getRecipesByCategory = async (id) => {

@@ -7,7 +7,7 @@ import Photo from '../assets/Image5.jpg'
 import Elipse from '../assets/Ellipse75.svg'
 import CarouselOne from '../components/CarouselOne'
 import { Link, useParams } from 'react-router-dom'
-import { getRecipes } from '../services/api'
+import { getRecipe } from '../services/api'
 import { useRequest } from '../context/Request'
 import Loading from '../components/Loading'
 import Error from '../components/Error'
@@ -21,7 +21,7 @@ const Recipe = () => {
   const requestData = useCallback(async () => {
     try {
       setLoading(true)
-      const { data: recipeData } = await getRecipes(id)
+      const { data: recipeData } = await getRecipe(id)
       setRecipes(recipeData)
       setLoading(false)
     } catch (error) {
@@ -42,7 +42,7 @@ const Recipe = () => {
       <Grid templateColumns='11% 51% 27% 11%' templateRows='repeat(6, auto)'>
         <GridItem colStart={2} colSpan={2}>
           <Flex>
-            <TopTitle color={theme.colors.title}>{recipes[0].title}</TopTitle>
+            <TopTitle color={theme.colors.title}>{recipes.title}</TopTitle>
             <Spacer />
             <Flex alignItems='center'>
               <p>voltar para </p>
@@ -52,7 +52,7 @@ const Recipe = () => {
                   marginLeft: '7px',
                   color: `${theme.colors.subTitle}`,
                 }}>
-                {recipes[0].category_name}
+                {recipes.category_name}
               </p>
               <Link to='/recipes'>
                 <Image
@@ -98,7 +98,7 @@ const Recipe = () => {
             Ingredientes
           </TopTitle>
           <div>
-            {recipes[0].ingredients.map((ingredient) => (
+            {recipes.ingredients.map((ingredient) => (
               <Flex key={ingredient.id} align='center' mt='5px'>
                 <Image src={Elipse} alt={'Elipse'} p='0 1rem' />
                 <Text fontWeight='medium' fontSize='1.3rem'>
@@ -113,7 +113,7 @@ const Recipe = () => {
             Modo de Preparo
           </TopTitle>
           <div>
-            {recipes[0].preparation.map((preparation, index) => (
+            {recipes.preparation.map((preparation, index) => (
               <Flex key={preparation.id} align='center' mt='20px' ml='15px'>
                 <Text fontSize='1.7rem' color={theme.colors.title}>
                   {index + 1}.
