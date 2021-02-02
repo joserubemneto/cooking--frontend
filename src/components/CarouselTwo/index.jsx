@@ -2,13 +2,15 @@ import React, { useContext } from 'react'
 import useMedia from '../../hooks/useMedia'
 import { ThemeContext } from 'styled-components'
 import { GlobalStyle } from '../MainStyles'
-import { Grid, GridItem, Heading } from '@chakra-ui/react'
+import { Box, Grid, GridItem, Heading } from '@chakra-ui/react'
 import Slider from '../CarouselTwo/Slider'
 import SliderMobile from '../CarouselTwo/SliderMobile'
 
 const CarouselTwo = ({ first, data }) => {
   const { fonts, colors } = useContext(ThemeContext)
   const large = useMedia('(min-width: 62.5rem)')
+
+  console.log(data)
 
   return (
     <Grid templateColumns='7% 86% 7%' templateRows='auto auto'>
@@ -19,7 +21,11 @@ const CarouselTwo = ({ first, data }) => {
         </Heading>
       </GridItem>
       <GridItem rowSpan={2} colStart={2} mt='2rem'>
-        {large ? <Slider data={data} /> : <SliderMobile data={data} />}
+        {large ? (
+          <Slider data={data[0].recipes} />
+        ) : (
+          <SliderMobile data={data[0].recipes} />
+        )}
       </GridItem>
     </Grid>
   )
