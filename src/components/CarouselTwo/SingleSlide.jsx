@@ -27,10 +27,10 @@ const SingleSlide = ({ data }) => {
       </Box>
       <Flex direction='column' justifyContent='space-between' m='2rem'>
         <Text fontSize='1.375rem' color={colors.subTitle} fontWeight='bold'>
-          {data[0].title}
+
         </Text>
         <Text mt='1rem' fontSize='0.875rem'>
-          {data[0].title}
+
         </Text>
         <Button
           alignSelf='flex-start'

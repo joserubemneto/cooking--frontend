@@ -56,7 +56,7 @@ const SamplePrevArrow = (props) => {
   )
 }
 
-const CenterMode = () => {
+const CenterMode = ({data}) => {
   const settings = {
     dots: true,
     appendDots: (dots) => (
@@ -84,9 +84,10 @@ const CenterMode = () => {
   return (
     <Box>
       <Slider {...settings}>
-      {this.props.data.map((data, index) => (
-            <SingleSlide data={data.recipes[index]} />
-          ))}
+        <pre>{data}</pre>
+      {/* {data.map((data) => (
+            <SingleSlide data={data} />
+          ))} */}
       </Slider>
     </Box>
   )

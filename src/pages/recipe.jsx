@@ -6,17 +6,19 @@ import Back from '../assets/back.svg'
 import Photo from '../assets/Image5.jpg'
 import Elipse from '../assets/Ellipse75.svg'
 import CarouselOne from '../components/CarouselOne'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { getRecipes } from '../services/api'
 import { useRequest } from '../context/Request'
+import Loading from '../components/Loading'
+import Error from '../components/Error'
 
 const Recipe = () => {
   const [recipes, setRecipes] = useState([])
   const { id } = useParams()
   const { loading, setLoading, error, setError } = useRequest()
-  console.log(chef)
+  console.log(recipes);
 
-  const requestChef = useCallback(async () => {
+  const requestData = useCallback(async () => {
     try {
       setLoading(true)
       const { data: recipeData } = await getRecipes(id)
@@ -29,12 +31,14 @@ const Recipe = () => {
   })
 
   useEffect(() => {
-    requestChef()
+    requestData()
   }, [])
 
 
   return (
     <>
+      {!loading && !error && (
+      <>
       <Grid templateColumns='11% 51% 27% 11%' templateRows='repeat(6, auto)'>
         <GridItem colStart={2} colSpan={2}>
           <Flex>
@@ -48,7 +52,7 @@ const Recipe = () => {
                   marginLeft: '7px',
                   color: `${theme.colors.subTitle}`,
                 }}>
-                {recipes[0].chef_name}
+                {recipes[0].category_name}
               </p>
               <Link to='/recipes'>
                 <Image
@@ -122,7 +126,11 @@ const Recipe = () => {
           </div>
         </GridItem>
       </Grid>
-      <CarouselOne title='Outras Receitas' />
+      <CarouselOne title='Outras Receitas' data={recipes} />
+    </>
+      )}
+      {loading && !error && <Loading />}
+      {error && <Error />}
     </>
   )
 }

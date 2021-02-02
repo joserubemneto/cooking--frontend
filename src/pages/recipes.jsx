@@ -36,7 +36,7 @@ const Recipes = () => {
     <>
       {!loading && !error && (
           large ? (<>
-            <CarouselOne title="Receitas mais acessadas" data={recipes} />
+            <CarouselOne title="Receitas mais acessadas" page="receitas" data={recipes} />
             <RecipesComponent data={categories} />
           </>) :
           <RecipeMobile data={categories} />
