@@ -2,7 +2,7 @@ import React from 'react'
 import { Grid, Flex, Heading, Box, Text, SimpleGrid } from '@chakra-ui/react'
 import { Btn } from './MainStyles'
 
-const Highlights = () => {
+const Highlights = ({ data }) => {
   return (
     <Flex
       justify='flex-start'
@@ -49,11 +49,10 @@ const Highlights = () => {
             margin: '-20px',
           }}>
           <Heading color='#FFF' fontSize='1.375rem'>
-            Receitas de São João
+            {data[0].name}
           </Heading>
           <Text mt='1.75rem' textAlign='center' color='#FFF'>
-            resumo resumo resumo resumo resumo resumo resumo resumo resumo
-            resumo resumo resumo resumo resumo resumo
+            {data[0].resume}
           </Text>
           <Box pt='1.8rem'>
             <Btn background='#fff' bgHover='#fff' color='#333'>
@@ -90,11 +89,10 @@ const Highlights = () => {
             margin: '-20px',
           }}>
           <Heading color='#FFF' fontSize='1.375rem'>
-            Receitas de São João
+            {data[1].name}
           </Heading>
           <Text mt='1.75rem' textAlign='center' color='#FFF'>
-            resumo resumo resumo resumo resumo resumo resumo resumo resumo
-            resumo resumo resumo resumo resumo resumo
+          {data[1].resume}
           </Text>
           <Box pt='1.8rem'>
             <Btn background='#fff' bgHover='#fff' color='#333'>
@@ -131,11 +129,10 @@ const Highlights = () => {
             margin: '-20px',
           }}>
           <Heading color='#FFF' fontSize='1.375rem'>
-            Receitas de São João
+          {data[1].name}
           </Heading>
           <Text mt='1.75rem' textAlign='center' color='#FFF'>
-            resumo resumo resumo resumo resumo resumo resumo resumo resumo
-            resumo resumo resumo resumo resumo resumo
+          {data[1].resume}
           </Text>
           <Box pt='1.8rem'>
             <Btn background='#fff' bgHover='#fff' color='#333'>
@@ -172,11 +169,10 @@ const Highlights = () => {
             margin: '-20px',
           }}>
           <Heading color='#FFF' fontSize='1.375rem'>
-            Receitas de São João
+          {data[0].name}
           </Heading>
           <Text mt='1.75rem' textAlign='center' color='#FFF'>
-            resumo resumo resumo resumo resumo resumo resumo resumo resumo
-            resumo resumo resumo resumo resumo resumo
+          {data[0].resume}
           </Text>
           <Box pt='1.8rem'>
             <Btn background='#fff' bgHover='#fff' color='#333'>
