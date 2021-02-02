@@ -7,22 +7,26 @@ import Photo from '../assets/Image5.jpg'
 import Elipse from '../assets/Ellipse75.svg'
 import CarouselOne from '../components/CarouselOne'
 import { Link, useParams } from 'react-router-dom'
-import { getRecipe } from '../services/api'
+import { getRecipe, getRecipes } from '../services/api'
 import { useRequest } from '../context/Request'
 import Loading from '../components/Loading'
 import Error from '../components/Error'
 
 const Recipe = () => {
   const [recipes, setRecipes] = useState([])
+  const [recipe, setRecipe] = useState([]);
   const { id } = useParams()
   const { loading, setLoading, error, setError } = useRequest()
   console.log(recipes);
+  console.log(recipe);
 
   const requestData = useCallback(async () => {
     try {
       setLoading(true)
+      const { data: recipesData } = await getRecipes()
+      setRecipes(recipesData)
       const { data: recipeData } = await getRecipe(id)
-      setRecipes(recipeData)
+      setRecipe(recipeData)
       setLoading(false)
     } catch (error) {
       setError(true)
@@ -42,7 +46,7 @@ const Recipe = () => {
       <Grid templateColumns='11% 51% 27% 11%' templateRows='repeat(6, auto)'>
         <GridItem colStart={2} colSpan={2}>
           <Flex>
-            <TopTitle color={theme.colors.title}>{recipes.title}</TopTitle>
+            <TopTitle color={theme.colors.title}>{recipe.title}</TopTitle>
             <Spacer />
             <Flex alignItems='center'>
               <p>voltar para </p>
@@ -98,7 +102,7 @@ const Recipe = () => {
             Ingredientes
           </TopTitle>
           <div>
-            {recipes.ingredients.map((ingredient) => (
+            {recipe.ingredients.map((ingredient) => (
               <Flex key={ingredient.id} align='center' mt='5px'>
                 <Image src={Elipse} alt={'Elipse'} p='0 1rem' />
                 <Text fontWeight='medium' fontSize='1.3rem'>
@@ -113,7 +117,7 @@ const Recipe = () => {
             Modo de Preparo
           </TopTitle>
           <div>
-            {recipes.preparation.map((preparation, index) => (
+            {recipe.preparation.map((preparation, index) => (
               <Flex key={preparation.id} align='center' mt='20px' ml='15px'>
                 <Text fontSize='1.7rem' color={theme.colors.title}>
                   {index + 1}.
