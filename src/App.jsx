@@ -7,6 +7,7 @@ import theme from './theme'
 import Routes from './routes'
 
 const App = () => (
+
   <ChakraProvider>
     <ThemeProvider theme={theme}>
       <GlobalStyle font={theme.fonts.body} />

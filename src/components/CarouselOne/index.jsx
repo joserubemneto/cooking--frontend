@@ -7,7 +7,7 @@ import { Grid, GridItem } from '@chakra-ui/react'
 import './Slider.css'
 import useMedia from '../../hooks/useMedia'
 
-const CarouselOne = ({ title }) => {
+const CarouselOne = ({ title, data }) => {
   const { font, colors } = useContext(ThemeContext)
   const large = useMedia('(min-width: 62.5rem)')
 
@@ -20,7 +20,7 @@ const CarouselOne = ({ title }) => {
         </TopTitle>
       </GridItem>
       <GridItem rowSpan={2} colStart={2}>
-        {large ? <Slider /> : <SliderMobile />}
+        {large ? <Slider data={data} /> : <SliderMobile data={data} />}
       </GridItem>
     </Grid>
   )

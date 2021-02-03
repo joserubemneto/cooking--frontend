@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Slider from 'react-slick'
 import useMedia from '../../hooks/useMedia'
 import SingleSlide from './SingleSlide'
+import { Link as ReachLink } from 'react-router-dom'
 import './Slider.css'
 
 function SampleNextArrow(props) {
@@ -76,12 +77,13 @@ export default class MultipleItems extends Component {
     return (
       <>
         <Slider id='one' {...settings}>
-          <SingleSlide mode='true' />
-          <SingleSlide mode='true' />
-          <SingleSlide mode='true' />
-          <SingleSlide mode='true' />
-          <SingleSlide mode='true' />
-          <SingleSlide mode='true' />
+         {this.props.data.map((data) => (
+           <ReachLink
+           to={`/receita/${data.id}`}
+           >
+            <SingleSlide titleSlide={data.title} mode="true" />
+            </ReachLink>
+          ))}
         </Slider>
       </>
     )

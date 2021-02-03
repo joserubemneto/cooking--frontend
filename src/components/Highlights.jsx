@@ -1,8 +1,9 @@
 import React from 'react'
 import { Grid, Flex, Heading, Box, Text, SimpleGrid } from '@chakra-ui/react'
 import { Btn } from './MainStyles'
+import { Link as ReachLink } from 'react-router-dom'
 
-const Highlights = () => {
+const Highlights = ({ data }) => {
   return (
     <Flex
       justify='flex-start'
@@ -49,11 +50,54 @@ const Highlights = () => {
             margin: '-20px',
           }}>
           <Heading color='#FFF' fontSize='1.375rem'>
-            Receitas de São João
+            {data[0].name}
           </Heading>
           <Text mt='1.75rem' textAlign='center' color='#FFF'>
-            resumo resumo resumo resumo resumo resumo resumo resumo resumo
-            resumo resumo resumo resumo resumo resumo
+            {data[0].resume}
+          </Text>
+          <Box pt='1.8rem'>
+            <ReachLink
+            to={`destaques`}
+            >
+              <Btn background='#fff' bgHover='#fff' color='#333'>
+                ver destaque
+              </Btn>
+            </ReachLink>
+          </Box>
+        </Flex>
+
+        <Flex
+          maxWidth='400px'
+          direction='column'
+          align='center'
+          m='0rem 1rem'
+          p='1.875rem 2.3rem'
+          boxShadow='20px 20px 50px rgba(0, 0, 0, 0.3)'
+          borderLeft='1px solid rgba(255, 255, 255, 0.7)'
+          borderTop='1px solid rgba(255, 255, 255, 0.7)'
+          borderRadius='10px'
+          position='relative'
+          zIndex='1'
+          overflow='hidden'
+          _before={{
+            content: `""`,
+            opacity: '40%',
+            position: 'absolute',
+            background: 'inherit',
+            zIndex: '-1',
+            top: '0',
+            left: '0',
+            right: '0',
+            bottom: '0',
+            background: 'linear-gradient(223.82deg, #FFF 7.66%, #fff 86.15%)',
+            filter: 'blur(10px)',
+            margin: '-20px',
+          }}>
+          <Heading color='#FFF' fontSize='1.375rem'>
+            {data[1].name}
+          </Heading>
+          <Text mt='1.75rem' textAlign='center' color='#FFF'>
+          {data[1].resume}
           </Text>
           <Box pt='1.8rem'>
             <Btn background='#fff' bgHover='#fff' color='#333'>
@@ -90,11 +134,10 @@ const Highlights = () => {
             margin: '-20px',
           }}>
           <Heading color='#FFF' fontSize='1.375rem'>
-            Receitas de São João
+          {data[1].name}
           </Heading>
           <Text mt='1.75rem' textAlign='center' color='#FFF'>
-            resumo resumo resumo resumo resumo resumo resumo resumo resumo
-            resumo resumo resumo resumo resumo resumo
+          {data[1].resume}
           </Text>
           <Box pt='1.8rem'>
             <Btn background='#fff' bgHover='#fff' color='#333'>
@@ -131,52 +174,10 @@ const Highlights = () => {
             margin: '-20px',
           }}>
           <Heading color='#FFF' fontSize='1.375rem'>
-            Receitas de São João
+          {data[0].name}
           </Heading>
           <Text mt='1.75rem' textAlign='center' color='#FFF'>
-            resumo resumo resumo resumo resumo resumo resumo resumo resumo
-            resumo resumo resumo resumo resumo resumo
-          </Text>
-          <Box pt='1.8rem'>
-            <Btn background='#fff' bgHover='#fff' color='#333'>
-              ver destaque
-            </Btn>
-          </Box>
-        </Flex>
-
-        <Flex
-          maxWidth='400px'
-          direction='column'
-          align='center'
-          m='0rem 1rem'
-          p='1.875rem 2.3rem'
-          boxShadow='20px 20px 50px rgba(0, 0, 0, 0.3)'
-          borderLeft='1px solid rgba(255, 255, 255, 0.7)'
-          borderTop='1px solid rgba(255, 255, 255, 0.7)'
-          borderRadius='10px'
-          position='relative'
-          zIndex='1'
-          overflow='hidden'
-          _before={{
-            content: `""`,
-            opacity: '40%',
-            position: 'absolute',
-            background: 'inherit',
-            zIndex: '-1',
-            top: '0',
-            left: '0',
-            right: '0',
-            bottom: '0',
-            background: 'linear-gradient(223.82deg, #FFF 7.66%, #fff 86.15%)',
-            filter: 'blur(10px)',
-            margin: '-20px',
-          }}>
-          <Heading color='#FFF' fontSize='1.375rem'>
-            Receitas de São João
-          </Heading>
-          <Text mt='1.75rem' textAlign='center' color='#FFF'>
-            resumo resumo resumo resumo resumo resumo resumo resumo resumo
-            resumo resumo resumo resumo resumo resumo
+          {data[0].resume}
           </Text>
           <Box pt='1.8rem'>
             <Btn background='#fff' bgHover='#fff' color='#333'>
