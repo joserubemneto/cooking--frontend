@@ -55,7 +55,7 @@ const Recipe = () => {
                       marginLeft: '7px',
                       color: `${theme.colors.subTitle}`,
                     }}>
-                    {recipes.category_name}
+                    {recipe.category_name}
                   </p>
                   <Link to='/recipes'>
                     <Image
