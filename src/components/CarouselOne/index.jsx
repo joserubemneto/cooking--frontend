@@ -22,8 +22,8 @@ const CarouselOne = ({ title, data }) => {
           {title}
         </TopTitle>
       </GridItem>
-      <GridItem rowSpan={2} colStart={2}>
-        {large ? <Slider data={data} /> : <SliderMobile data={data} />}
+      <GridItem rowSpan={2} colStart={2} >
+        {large ? <Slider loader={setLoading} data={data} /> : <SliderMobile data={data} />}
       </GridItem>
     </Grid>
   )
