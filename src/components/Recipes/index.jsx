@@ -5,6 +5,7 @@ import theme from '../../theme'
 import { SlideTitle } from '../MainStyles'
 import Elipse from '../../assets/Ellipse75.svg'
 import Back from '../../assets/Image4.jpg'
+import { Link as ReachLink } from 'react-router-dom'
 
 const RecipesComponent = ({ data }) => {
 
@@ -29,12 +30,16 @@ const RecipesComponent = ({ data }) => {
                 display={index === 0 && 'none'}
                 visibility={index === 0 && 'hidden'}
               />
-              <Text
-                fontWeight={index % 2 !== 0 && 'bold'}
-                textTransform='uppercase'
-                fontSize='1.2rem'>
-                {data.name}
-              </Text>
+              <ReachLink
+              to={`categoria/${data.id}`}
+              >
+                <Text
+                  fontWeight={index % 2 !== 0 && 'bold'}
+                  textTransform='uppercase'
+                  fontSize='1.2rem'>
+                  {data.name}
+                </Text>
+              </ReachLink>
             </Flex>
           ))}
         </Flex>
@@ -47,8 +52,11 @@ const RecipesComponent = ({ data }) => {
       <GridItem colStart={2} rowStart={4} mt='1rem'>
         <Grid templateColumns='1fr 1fr 1fr' templateRows='auto auto' gap='20px'>
           {data.map(
-            (data, intex) =>
+            (data) =>
                  (
+                  <ReachLink
+                  to={`categoria/${data.id}`}
+                  >
                 <Flex
                   w={'100%'}
                   h='290px'
@@ -72,6 +80,7 @@ const RecipesComponent = ({ data }) => {
                     borderRadius='2rem'
                   />
                 </Flex>
+                </ReachLink>
               )
           )}
         </Grid>

@@ -5,11 +5,14 @@ import { Box } from '../components/CarouselOne/styles'
 import Back from '../assets/Image1.jpg'
 import { Btn } from '../components/MainStyles'
 import { Image, Flex } from '@chakra-ui/react'
+import { useRequest } from '../context/Request'
+import { Link as ReachLink } from 'react-router-dom'
 
-const CategoryCard = ({ Name }) => {
+const CategoryCard = ({ data }) => {
+  const { setLoading } = useRequest()
   return (
     <Flex flexDirection='column' alignItems='center'>
-      <TopTitle color={theme.colors.title}>{Name}</TopTitle>
+      <TopTitle color={theme.colors.title}>{data.title}</TopTitle>
       <Box mobile={true} bg='transparent'>
         <Image
           boxSize='100%'
@@ -21,7 +24,9 @@ const CategoryCard = ({ Name }) => {
           borderRadius='2rem'
         />
       </Box>
-      <Btn margin='20px'>ver receita</Btn>
+      <ReachLink onClick={() => setLoading(true)} to={`/receita/${data.id}`}>
+        <Btn margin='20px'>ver receita</Btn>
+      </ReachLink>
     </Flex>
   )
 }

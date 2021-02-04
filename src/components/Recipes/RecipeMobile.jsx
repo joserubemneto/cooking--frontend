@@ -5,14 +5,14 @@ import {TopTitle} from '../MainStyles'
 import theme from '../../theme'
 import {Select} from '../MainStyles'
 
-const RecipeMobile = () => {
-
-  const categories = ["Bolos e Tortas", "Camarões", "Carnes", "Empanados"];
-
+const RecipeMobile = ({recipes, categories}) => {
+  console.log(categories);
+  console.log(recipes);
   return (
     <>
       <Grid
       templateColumns="9% 82% 9%"
+
       >
         <GridItem
         colStart={2}
@@ -25,19 +25,19 @@ const RecipeMobile = () => {
           <Select>
             <option disabled selected>Filtros</option>
             <option option="none">Nenhum</option>
-            {categories.map((category, index) => (
-              <option value={category}>{category}</option>
+            {categories.map((category) => (
+              <option value={category}>{category.name}</option>
             ))}
           </Select>
           </Flex>
         </GridItem>
         <GridItem
         colStart={2}
+        colSpan={1}
         >
-          <CategoryCard Name="Gelo"/>
-          <CategoryCard />
-          <CategoryCard />
-          <CategoryCard />
+          {recipes.map((recipe) => (
+            <CategoryCard data={recipe}/>
+          ))}
         </GridItem>
       </Grid>
     </>

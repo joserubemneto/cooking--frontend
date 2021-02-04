@@ -50,7 +50,7 @@ const Footer = () => {
   ]
 
   return (
-    <Box boxShadow={`0 -5px 5px -5px #C3C3C3`} pt={'2.75rem'} mt={'7rem'}>
+    <Box boxShadow={mobile ? '' : `0 -5px 5px -5px #C3C3C3`} pt={'2.75rem'} mt={'7rem'}>
       {!mobile ? (
         <Flex flexDirection='column' m={'1.625rem 4rem'}>
           <Flex justifyContent='space-between'>

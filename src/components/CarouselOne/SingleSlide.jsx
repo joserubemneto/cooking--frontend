@@ -6,6 +6,7 @@ import Back from '../../assets/Image4.jpg'
 import { Image } from '@chakra-ui/react'
 
 const SingleSlide = ({ mode, titleSlide }) => {
+
   return (
     <>
       <Box mobile={mode}>

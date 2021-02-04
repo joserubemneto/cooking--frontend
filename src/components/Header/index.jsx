@@ -7,6 +7,7 @@ import { Logo } from '../MainStyles'
 import { Bloob } from './Bloob'
 import useMedia from '../../hooks/useMedia'
 import bloob3 from '../../assets/Vetor Header 1.svg'
+import { useRequest } from '../../context/Request'
 
 const Header = () => {
   const { fonts, colors } = useContext(ThemeContext)
@@ -28,35 +29,63 @@ const Header = () => {
           open={burguerOpen}>
           <ul>
             <li>
-              <Link to='/' onClick={() => setBurgerOpen(false)}>
+              <Link
+                to='/'
+                onClick={() => {
+                  setBurgerOpen(false)
+                }}>
                 Início
               </Link>
             </li>
             <li>
-              <Link to='/receitas' onClick={() => setBurgerOpen(false)}>
+              <Link
+                to='/receitas'
+                onClick={() => {
+                  setBurgerOpen(false)
+                }}>
                 Receitas
               </Link>
             </li>
             <li>
-              <Link to='/destaques' onClick={() => setBurgerOpen(false)}>
+              <Link
+                to='/destaques'
+                onClick={() => {
+                  setBurgerOpen(false)
+                }}>
                 Destaques
               </Link>
             </li>
             <li>
-              <Link to='/chefs' onClick={() => setBurgerOpen(false)}>
+              <Link
+                to='/chefs'
+                onClick={() => {
+                  setBurgerOpen(false)
+                }}>
                 Chefs
               </Link>
             </li>
           </ul>
           {mobile && (
             <div>
-              <Link to='/sobre' onClick={() => setBurgerOpen(false)}>
+              <Link
+                to='/sobre'
+                onClick={() => {
+                  setBurgerOpen(false)
+                }}>
                 QUEM SOMOS
               </Link>
-              <Link to='/sobre' onClick={() => setBurgerOpen(false)}>
+              <Link
+                to='/sobre'
+                onClick={() => {
+                  setBurgerOpen(false)
+                }}>
                 CONTATO
               </Link>
-              <Link to='/sobre' onClick={() => setBurgerOpen(false)}>
+              <Link
+                to='/sobre'
+                onClick={() => {
+                  setBurgerOpen(false)
+                }}>
                 TERMOS
               </Link>
             </div>
