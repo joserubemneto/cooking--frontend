@@ -20,6 +20,8 @@ const Recipes = () => {
       const { data: categoryData } = await getCategories()
       setCategories(categoryData)
       const { data: recipeData } = await getRecipes()
+      console.log(recipes);
+      console.log(categories);
       setRecipes(recipeData)
       setLoading(false)
     } catch (error) {
@@ -39,7 +41,7 @@ const Recipes = () => {
             <CarouselOne title="Receitas mais acessadas" page="receitas" data={recipes} />
             <RecipesComponent data={categories} />
           </>) :
-          <RecipeMobile data={categories} />
+          <RecipeMobile recipes={recipes} categories={categories} />
       )}
       {loading && !error && <Loading />}
       {error && <Error />}

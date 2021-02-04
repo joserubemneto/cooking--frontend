@@ -11,12 +11,14 @@ import { getRecipe, getRecipes } from '../services/api'
 import { useRequest } from '../context/Request'
 import Loading from '../components/Loading'
 import Error from '../components/Error'
+import useMedia from '../hooks/useMedia'
 
 const Recipe = () => {
   const [recipes, setRecipes] = useState([])
   const [recipe, setRecipe] = useState([])
   const { id } = useParams()
   const { loading, setLoading, error, setError } = useRequest()
+  const large = useMedia('(min-width: 62.5rem)')
 
   const requestData = useCallback(async () => {
     try {
@@ -48,15 +50,20 @@ const Recipe = () => {
                 <TopTitle color={theme.colors.title}>{recipe.title}</TopTitle>
                 <Spacer />
                 <Flex alignItems='center'>
-                  <p>voltar para </p>
-                  <Link to={`/categoria/${recipe.category_id}`}
+                  <p
+                  style={{
+                    display: large ? '' : 'none',
+                  }}
+                  >voltar para </p>
+                  <Link
+                  to= { large ? `/categoria/${recipe.category_id}` : `/receitas`}
                   style={{
                     display: 'flex',
                     alignItems: 'center',
                   }}>
                   <p
                     style={{
-                      display: 'inline-block',
+                      display: large ? 'inline-block' : 'none',
                       marginLeft: '7px',
                       color: `${theme.colors.subTitle}`,
                     }}>
@@ -81,6 +88,7 @@ const Recipe = () => {
                 mt='30px'
                 boxSize='75%'
                 height='400px'
+                width= {large ? '75%' : '100%'}
                 objectFit='cover'
                 src={Photo}
                 alt='Dan Abramov'
@@ -88,7 +96,9 @@ const Recipe = () => {
                 cursor='pointer'
               />
             </GridItem>
-            <GridItem colStart={2}>
+            <GridItem colStart={2}
+            colSpan={ large ? 1 : 2}
+            >
               <TopTitle Talign='left' color={theme.colors.subTitle}>
                 Resumo
               </TopTitle>
@@ -100,7 +110,7 @@ const Recipe = () => {
                 resumoresumo do resumo do resumo do resumo
               </Text>
             </GridItem>
-            <GridItem colStart={2} mt='20px'>
+            <GridItem colStart={2} colSpan={ large ? 1 : 2} mt='20px'>
               <TopTitle Talign='left' color={theme.colors.subTitle}>
                 Ingredientes
               </TopTitle>
@@ -115,7 +125,7 @@ const Recipe = () => {
                 ))}
               </div>
             </GridItem>
-            <GridItem colStart={2}>
+            <GridItem colStart={2} colSpan={ large ? 1 : 2}>
               <TopTitle Talign='left' color={theme.colors.subTitle}>
                 Modo de Preparo
               </TopTitle>
