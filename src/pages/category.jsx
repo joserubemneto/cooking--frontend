@@ -14,16 +14,19 @@ import Error from '../components/Error'
 
 const Category = () => {
   const [category, setCategory] = useState([])
-  const [idIndex, setIdIndex] = useState(0);
+  const [recipes, setRecipes] = useState([]);
   const { id } = useParams()
   const { loading, setLoading, error, setError } = useRequest()
 
   const requestData = useCallback(async () => {
     try {
       setLoading(true)
-      const { data: categoryData } = await getRecipesByCategory(id)
+      const { data: categoryData } = await getCategory(id)
       setCategory(categoryData)
-      setId()
+      const { data: recipesData } = await getRecipesByCategory(id)
+      setRecipes(recipesData)
+      console.log(category);
+      console.log(recipes);
       setLoading(false)
     } catch (error) {
       console.log(error)
@@ -98,18 +101,11 @@ const Category = () => {
               </GridItem>
               <GridItem colStart={2} colSpan={2}>
                 <Grid templateColumns='1fr 1fr'>
-                  <GridItem margin=' 0 30px'>
-                    <CategoryCard Name='lucas melo' />
-                  </GridItem>
-                  <GridItem margin='0 30px'>
-                    <CategoryCard Name='lucas melo' />
-                  </GridItem>
-                  <GridItem margin='0 30px'>
-                    <CategoryCard Name='lucas melo' />
-                  </GridItem>
-                  <GridItem margin='0 30px'>
-                    <CategoryCard Name='lucas melo' />
-                  </GridItem>
+                  {recipes.map((recipe) => (
+                    <GridItem margin=' 0 30px'>
+                      <CategoryCard data={recipe} />
+                    </GridItem>
+                  ))}
                 </Grid>
               </GridItem>
             </Grid>
