@@ -49,6 +49,11 @@ const Recipe = () => {
                 <Spacer />
                 <Flex alignItems='center'>
                   <p>voltar para </p>
+                  <Link to={`/categoria/${recipe.category_id}`}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                  }}>
                   <p
                     style={{
                       display: 'inline-block',
@@ -57,7 +62,6 @@ const Recipe = () => {
                     }}>
                     {recipe.category_name}
                   </p>
-                  <Link to='/recipes'>
                     <Image
                       boxSize='35px'
                       objectFit='cover'
