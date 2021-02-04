@@ -34,12 +34,6 @@ const Category = () => {
     }
   })
 
-  const setId = useCallback(async () => {
-    {category.map((category, index) => {
-      if(category.id === id) setIdIndex(index)
-    })}
-  })
-
   useEffect(() => {
     requestData()
   }, [])

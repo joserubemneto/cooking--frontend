@@ -71,7 +71,7 @@ export default class MultipleItems extends Component {
     }
     return (
       <>
-        <Slider id='one' {...settings}>
+        <Slider id='one' {...settings} >
           {this.props.data.map((data) => (
             <ReachLink
             to={`/receita/${data.id}`}
@@ -81,7 +81,6 @@ export default class MultipleItems extends Component {
           ))}
           <SingleSlide titleSlide='oi' />
         </Slider>
-      </>
-    )
+      </>    )
   }
 }
