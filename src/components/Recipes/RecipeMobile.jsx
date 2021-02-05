@@ -11,14 +11,14 @@ import { getRecipes, getRecipesByCategory } from '../../services/api'
 
 const RecipeMobile = ({ categories}) => {
   const [recipes, setRecipes] = useState([]);
-  const [categoryTarget, setCategoryTarget] = useState([]);
+  const [categoryTarget, setCategoryTarget] = useState('');
   const { loading, setLoading, error, setError } = useRequest()
 
   const requestData = useCallback(async (target) => {
     try {
       const { data: recipeData } = await getRecipes()
       const { data: recipeByCategoryData } = await getRecipesByCategory(target)
-      { target ? setRecipes(recipeData) : setRecipes(recipeByCategoryData) }
+      { target ? setRecipes(recipeByCategoryData) : setRecipes(recipeData) }
       setLoading(false)
     } catch (error) {
       setError(true)
@@ -47,16 +47,15 @@ const RecipeMobile = ({ categories}) => {
             <TopTitle color={theme.colors.title}>Nossas Receitas</TopTitle>
             <Spacer />
             <Select
-
+            onChange={(e) => {
+              const current = e.target.value;
+              setCategoryTarget(current);
+            }}
             >
               <option disabled selected>Filtros</option>
               <option option="none">Nenhum</option>
               {categories.map((category) => (
-                <option onChange={() => {
-                  setCategoryTarget(category.id);
-                  console.log(categoryTarget);
-                }}
-                value={category}
+                <option value={category.id}
                 >{category.name}</option>
               ))}
             </Select>
