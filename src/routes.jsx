@@ -10,8 +10,12 @@ import About from './pages/about'
 import Chefs from './pages/chefs'
 import Chef from './pages/chef'
 import Category from './pages/category'
+import useMedia from './hooks/useMedia'
+import PageNotFound from './components/PageNotFound'
 
 const Routes = () => {
+  const large = useMedia('(min-width: 62.5rem)')
+
   return (
     <BrowserRouter>
       <Header />
@@ -26,7 +30,7 @@ const Routes = () => {
           <Recipes />
         </Route>
         <Route path='/categoria/:id'>
-          <Category />
+          { large ? <Category /> : <PageNotFound /> }
         </Route>
         <Route path='/receita/:id'>
           <Recipe />
