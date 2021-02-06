@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const Box = styled.div`
-  width: ${({ mobile }) => (mobile ? '100%' : '28vw')};
+  width: ${({ mobile }) => (mobile ? '100%' : 'auto')};
   height: 290px;
 
   position: relative;
@@ -11,6 +11,8 @@ const Box = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  margin-left: 1.25rem;
 
   border-radius: 2rem;
 `
