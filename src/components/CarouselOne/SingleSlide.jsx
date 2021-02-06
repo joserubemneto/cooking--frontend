@@ -6,6 +6,7 @@ import Back from '../../assets/Image4.jpg'
 import { Image } from '@chakra-ui/react'
 
 const SingleSlide = ({ mode, titleSlide }) => {
+
   return (
     <>
       <Box mobile={mode}>
@@ -19,7 +20,6 @@ const SingleSlide = ({ mode, titleSlide }) => {
           zIndex='-1'
           borderRadius='2rem'
         />
-        {/* <Chef>Chef Lucas</Chef> */}
       </Box>
     </>
   )

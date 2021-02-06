@@ -2,12 +2,12 @@ import React, { useContext } from 'react'
 import useMedia from '../../hooks/useMedia'
 import { ThemeContext } from 'styled-components'
 import { GlobalStyle } from '../MainStyles'
-import { Grid, GridItem, Heading } from '@chakra-ui/react'
+import { Box, Grid, GridItem, Heading } from '@chakra-ui/react'
 import Slider from '../CarouselTwo/Slider'
 import SliderMobile from '../CarouselTwo/SliderMobile'
 
-const CarouselTwo = ({ title, first }) => {
-  const { fonts, colors } = useContext(ThemeContext)
+const CarouselTwo = ({ first, data }) => {
+  const { colors } = useContext(ThemeContext)
   const large = useMedia('(min-width: 62.5rem)')
 
   return (
@@ -15,11 +15,15 @@ const CarouselTwo = ({ title, first }) => {
       <GlobalStyle />
       <GridItem mt={first ? '2rem' : '8rem'} rowSpan={1} colStart={2}>
         <Heading weight='bold' color={colors.title}>
-          {title}
+          {data[0] && data[0].name}
         </Heading>
       </GridItem>
       <GridItem rowSpan={2} colStart={2} mt='2rem'>
-        {large ? <Slider /> : <SliderMobile />}
+        {large ? (
+          <Slider data={data[0] && data[0].recipes} />
+        ) : (
+          <SliderMobile data={data[0] && data[0].recipes} />
+        )}
       </GridItem>
     </Grid>
   )

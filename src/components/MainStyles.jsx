@@ -19,6 +19,45 @@ const SlideTitle = styled(TopTitle)`
   color: ${(props) => props.color || '#000'};
 `
 
+const Select = styled.select`
+  background: linear-gradient(201.73deg, #EE6737 -7.35%, #F73C2C 103.6%);
+  border-radius: .7rem;
+  outline: none;
+  padding: .5rem;
+  color: white;
+  border: 2px solid transparent;
+
+  * {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    border: none;
+    border-radius: 10px;
+  }
+
+  &:focus,
+  &:hover {
+    outline: none;
+  }
+
+  option {
+    background-color: #D64D27;
+    padding: 40px;
+    border-radius: 10px;
+    border: none;
+  }
+
+  option li {
+    padding: 0 6px;
+    margin: 0;
+    border: none;
+  }
+
+  option li:hover {
+    background: #f73c2c;
+  }
+
+`
+
 const Btn = styled.button`
   & {
     background: ${({ background }) =>
@@ -129,4 +168,4 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-export { TopTitle, HeadTitle, SlideTitle, Logo, GlobalStyle, Btn, myBack }
+export { TopTitle, HeadTitle, SlideTitle, Logo, GlobalStyle, Btn, myBack, Select }

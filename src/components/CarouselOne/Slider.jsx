@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Slider from 'react-slick'
+import { Link as ReachLink } from 'react-router-dom'
 import SingleSlide from './SingleSlide'
 import './Slider.css'
 
@@ -71,15 +72,14 @@ export default class MultipleItems extends Component {
     return (
       <>
         <Slider id='one' {...settings}>
-          <SingleSlide titleSlide='lucas e lucas' />
-          <SingleSlide titleSlide='lucas e lucas' />
-          <SingleSlide titleSlide='lucas e lucas' />
-          <SingleSlide titleSlide='lucas e lucas' />
-          <SingleSlide titleSlide='lucas e lucas' />
-          <SingleSlide titleSlide='lucas e lucas' />
-          <SingleSlide titleSlide='lucas e lucas' />
-          <SingleSlide titleSlide='lucas e lucas' />
-          <SingleSlide titleSlide='lucas e lucas' />
+          {this.props.data.map((data) => (
+            <ReachLink
+              to={`/receita/${data.id}`}
+              onClick={() => this.props.loader(true)}>
+              <SingleSlide titleSlide={data.title || data.name} />
+            </ReachLink>
+          ))}
+          <SingleSlide titleSlide='oi' />
         </Slider>
       </>
     )

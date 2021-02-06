@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react'
-import axios from 'axios'
 import { useRequest } from '../context/Request'
-import { getChef } from '../services/api'
+import { getChef, getRecipes } from '../services/api'
 import { Flex, Box, Heading, Text, Link, Image } from '@chakra-ui/react'
 import { Link as ReactLink, useParams } from 'react-router-dom'
 import CarouselOne from '../components/CarouselOne'
@@ -11,6 +10,7 @@ import { ReactComponent as Back } from '../assets/back.svg'
 
 const Chef = () => {
   const [chef, setChef] = useState([])
+  const [recipes, setRecipes] = useState([]);
   const { id } = useParams()
   const { loading, setLoading, error, setError } = useRequest()
   console.log(chef)
@@ -20,6 +20,8 @@ const Chef = () => {
       setLoading(true)
       const { data: chefData } = await getChef(id)
       setChef(chefData)
+      const { data: recipesData } = await getRecipes()
+      setRecipes(recipesData)
       setLoading(false)
     } catch (error) {
       setError(true)
@@ -96,7 +98,7 @@ const Chef = () => {
             </Flex>
           </Flex>
 
-          <CarouselOne title='Receitas do chef' />
+          <CarouselOne title='Receitas do chef' data={recipes} />
         </Box>
       )}
       {loading && !error && <Loading />}

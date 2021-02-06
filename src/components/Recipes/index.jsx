@@ -5,60 +5,9 @@ import theme from '../../theme'
 import { SlideTitle } from '../MainStyles'
 import Elipse from '../../assets/Ellipse75.svg'
 import Back from '../../assets/Image4.jpg'
+import { Link as ReachLink } from 'react-router-dom'
 
-const RecipesComponent = () => {
-  const categories = [
-    {
-      id: '1',
-      name: 'Bolos',
-      tag: 'yes',
-    },
-    {
-      id: '2',
-      name: 'Tortas',
-      tag: 'yes',
-    },
-    {
-      id: '3',
-      name: 'Carnes',
-      tag: 'yes',
-    },
-    {
-      id: '4',
-      name: 'Camarões',
-      tag: 'yes',
-    },
-    {
-      id: '5',
-      name: 'Empanados',
-      tag: 'yes',
-    },
-    {
-      id: '6',
-      name: 'Doces',
-      tag: 'yes',
-    },
-    {
-      id: '7',
-      name: 'Veganos',
-      tag: 'no',
-    },
-    {
-      id: '8',
-      name: 'Aves',
-      tag: 'no',
-    },
-    {
-      id: '9',
-      name: 'Hambúrguer',
-      tag: 'no',
-    },
-    {
-      id: '10',
-      name: 'Pizzas',
-      tag: 'no',
-    },
-  ]
+const RecipesComponent = ({ data }) => {
 
   return (
     <Grid
@@ -72,8 +21,8 @@ const RecipesComponent = () => {
       </GridItem>
       <GridItem colStart={2} rowStart={2} mt='0.5rem'>
         <Flex justify='center' align='center'>
-          {categories.map((category, index) => (
-            <Flex key={category.id} align='center' justify='space-between'>
+          {data.map((data, index) => (
+            <Flex key={data.id} align='center' justify='space-between'>
               <Image
                 src={Elipse}
                 alt={'Elipse'}
@@ -81,12 +30,16 @@ const RecipesComponent = () => {
                 display={index === 0 && 'none'}
                 visibility={index === 0 && 'hidden'}
               />
-              <Text
-                fontWeight={index % 2 !== 0 && 'bold'}
-                textTransform='uppercase'
-                fontSize='1.2rem'>
-                {category.name}
-              </Text>
+              <ReachLink
+              to={`categoria/${data.id}`}
+              >
+                <Text
+                  fontWeight={index % 2 !== 0 && 'bold'}
+                  textTransform='uppercase'
+                  fontSize='1.2rem'>
+                  {data.name}
+                </Text>
+              </ReachLink>
             </Flex>
           ))}
         </Flex>
@@ -98,9 +51,12 @@ const RecipesComponent = () => {
       </GridItem>
       <GridItem colStart={2} rowStart={4} mt='1rem'>
         <Grid templateColumns='1fr 1fr 1fr' templateRows='auto auto' gap='20px'>
-          {categories.map(
-            (category) =>
-              category.tag === 'yes' && (
+          {data.map(
+            (data) =>
+                 (
+                  <ReachLink
+                  to={`categoria/${data.id}`}
+                  >
                 <Flex
                   w={'100%'}
                   h='290px'
@@ -111,7 +67,7 @@ const RecipesComponent = () => {
                   borderRadius='2rem'
                   cursor='pointer'>
                   <SlideTitle color={theme.colors.slide}>
-                    {category.name}
+                    {data.name}
                   </SlideTitle>
 
                   <Image
@@ -124,6 +80,7 @@ const RecipesComponent = () => {
                     borderRadius='2rem'
                   />
                 </Flex>
+                </ReachLink>
               )
           )}
         </Grid>
