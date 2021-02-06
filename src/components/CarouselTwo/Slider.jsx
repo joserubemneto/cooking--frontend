@@ -73,9 +73,8 @@ const MultipleItems = ({ data }) => {
   return (
     <Box>
       <Slider {...settings}>
-        {data.map((recipe) => (
-          <SingleSlide key={data.id} data={recipe} />
-        ))}
+        {data &&
+          data.map((recipe) => <SingleSlide key={data.id} data={recipe} />)}
       </Slider>
     </Box>
   )
