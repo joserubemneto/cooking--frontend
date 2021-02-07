@@ -15,14 +15,14 @@ const CarouselTwo = ({ first, data }) => {
       <GlobalStyle />
       <GridItem mt={first ? '2rem' : '8rem'} rowSpan={1} colStart={2}>
         <Heading weight='bold' color={colors.title}>
-          {data[0] && data[0].name}
+          {data && data.name}
         </Heading>
       </GridItem>
       <GridItem rowSpan={2} colStart={2} mt='2rem'>
         {large ? (
-          <Slider data={data[0] && data[0].recipes} />
+          <Slider data={data && data.recipes} />
         ) : (
-          <SliderMobile data={data[0] && data[0].recipes} />
+          <SliderMobile data={data && data.recipes} />
         )}
       </GridItem>
     </Grid>
