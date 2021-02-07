@@ -6,13 +6,12 @@ import { ThemeContext } from 'styled-components'
 import { Grid, GridItem } from '@chakra-ui/react'
 import './Slider.css'
 import useMedia from '../../hooks/useMedia'
-import {useRequest} from '../../context/Request'
+import { useRequest } from '../../context/Request'
 
-const CarouselOne = ({ title, data }) => {
+const CarouselOne = ({ title, data, url }) => {
   const { font, colors } = useContext(ThemeContext)
   const large = useMedia('(min-width: 62.5rem)')
   const { setLoading } = useRequest()
-
 
   return (
     <Grid templateColumns='7% 86% 7%' templateRows='auto auto'>
@@ -22,8 +21,12 @@ const CarouselOne = ({ title, data }) => {
           {title}
         </TopTitle>
       </GridItem>
-      <GridItem rowSpan={2} colStart={2} >
-        {large ? <Slider loader={setLoading} data={data} /> : <SliderMobile data={data} />}
+      <GridItem rowSpan={2} colStart={2}>
+        {large ? (
+          <Slider loader={setLoading} data={data} url={url} />
+        ) : (
+          <SliderMobile data={data} url={url} />
+        )}
       </GridItem>
     </Grid>
   )
