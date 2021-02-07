@@ -23,15 +23,18 @@ const Highlights = () => {
   })
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     requestData()
   }, [])
 
   return (
     <>
       {!loading && !error && (
-      <Box>
-        <CarouselTwo title='Receitas Práticas' first={true} data={highlights} />
-      </Box>
+        <Box>
+          {highlights.map((highlight, index) => (
+            <CarouselTwo first={index === 0 ? true : false} data={highlight} />
+          ))}
+        </Box>
       )}
       {loading && !error && <Loading />}
       {error && <Error />}
