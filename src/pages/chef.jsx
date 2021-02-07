@@ -67,7 +67,13 @@ const Chef = () => {
               </Flex>
             </Flex>
 
-            <Box mt='2rem' w='300px' h='300px' bg='#c5c5c5' />
+            <Box mt='2rem' w='300px' h='300px'>
+              <Image
+                src={chef.img_url}
+                boxSize='100%'
+                objectFit='cover'
+              />
+            </Box>
 
             <Text mt='3rem' maxWidth='500px'>
               {chef.resume}

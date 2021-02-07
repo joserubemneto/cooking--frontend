@@ -66,6 +66,7 @@ const MultipleItems = ({ data }) => {
     infinite: true,
     centerPadding: '0',
     slidesToShow: 2,
+    autoplay: true,
     speed: 500,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,

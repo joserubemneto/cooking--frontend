@@ -11,7 +11,7 @@ import Error from '../Error'
 import { useRequest } from '../../context/Request'
 import { getRecipes, getRecipesByCategory } from '../../services/api'
 
-const RecipeMobile = ({ categories}) => {
+const RecipeMobile = ({ categories }) => {
   const [recipes, setRecipes] = useState([]);
   const [categoryTarget, setCategoryTarget] = useState('');
   const { loading, setLoading, error, setError } = useRequest()

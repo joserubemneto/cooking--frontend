@@ -66,6 +66,7 @@ export default class MultipleItems extends Component {
       speed: 500,
       slidesToShow: 3,
       slidesToScroll: 3,
+      autoplay: true,
       nextArrow: <SampleNextArrow />,
       prevArrow: <SamplePrevArrow />,
     }
