@@ -30,7 +30,7 @@ const Routes = () => {
           <Recipes />
         </Route>
         <Route path='/categoria/:id'>
-          { large ? <Category /> : <PageNotFound /> }
+          {large ? <Category /> : <PageNotFound />}
         </Route>
         <Route path='/receita/:id'>
           <Recipe />
@@ -45,6 +45,12 @@ const Routes = () => {
           <Chef />
         </Route>
         <Route path='/chef/:id'></Route>
+        <Route path='/not-found'>
+          <PageNotFound />
+        </Route>
+        <Route>
+          <PageNotFound />
+        </Route>
       </Switch>
       <Footer />
     </BrowserRouter>
