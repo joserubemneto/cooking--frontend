@@ -26,6 +26,7 @@ const Chefs = () => {
   })
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     requestChefs()
   }, [])
 
@@ -35,7 +36,7 @@ const Chefs = () => {
     <>
       {!loading && !error && (
         <Box>
-          <CarouselOne title='Top Chefs' data={chefs} />
+          <CarouselOne title='Top Chefs' data={chefs} url={'chef'} />
           <SimpleGrid columns={large ? 2 : 1} gap='6rem' m='10rem 2rem'>
             {chefs.map((chef) => (
               <ChefCard
