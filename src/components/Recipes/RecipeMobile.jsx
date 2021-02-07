@@ -1,9 +1,11 @@
 import React from 'react'
 import CategoryCard from '../CategoryCard'
-import { Grid, GridItem, Flex, Spacer } from "@chakra-ui/react"
+import { Grid, GridItem, Flex, Spacer, Image } from "@chakra-ui/react"
 import {TopTitle} from '../MainStyles'
 import theme from '../../theme'
 import {Select} from '../MainStyles'
+import BackToTop from '../../assets/back to top.svg'
+
 
 const RecipeMobile = ({recipes, categories}) => {
   console.log(categories);
@@ -38,6 +40,21 @@ const RecipeMobile = ({recipes, categories}) => {
           {recipes.map((recipe) => (
             <CategoryCard data={recipe}/>
           ))}
+        </GridItem>
+        <GridItem
+        position= "fixed"
+        right="5px"
+        bottom="100px"
+        >
+          <a href="#">
+          <Image
+          src={BackToTop}
+          alt="voltar para o topo"
+          width="35px"
+          height="35px"
+          objectFit="cover"
+        />
+          </a>
         </GridItem>
       </Grid>
     </>

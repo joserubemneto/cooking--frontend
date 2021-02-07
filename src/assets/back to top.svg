@@ -1,6 +1,6 @@
 <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="80" height="80" rx="16" fill="url(#paint0_linear)"/>
-<path d="M64 52L40 28L16 52" stroke="white" stroke-width="3" stroke-linecap="round"/>
+<path d="M64 52L40 28L16 52" stroke="white" stroke-width="4" stroke-linecap="round"/>
 <defs>
 <linearGradient id="paint0_linear" x1="63" y1="-15" x2="20.3117" y2="92.1168" gradientUnits="userSpaceOnUse">
 <stop stop-color="#EE6737"/>

@@ -137,6 +137,7 @@ const Logo = styled.div`
 const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
+    scroll-behavior: smooth;
   }
 
   body {
