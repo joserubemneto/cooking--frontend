@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState, useCallback } from 'react'
 import { Logo } from '../MainStyles'
 import { Link } from 'react-router-dom'
 import { ThemeContext } from 'styled-components'
@@ -6,51 +6,31 @@ import { Flex, Box, Text } from '@chakra-ui/react'
 import useMedia from '../../hooks/useMedia'
 import { ReactComponent as Bloob } from '../../assets/Vetor Footer 2.svg'
 import { ReactComponent as Bloob2 } from '../../assets/Vetor Footer 1.svg'
+import { getHighlights } from '../../services/api'
 
 const Footer = () => {
   const { fonts, colors } = useContext(ThemeContext)
   const mobile = useMedia('(max-width: 55rem)')
+  const [highlights, setHighlights] = useState([])
 
-  const especialRecipesPages = [
-    {
-      title: 'Receitas de Ano Novo',
-      page: 'ano-novo',
-    },
-    {
-      title: 'Receitas de Natal',
-      page: 'natal',
-    },
-    {
-      title: 'Receitas de São João',
-      page: 'sao-joao',
-    },
-    {
-      title: 'Receitas de Páscoa',
-      page: 'pascoa',
-    },
-  ]
+  const requestData = useCallback(async () => {
+    try {
+      const { data: highlightsData } = await getHighlights()
+      setHighlights(highlightsData)
+    } catch (error) {
+      console.log(error)
+    }
+  })
 
-  const aboutPages = [
-    {
-      title: 'Quem Somos',
-      page: 'sobre',
-    },
-    {
-      title: 'Contato',
-      page: 'sobre',
-    },
-    {
-      title: 'Guia',
-      page: 'sobre',
-    },
-    {
-      title: 'Termos de uso e política de privacidade',
-      page: 'sobre',
-    },
-  ]
+  useEffect(() => {
+    requestData()
+  }, [])
 
   return (
-    <Box boxShadow={mobile ? '' : `0 -5px 5px -5px #C3C3C3`} pt={'2.75rem'} mt={'7rem'}>
+    <Box
+      boxShadow={mobile ? '' : `0 -5px 5px -5px #C3C3C3`}
+      pt={'2.75rem'}
+      mt={'7rem'}>
       {!mobile ? (
         <Flex flexDirection='column' m={'1.625rem 4rem'}>
           <Flex justifyContent='space-between'>
@@ -83,29 +63,33 @@ const Footer = () => {
                 <Text color={colors.subTitle} fontWeight={'bold'}>
                   Especiais
                 </Text>
-                {especialRecipesPages.map((page) => (
-                  <Box
-                    key={page.title}
-                    fontSize={'0.9rem'}
-                    pt={'1rem'}
-                    _hover={{ fontWeight: 'bold', transition: 'all 600ms' }}>
-                    <Link to={`/${page.page}`}>{page.title}</Link>
-                  </Box>
-                ))}
+                {highlights &&
+                  highlights.map((highlight) => (
+                    <Box
+                      key={highlight.id}
+                      fontSize={'0.9rem'}
+                      pt={'1rem'}
+                      _hover={{ fontWeight: 'bold', transition: 'all 600ms' }}>
+                      <Link to={`/destaques`}>{highlight.name}</Link>
+                    </Box>
+                  ))}
               </Box>
               <Box ml={'8rem'}>
                 <Text color={colors.subTitle} fontWeight={'bold'}>
                   Sobre
                 </Text>
-                {aboutPages.map((page) => (
-                  <Box
-                    key={page.title}
-                    fontSize={'0.9rem'}
-                    pt={'1rem'}
-                    _hover={{ fontWeight: 'bold', transition: 'all 600ms' }}>
-                    <Link to={`/${page.page}`}>{page.title}</Link>
-                  </Box>
-                ))}
+                <Box
+                  fontSize={'0.9rem'}
+                  pt={'1rem'}
+                  _hover={{ fontWeight: 'bold', transition: 'all 600ms' }}>
+                  <Link to={`/sobre`}>Sobre nós</Link>
+                </Box>
+                <Box
+                  fontSize={'0.9rem'}
+                  pt={'1rem'}
+                  _hover={{ fontWeight: 'bold', transition: 'all 600ms' }}>
+                  <Link to={`/sobre`}>Contato</Link>
+                </Box>
               </Box>
             </Flex>
           </Flex>
