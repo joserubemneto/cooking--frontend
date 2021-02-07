@@ -47,9 +47,6 @@ const Chefs = () => {
               />
             ))}
           </SimpleGrid>
-          <Box position='fixed' bottom='10' right='5' cursor='pointer'>
-            <BackToTop />
-          </Box>
         </Box>
       )}
       {loading && <Loading />}
