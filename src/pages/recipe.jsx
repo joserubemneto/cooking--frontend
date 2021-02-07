@@ -35,6 +35,7 @@ const Recipe = () => {
   })
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     requestData()
   }, [id])
 
@@ -51,24 +52,27 @@ const Recipe = () => {
                 <Spacer />
                 <Flex alignItems='center'>
                   <p
-                  style={{
-                    display: large ? '' : 'none',
-                  }}
-                  >voltar para </p>
-                  <Link
-                  to= { large ? `/categoria/${recipe.category_id}` : `/receitas`}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                  }}>
-                  <p
                     style={{
-                      display: large ? 'inline-block' : 'none',
-                      marginLeft: '7px',
-                      color: `${theme.colors.subTitle}`,
+                      display: large ? '' : 'none',
                     }}>
-                    {recipe.category_name}
+                    voltar para{' '}
                   </p>
+                  <Link
+                    to={
+                      large ? `/categoria/${recipe.category_id}` : `/receitas`
+                    }
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                    }}>
+                    <p
+                      style={{
+                        display: large ? 'inline-block' : 'none',
+                        marginLeft: '7px',
+                        color: `${theme.colors.subTitle}`,
+                      }}>
+                      {recipe.category_name}
+                    </p>
                     <Image
                       boxSize='35px'
                       objectFit='cover'
@@ -88,7 +92,7 @@ const Recipe = () => {
                 mt='30px'
                 boxSize='75%'
                 height='400px'
-                width= {large ? '75%' : '100%'}
+                width={large ? '75%' : '100%'}
                 objectFit='cover'
                 src={recipe.img_url}
                 alt='Dan Abramov'
@@ -96,9 +100,7 @@ const Recipe = () => {
                 cursor='pointer'
               />
             </GridItem>
-            <GridItem colStart={2}
-            colSpan={ large ? 1 : 2}
-            >
+            <GridItem colStart={2} colSpan={large ? 1 : 2}>
               <TopTitle Talign='left' color={theme.colors.subTitle}>
                 Resumo
               </TopTitle>
@@ -106,7 +108,7 @@ const Recipe = () => {
                 {recipe.resume}
               </Text>
             </GridItem>
-            <GridItem colStart={2} colSpan={ large ? 1 : 2} mt='20px'>
+            <GridItem colStart={2} colSpan={large ? 1 : 2} mt='20px'>
               <TopTitle Talign='left' color={theme.colors.subTitle}>
                 Ingredientes
               </TopTitle>
@@ -121,7 +123,7 @@ const Recipe = () => {
                 ))}
               </div>
             </GridItem>
-            <GridItem colStart={2} colSpan={ large ? 1 : 2}>
+            <GridItem colStart={2} colSpan={large ? 1 : 2}>
               <TopTitle Talign='left' color={theme.colors.subTitle}>
                 Modo de Preparo
               </TopTitle>
