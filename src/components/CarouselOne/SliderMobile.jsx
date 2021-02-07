@@ -93,16 +93,16 @@ export default class MultipleItems extends Component {
            >
              <SingleSlide titleSlide={this.props.data[2].title} mode="true" img={this.props.data[2].img_url} />
             </ReachLink>
-            <ReachLink
+            {this.props.data[3] && <ReachLink
            to={`/receita/${this.props.data[3].id}`}
            >
              <SingleSlide titleSlide={this.props.data[3].title} mode="true" img={this.props.data[3].img_url} />
-            </ReachLink>
-            <ReachLink
+            </ReachLink>}
+            {this.props.data[4] && <ReachLink
            to={`/receita/${this.props.data[4].id}`}
            >
              <SingleSlide titleSlide={this.props.data[4].title} mode="true" img={this.props.data[4].img_url} />
-            </ReachLink>
+            </ReachLink>}
         </Slider>
       </>
     )
