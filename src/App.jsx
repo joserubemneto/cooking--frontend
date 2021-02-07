@@ -7,12 +7,11 @@ import theme from './theme'
 import Routes from './routes'
 
 const App = () => (
-
   <ChakraProvider>
     <ThemeProvider theme={theme}>
       <GlobalStyle font={theme.fonts.body} />
       <RequestProvider>
-        <Box maxWidth='1350px' m='0 auto'>
+        <Box maxWidth='1350px' m='0 auto' h='100%'>
           <Routes />
         </Box>
       </RequestProvider>
