@@ -3,99 +3,67 @@ import Slider from 'react-slick'
 import useMedia from '../../hooks/useMedia'
 import SingleSlide from './SingleSlide'
 import '../CarouselOne/Slider.css'
-import { Box, UnorderedList } from '@chakra-ui/react'
 
 const SampleNextArrow = (props) => {
-  const { onClick } = props
+  const { className, style, onClick } = props
   const small = useMedia('(max-width: 410px)')
-  const medium = useMedia('(max-width: 544px)')
-  const break1 = useMedia('(min-width: 495px)')
-  const break2 = useMedia('(min-width: 540px)')
-  const break3 = useMedia('(max-width: 478px)')
-  const break4 = useMedia('(max-width: 400px)')
-  const break5 = useMedia('(min-width: 610px)')
 
   return (
-    <Box
+    <div
       id='oneNext'
-      display='block'
-      position='absolute'
-      top={
-        (break4 && '29rem') ||
-        (break3 && '31rem') ||
-        (medium && '33.7rem') ||
-        (break5 && '17rem') ||
-        (break2 && '18.4rem') ||
-        (break1 && '18.4rem')
-      }
-      right={small ? '6%' : '10%'}
-      p='0'
-      m='0'
-      zIndex='2'
+      className={className}
+      style={{
+        ...style,
+        display: 'block',
+        position: 'relative',
+        top: '47px',
+        right: small ? '-83%' : '-75%',
+        padding: '0',
+        margin: '0',
+        zIndex: '2',
+      }}
       onClick={onClick}
     />
   )
 }
 
 const SamplePrevArrow = (props) => {
-  const { onClick } = props
+  const { className, style, onClick } = props
   const small = useMedia('(max-width: 410px)')
-  const medium = useMedia('(max-width: 544px)')
-  const break1 = useMedia('(min-width: 495px)')
-  const break2 = useMedia('(min-width: 540px)')
-  const break3 = useMedia('(max-width: 478px)')
-  const break4 = useMedia('(max-width: 400px)')
-  const break5 = useMedia('(min-width: 610px)')
 
   return (
-    <Box
+    <div
       id='onePrev'
-      display='block'
-      position='absolute'
-      top={
-        (break4 && '29rem') ||
-        (break3 && '31rem') ||
-        (medium && '33.7rem') ||
-        (break5 && '17rem') ||
-        (break2 && '18.4rem') ||
-        (break1 && '18.4rem')
-      }
-      left={small ? '6%' : '10%'}
-      p='0'
-      m='0'
-      zIndex='1'
+      className={className}
+      style={{
+        ...style,
+        display: 'block',
+        position: 'relative',
+        top: '308px',
+        left: small ? '2%' : '15%',
+        padding: '0',
+        margin: '0',
+        zIndex: '2',
+      }}
       onClick={onClick}
     />
   )
 }
 
-const Component = () => {
-  const medium = useMedia('(max-width: 544px)')
-  const break1 = useMedia('(min-width: 495px)')
-  const break2 = useMedia('(min-width: 540px)')
-  const break3 = useMedia('(max-width: 478px)')
-  const break4 = useMedia('(max-width: 400px)')
-  const break5 = useMedia('(min-width: 610px)')
-
+const MultipleItems = ({ data }) => {
   const settings = {
     dots: true,
     appendDots: (dots) => (
-      <Box
-        bgColor='transparent'
-        p='0'
-        position='absolute'
-        top={
-          (break4 && '29rem') ||
-          (break3 && '31rem') ||
-          (medium && '33.7rem') ||
-          (break5 && '17rem') ||
-          (break2 && '18.4rem') ||
-          (break1 && '18.4rem')
-        }>
-        <UnorderedList id='oneDot' m='-10px'>
-          {dots}
-        </UnorderedList>
-      </Box>
+      <div
+        style={{
+          backgroundColor: 'transparent',
+          padding: '0',
+        }}>
+        <ul id='oneDot' style={{ margin: '-10px' }}>
+          {' '}
+          {dots}{' '}
+        </ul>
+      </div>
     ),
     infinite: true,
     speed: 500,
@@ -107,16 +75,12 @@ const Component = () => {
 
   return (
     <>
-      <Slider id='one' {...settings}>
-        <SingleSlide mode='true' />
-        <SingleSlide mode='true' />
-        <SingleSlide mode='true' />
-        <SingleSlide mode='true' />
-        <SingleSlide mode='true' />
-        <SingleSlide mode='true' />
+      <Slider {...settings}>
+        {data &&
+          data.map((recipe) => <SingleSlide key={data.id} data={recipe} />)}
       </Slider>
     </>
   )
 }
 
-export default Component
+export default MultipleItems

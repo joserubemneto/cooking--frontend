@@ -7,10 +7,8 @@ import Slider from '../CarouselTwo/Slider'
 import SliderMobile from '../CarouselTwo/SliderMobile'
 
 const CarouselTwo = ({ first, data }) => {
-  const { fonts, colors } = useContext(ThemeContext)
+  const { colors } = useContext(ThemeContext)
   const large = useMedia('(min-width: 62.5rem)')
-
-  console.log(data)
 
   return (
     <Grid templateColumns='7% 86% 7%' templateRows='auto auto'>
