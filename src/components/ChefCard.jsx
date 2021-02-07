@@ -12,12 +12,13 @@ const ChefCard = ({ chefName, description, id, img }) => {
       <Box maxWidth='250px' w='100%' h='250px' mt='2rem'>
         <Image
               src={img}
+              alt={chefName}
               boxSize='100%'
               objectFit='cover'
             />
       </Box>
 
-      <Text mt='2rem' fontSize='1.125rem' maxWidth='350px'>
+      <Text mt='2rem' fontSize='1.125rem' maxWidth='350px' textAlign='center'>
         {description}
       </Text>
 

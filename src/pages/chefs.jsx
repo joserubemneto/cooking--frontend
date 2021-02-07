@@ -42,7 +42,7 @@ const Chefs = () => {
               <ChefCard
                 key={chef.id}
                 chefName={chef.name}
-                description={'Gosta de fazer hambúrguer'}
+                description={chef.resume}
                 id={chef.id}
                 img={chef.img_url}
               />

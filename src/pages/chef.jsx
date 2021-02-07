@@ -6,7 +6,7 @@ import { Link as ReactLink, useParams } from 'react-router-dom'
 import CarouselOne from '../components/CarouselOne'
 import Loading from '../components/Loading'
 import Error from '../components/Error'
-import { ReactComponent as Back } from '../assets/back.svg'
+import Back from '../assets/back.svg'
 
 const Chef = () => {
   const [chef, setChef] = useState([])
@@ -54,7 +54,7 @@ const Chef = () => {
                 direction={['column-reverse', 'column-reverse', 'row', 'row']}>
                 <Box
                   fontSize='1.125rem'
-                  mr={'2rem'}
+                  mr={'1rem'}
                   display={['none', 'none', 'block', 'block']}
                   visibility={['hidden', 'hidden', 'visible', 'visible']}>
                   voltar para{' '}
@@ -63,7 +63,16 @@ const Chef = () => {
                   </Text>
                 </Box>
                 <Link as={ReactLink} to='/chefs'>
-                  <Back />
+                <Image
+                      boxSize='35px'
+                      objectFit='cover'
+                      src={Back}
+                      alt='Dan Abramov'
+                      zIndex='-1'
+                      cursor='pointer'
+                      borderRadius='2rem'
+                      ml='10px'
+                    />
                 </Link>
               </Flex>
             </Flex>

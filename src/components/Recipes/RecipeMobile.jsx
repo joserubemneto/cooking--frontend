@@ -51,7 +51,11 @@ const RecipeMobile = ({ categories }) => {
             <Select
             onChange={(e) => {
               const current = e.target.value;
-              setCategoryTarget(current);
+              if(current === 'Nenhum') {
+                setCategoryTarget('')
+              } else {
+                setCategoryTarget(current);
+              }
             }}
             >
               <option disabled selected>Filtros</option>

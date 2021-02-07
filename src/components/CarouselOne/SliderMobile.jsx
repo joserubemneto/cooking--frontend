@@ -78,13 +78,31 @@ export default class MultipleItems extends Component {
     return (
       <>
         <Slider id='one' {...settings}>
-         {this.props.data.map((data) => (
            <ReachLink
-           to={`/receita/${data.id}`}
+           to={`/receita/${this.props.data[0].id}`}
            >
-            <SingleSlide titleSlide={data.title} mode="true" />
+             <SingleSlide titleSlide={this.props.data[0].title} mode="true" img={this.props.data[0].img_url} />
             </ReachLink>
-          ))}
+            <ReachLink
+           to={`/receita/${this.props.data[1].id}`}
+           >
+             <SingleSlide titleSlide={this.props.data[1].title} mode="true" img={this.props.data[1].img_url} />
+            </ReachLink>
+            <ReachLink
+           to={`/receita/${this.props.data[2].id}`}
+           >
+             <SingleSlide titleSlide={this.props.data[2].title} mode="true" img={this.props.data[2].img_url} />
+            </ReachLink>
+            <ReachLink
+           to={`/receita/${this.props.data[3].id}`}
+           >
+             <SingleSlide titleSlide={this.props.data[3].title} mode="true" img={this.props.data[3].img_url} />
+            </ReachLink>
+            <ReachLink
+           to={`/receita/${this.props.data[4].id}`}
+           >
+             <SingleSlide titleSlide={this.props.data[4].title} mode="true" img={this.props.data[4].img_url} />
+            </ReachLink>
         </Slider>
       </>
     )

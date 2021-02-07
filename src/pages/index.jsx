@@ -39,10 +39,10 @@ const Landing = () => {
   return (
     <>
       {!loading && !error && (
-        <Box>
+        <Box position="relative">
           <Banner />
           <CarrouselOne title='Top Receitas' data={recipes} url={'receita'} />
-          <Highlights data={highlights} />
+          <Highlights position='absolute' data={highlights} />
           <CarrouselOne title='Top Chefs' data={chefs} url={'chef'} />
         </Box>
       )}
