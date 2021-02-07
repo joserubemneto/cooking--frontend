@@ -6,14 +6,19 @@ const PageNotFound = () => {
   return (
     <Flex justify='center' direction='column' align='center'>
       <Text>Página não encontrada.</Text>
-      <Link to='/receitas' style={{
-            marginTop: '8px',
-          }} >Voltar para
-      <span style={{
+      <Link
+        to='/'
+        style={{
+          marginTop: '8px',
+        }}>
+        Voltar para
+        <span
+          style={{
             marginLeft: '5px',
-            color: '#F73C2C'
-          }}>Receitas.
-      </span>
+            color: '#F73C2C',
+          }}>
+          Home.
+        </span>
       </Link>
     </Flex>
   )
