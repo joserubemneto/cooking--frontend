@@ -10,8 +10,8 @@ import Error from '../components/Error'
 
 const Landing = () => {
   const [highlights, setHighlights] = useState([])
-  const [chefs, setChefs] = useState([]);
-  const [recipes, setRecipes] = useState([]);
+  const [chefs, setChefs] = useState([])
+  const [recipes, setRecipes] = useState([])
   const { loading, setLoading, error, setError } = useRequest()
 
   const requestData = useCallback(async () => {
@@ -31,6 +31,7 @@ const Landing = () => {
   })
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     requestData()
     setLoading(true)
   }, [])
@@ -38,12 +39,12 @@ const Landing = () => {
   return (
     <>
       {!loading && !error && (
-      <Box>
-        <Banner />
-        <CarrouselOne title='Top Receitas' data={recipes} />
-        <Highlights data={highlights} />
-        <CarrouselOne title='Top Chefs' data={chefs} />
-       </Box>
+        <Box>
+          <Banner />
+          <CarrouselOne title='Top Receitas' data={recipes} url={'receita'} />
+          <Highlights data={highlights} />
+          <CarrouselOne title='Top Chefs' data={chefs} url={'chef'} />
+        </Box>
       )}
       {loading && !error && <Loading />}
       {error && <Error />}
