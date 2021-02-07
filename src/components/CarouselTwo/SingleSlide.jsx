@@ -22,7 +22,7 @@ const SingleSlide = ({ data }) => {
         position='relative'>
         <Box maxWidth={small ? '100%' : '280px'}>
           <Image
-            src={Picture}
+            src={data.img_url}
             w='100%'
             boxSize='100%'
             objectFit='cover'
@@ -35,6 +35,7 @@ const SingleSlide = ({ data }) => {
           <Text fontSize='1.375rem' color={colors.subTitle} fontWeight='bold'>
             {data && data.title}
           </Text>
+          <Text>{data.resume}</Text>
           <Link
             as={ReactLink}
             onClick={() => setLoading(true)}

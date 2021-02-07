@@ -46,6 +46,7 @@ const Chefs = () => {
                 chefName={chef.name}
                 description={'Gosta de fazer hambúrguer'}
                 id={chef.id}
+                img={chef.img_url}
               />
             ))}
           </SimpleGrid>

@@ -5,7 +5,7 @@ import theme from '../../theme'
 import Back from '../../assets/Image4.jpg'
 import { Image } from '@chakra-ui/react'
 
-const SingleSlide = ({ mode, titleSlide }) => {
+const SingleSlide = ({ mode, titleSlide, img }) => {
 
   return (
     <>
@@ -14,7 +14,7 @@ const SingleSlide = ({ mode, titleSlide }) => {
         <Image
           boxSize='100%'
           objectFit='cover'
-          src={Back}
+          src={img}
           alt='Dan Abramov'
           position='absolute'
           zIndex='-1'

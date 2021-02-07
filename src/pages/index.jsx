@@ -42,7 +42,7 @@ const Landing = () => {
         <Banner />
         <CarrouselOne title='Top Receitas' data={recipes} />
         <Highlights data={highlights} />
-        <CarrouselOne title='Top Chefs' data={recipes} />
+        <CarrouselOne title='Top Chefs' data={chefs} />
        </Box>
       )}
       {loading && !error && <Loading />}

@@ -73,7 +73,7 @@ const RecipesComponent = ({ data }) => {
                   <Image
                     boxSize='100%'
                     objectFit='cover'
-                    src={Back}
+                    src={data.img_url}
                     alt='Dan Abramov'
                     position='absolute'
                     zIndex='-1'

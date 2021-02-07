@@ -1,15 +1,21 @@
 import React from 'react'
-import { Flex, Box, Heading, Text, Link } from '@chakra-ui/react'
+import { Flex, Box, Heading, Text, Link, Image } from '@chakra-ui/react'
 import { Link as ReachLink } from 'react-router-dom'
 
-const ChefCard = ({ chefName, description, id }) => {
+const ChefCard = ({ chefName, description, id, img }) => {
   return (
     <Flex direction='column' justifyContent='center' align='center'>
       <Heading fontSize='1.625rem' color='#EE6737'>
         {chefName}
       </Heading>
 
-      <Box maxWidth='250px' w='100%' h='250px' mt='2rem' bg='#C5C5C5'></Box>
+      <Box maxWidth='250px' w='100%' h='250px' mt='2rem'>
+        <Image
+              src={img}
+              boxSize='100%'
+              objectFit='cover'
+            />
+      </Box>
 
       <Text mt='2rem' fontSize='1.125rem' maxWidth='350px'>
         {description}

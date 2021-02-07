@@ -25,8 +25,6 @@ const Category = () => {
       setCategory(categoryData)
       const { data: recipesData } = await getRecipesByCategory(id)
       setRecipes(recipesData)
-      console.log(category);
-      console.log(recipes);
       setLoading(false)
     } catch (error) {
       console.log(error)

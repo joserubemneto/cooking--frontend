@@ -90,7 +90,7 @@ const Recipe = () => {
                 height='400px'
                 width= {large ? '75%' : '100%'}
                 objectFit='cover'
-                src={Photo}
+                src={recipe.img_url}
                 alt='Dan Abramov'
                 zIndex='-1'
                 cursor='pointer'
@@ -103,11 +103,7 @@ const Recipe = () => {
                 Resumo
               </TopTitle>
               <Text fontSize='18px' lineHeight='27px'>
-                resumo do resumo do resumo do resumo resumo do resumo do resumo
-                do resumoresumo do resumo do resumo do resumoresumo do resumo do
-                resumo do resumoresumo do resumo do resumo do resumoresumo do
-                resumo do resumo do resumoresumo do resumo do resumo do
-                resumoresumo do resumo do resumo do resumo
+                {recipe.resume}
               </Text>
             </GridItem>
             <GridItem colStart={2} colSpan={ large ? 1 : 2} mt='20px'>
