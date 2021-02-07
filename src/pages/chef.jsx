@@ -10,7 +10,7 @@ import { ReactComponent as Back } from '../assets/back.svg'
 
 const Chef = () => {
   const [chef, setChef] = useState([])
-  const [recipes, setRecipes] = useState([]);
+  const [recipes, setRecipes] = useState([])
   const { id } = useParams()
   const { loading, setLoading, error, setError } = useRequest()
   console.log(chef)
@@ -30,6 +30,7 @@ const Chef = () => {
   })
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     requestChef()
   }, [])
 
@@ -68,11 +69,7 @@ const Chef = () => {
             </Flex>
 
             <Box mt='2rem' w='300px' h='300px'>
-              <Image
-                src={chef.img_url}
-                boxSize='100%'
-                objectFit='cover'
-              />
+              <Image src={chef.img_url} boxSize='100%' objectFit='cover' />
             </Box>
 
             <Text mt='3rem' maxWidth='500px'>
