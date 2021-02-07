@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import useMedia from '../hooks/useMedia'
 import { Flex, Box, Heading, Link, Text } from '@chakra-ui/react'
 import { ThemeContext } from 'styled-components'
@@ -8,6 +8,10 @@ import { ReactComponent as Mail } from '../assets/Mail.svg'
 const About = () => {
   const { fonts, colors } = useContext(ThemeContext)
   const mobile = useMedia('(max-width: 48rem)')
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <Flex
