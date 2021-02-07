@@ -85,7 +85,7 @@ const Category = () => {
                   <Image
                     boxSize='100%'
                     objectFit='cover'
-                    src={Imagem}
+                    src={category.img_url}
                     alt='Dan Abramov'
                     position='absolute'
                     zIndex='-1'
