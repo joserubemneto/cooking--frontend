@@ -108,7 +108,7 @@ const Chef = () => {
               </Text>
             </Flex>
           </Flex>
-          <CarouselOne title='Receitas do chef' url='receitas' data={chef.recipes || recipes} />
+          <CarouselOne title='Receitas do chef' url='receita' data={chef.recipes || recipes} />
         </Box>
       )}
       {loading && !error && <Loading />}
