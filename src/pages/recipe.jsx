@@ -143,7 +143,7 @@ const Recipe = () => {
               </div>
             </GridItem>
           </Grid>
-          <CarouselOne title='Outras Receitas' data={large ? recipes : recipeMobile} />
+          <CarouselOne title='Outras Receitas' url='receita' data={large ? recipes : recipeMobile} />
         </>
       )}
       {loading && !error && <Loading />}

@@ -80,7 +80,8 @@ export default class MultipleItems extends Component {
         <Slider id='one' {...settings}>
           {this.props.data.map((data) => (
             <ReachLink
-            to={`/receita/${data.id}`}
+            to={`/${this.props.url}/${data.id}`}
+            onClick={() => this.props.loader(true)}
             >
               <SingleSlide
               titleSlide={data.title || data.name} mode="true" img={data.img_url} />
