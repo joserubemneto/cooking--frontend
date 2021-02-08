@@ -76,7 +76,7 @@ const Recipe = () => {
                       {recipe.category_name}
                     </p>
                     <Image
-                      boxSize='35px'
+                      boxSize='auto'
                       objectFit='cover'
                       src={Back}
                       alt='Dan Abramov'
