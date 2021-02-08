@@ -4,7 +4,7 @@ const RequestContext = createContext()
 
 export const RequestProvider = ({ children }) => {
   const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(false)
+  const [error, setError] = useState(true)
   return (
     <RequestContext.Provider value={{ loading, setLoading, error, setError }}>
       {children}

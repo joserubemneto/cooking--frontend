@@ -13,7 +13,6 @@ const Chef = () => {
   const [recipes, setRecipes] = useState([])
   const { id } = useParams()
   const { loading, setLoading, error, setError } = useRequest()
-  console.log(chef)
 
   const requestChef = useCallback(async () => {
     try {
@@ -54,7 +53,7 @@ const Chef = () => {
                 direction={['column-reverse', 'column-reverse', 'row', 'row']}>
                 <Box
                   fontSize='1.125rem'
-                  mr={'1rem'}
+                  mr={'3rem'}
                   display={['none', 'none', 'block', 'block']}
                   visibility={['hidden', 'hidden', 'visible', 'visible']}>
                   voltar para{' '}
@@ -67,7 +66,7 @@ const Chef = () => {
                       boxSize='35px'
                       objectFit='cover'
                       src={Back}
-                      alt='Dan Abramov'
+                      alt='Voltar'
                       zIndex='-1'
                       cursor='pointer'
                       borderRadius='2rem'
@@ -109,8 +108,7 @@ const Chef = () => {
               </Text>
             </Flex>
           </Flex>
-
-          <CarouselOne title='Receitas do chef' data={recipes} />
+          <CarouselOne title='Receitas do chef' url='receitas' data={chef.recipes || recipes} />
         </Box>
       )}
       {loading && !error && <Loading />}

@@ -10,7 +10,7 @@ import { Link as ReachLink } from 'react-router-dom'
 const CategoryCard = ({ data }) => {
   const { setLoading } = useRequest()
   return (
-    <Flex flexDirection='column' alignItems='center'>
+    <Flex flexDirection='column' alignItems='center' mb='3.5rem'>
       <TopTitle color={theme.colors.title}>{data.title}</TopTitle>
       <Box mobile={true} >
         <Image

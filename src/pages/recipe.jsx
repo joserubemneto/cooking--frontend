@@ -76,7 +76,7 @@ const Recipe = () => {
                       {recipe.category_name}
                     </p>
                     <Image
-                      boxSize='35px'
+                      boxSize='auto'
                       objectFit='cover'
                       src={Back}
                       alt='Dan Abramov'
@@ -143,7 +143,7 @@ const Recipe = () => {
               </div>
             </GridItem>
           </Grid>
-          <CarouselOne title='Outras Receitas' data={large ? recipes : recipeMobile} />
+          <CarouselOne title='Outras Receitas' url='receita' data={large ? recipes : recipeMobile} />
         </>
       )}
       {loading && !error && <Loading />}

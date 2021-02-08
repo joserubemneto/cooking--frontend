@@ -34,7 +34,7 @@ const SingleSlide = ({ data }) => {
           />
         </Box>
         <Flex direction='column' justifyContent='space-around' p='1rem 1.5rem'>
-          <Text fontSize='1.375rem' color={colors.subTitle} fontWeight='bold'>
+          <Text fontSize='1.375rem' color={colors.subTitle} fontWeight='bold' mt='.5rem'>
             {data && data.title}
           </Text>
           <Text>{data.resume}</Text>

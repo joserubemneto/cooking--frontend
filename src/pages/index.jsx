@@ -48,8 +48,8 @@ const Landing = () => {
         <Box position="relative">
           <Banner />
           <CarrouselOne title='Top Receitas' data={large ? recipes : recipesMobile} url={'receita'} />
-          <Highlights position='absolute' data={highlights} />
-          <CarrouselOne title='Top Chefs' data={chefs} url={'chef'} />
+          <Highlights data={highlights} />
+          <CarrouselOne title='Top Chefs' data={chefs} url='chef' />
         </Box>
       )}
       {loading && !error && <Loading />}

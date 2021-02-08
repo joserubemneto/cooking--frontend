@@ -25,7 +25,7 @@ const CarouselOne = ({ title, data, url }) => {
         {large ? (
           <Slider loader={setLoading} data={data} url={url} />
         ) : (
-          <SliderMobile data={data} url={url} />
+          <SliderMobile loader={setLoading} data={data} url={url} />
         )}
       </GridItem>
     </Grid>
