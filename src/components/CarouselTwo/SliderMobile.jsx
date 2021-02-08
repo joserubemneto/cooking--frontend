@@ -29,7 +29,7 @@ const SampleNextArrow = (props) => {
 
 const SamplePrevArrow = (props) => {
   const { className, style, onClick } = props
-  const small = useMedia('(max-width: 410px)')
+  const small = useMedia('(max-width: 544px)')
 
   return (
     <div
@@ -39,7 +39,7 @@ const SamplePrevArrow = (props) => {
         ...style,
         display: 'block',
         position: 'relative',
-        top: '468px',
+        top: small ? '468px' : '308px',
         left: small ? '2%' : '15%',
         padding: '0',
         margin: '0',

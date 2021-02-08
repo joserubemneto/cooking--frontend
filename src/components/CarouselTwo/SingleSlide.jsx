@@ -19,25 +19,34 @@ const SingleSlide = ({ data }) => {
         h={small ? '400px' : '240px'}
         direction={small && 'column'}
         position='relative'>
-        <Box
-          maxWidth={small ? '100%' : '280px'}
-          maxHeight={small ? '50%' : '100%'}>
+        <Box maxWidth={small ? '100%' : '280px'} h={small ? '50%' : '100%'}>
           <Image
             src={data.img_url}
             alt={data.title || data.name}
             w='100%'
             boxSize='100%'
+            h='100%'
             objectFit='cover'
             borderLeftRadius={!small && '16px'}
             borderTopRadius={small && '16px'}
             borderTopLeftRadius='16px'
           />
         </Box>
-        <Flex direction='column' justifyContent='space-around' p='1rem 1.5rem'>
-          <Text fontSize='1.375rem' color={colors.subTitle} fontWeight='bold' mt='.5rem'>
+        <Flex
+          direction='column'
+          align='center'
+          h={small && '100%'}
+          justifyContent='space-around'
+          m='1rem 1.5rem'>
+          <Text
+            alignSelf='flex-start'
+            fontSize='1.375rem'
+            color={colors.subTitle}
+            fontWeight='bold'
+            mt='.5rem'>
             {data && data.title}
           </Text>
-          <Text>{data.resume}</Text>
+          <Text alignSelf='flex-start'>{data.resume}</Text>
           <Link
             as={ReactLink}
             onClick={() => setLoading(true)}
