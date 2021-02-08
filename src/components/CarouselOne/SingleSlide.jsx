@@ -15,7 +15,7 @@ const SingleSlide = ({ mode, titleSlide, img }) => {
           boxSize='100%'
           objectFit='cover'
           src={img}
-          alt='Dan Abramov'
+          alt={titleSlide}
           position='absolute'
           zIndex='-1'
           borderRadius='2rem'

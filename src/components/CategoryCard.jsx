@@ -18,7 +18,7 @@ const CategoryCard = ({ data }) => {
           boxSize='100%'
           objectFit='cover'
           src={data.img_url}
-          alt='Dan Abramov'
+          alt={data.title || data.name}
           borderRadius='2rem'
         />
       </Box>

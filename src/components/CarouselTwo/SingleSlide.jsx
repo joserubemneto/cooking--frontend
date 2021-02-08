@@ -23,6 +23,7 @@ const SingleSlide = ({ data }) => {
         <Box maxWidth={small ? '100%' : '280px'}>
           <Image
             src={data.img_url}
+            alt={data.title || data.name}
             w='100%'
             boxSize='100%'
             objectFit='cover'

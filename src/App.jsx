@@ -11,7 +11,7 @@ const App = () => (
     <ThemeProvider theme={theme}>
       <GlobalStyle font={theme.fonts.body} />
       <RequestProvider>
-        <Box maxWidth='1350px' m='0 auto' h='100%'>
+        <Box maxWidth='1440px' m='0 auto' h='100%' >
           <Routes />
         </Box>
       </RequestProvider>
