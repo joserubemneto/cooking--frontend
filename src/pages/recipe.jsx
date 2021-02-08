@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react'
-import { Grid, GridItem, Image, Flex, Spacer, Text } from '@chakra-ui/react'
-import { TopTitle, HeadTitle } from '../components/MainStyles'
+import { Grid, GridItem, Image, Flex, Spacer, Text, Box } from '@chakra-ui/react'
+import { TopTitle } from '../components/MainStyles'
 import theme from '../theme'
 import Back from '../assets/back.svg'
 import Elipse from '../assets/Ellipse75.svg'
@@ -11,11 +11,20 @@ import { useRequest } from '../context/Request'
 import Loading from '../components/Loading'
 import Error from '../components/Error'
 import useMedia from '../hooks/useMedia'
+import Arrow from '../assets/Down.svg'
+import Right from '../assets/Right.svg'
+
 
 const Recipe = () => {
   const [recipes, setRecipes] = useState([])
   const [recipe, setRecipe] = useState([])
   const [recipeMobile, setRecipeMobile] = useState([]);
+  const [resume, setResume] = useState(true);
+  const [ingredients, setIngredients] = useState(true);
+  const [preparation, setPreparation] = useState(true);
+  const [rotates, setRotates] = useState('rotate(0deg)');
+  const [rotates2, setRotates2] = useState('rotate(0deg)');
+  const [rotates3, setRotates3] = useState('rotate(0deg)');
   const { id } = useParams()
   const { loading, setLoading, error, setError } = useRequest()
   const large = useMedia('(min-width: 62.5rem)')
@@ -40,6 +49,10 @@ const Recipe = () => {
     window.scrollTo(0, 0)
     requestData()
   }, [id])
+
+  function rotateArrow(state, setState) {
+    state ? setState('rotate(-90deg)') : setState('rotate(0)')
+  }
 
   return (
     <>
@@ -79,7 +92,7 @@ const Recipe = () => {
                       boxSize='auto'
                       objectFit='cover'
                       src={Back}
-                      alt='Dan Abramov'
+                      alt='Voltar'
                       zIndex='-1'
                       cursor='pointer'
                       borderRadius='2rem'
@@ -103,18 +116,57 @@ const Recipe = () => {
               />
             </GridItem>
             <GridItem colStart={2} colSpan={large ? 1 : 2}>
+              <Box display='flex' alignItems='center'>
               <TopTitle Talign='left' color={theme.colors.subTitle}>
                 Resumo
               </TopTitle>
-              <Text fontSize='18px' lineHeight='27px'>
+              <Image
+                boxSize='25px'
+                objectFit='cover'
+                src={Arrow}
+                alt='Voltar'
+                cursor='pointer'
+                borderRadius='2rem'                    ml='20px'
+                transition='all .3s ease'
+                transform={rotates}
+                onClick={() => {
+                  setResume(!resume)
+                  rotateArrow(resume, setRotates)
+                }}
+                    />
+              </Box>
+              <Text fontSize='18px' lineHeight='27px' display={resume ? 'block' : 'none'}
+              transition='all .5s ease'
+                >
                 {recipe.resume}
               </Text>
             </GridItem>
             <GridItem colStart={2} colSpan={large ? 1 : 2} mt='20px'>
+              <Box display='flex' alignItems='center'>
               <TopTitle Talign='left' color={theme.colors.subTitle}>
                 Ingredientes
               </TopTitle>
-              <div>
+              <Image
+                boxSize='25px'
+                objectFit='cover'
+                src={Arrow}
+                alt='Voltar'
+                cursor='pointer'
+                borderRadius='2rem'                    ml='20px'
+                transition='all .3s ease'
+                transform={rotates2}
+                onClick={() => {
+                  setIngredients(!ingredients)
+                  rotateArrow(ingredients, setRotates2)
+                }}
+                    />
+              </Box>
+              <div
+              style={{
+                display: ingredients ? 'block' : 'none',
+                transition: 'all 1s ease'
+              }}
+              >
                 {recipe.ingredients.map((ingredient) => (
                   <Flex key={ingredient.id} align='center' mt='5px'>
                     <Image src={Elipse} alt={'Elipse'} p='0 1rem' />
@@ -126,10 +178,30 @@ const Recipe = () => {
               </div>
             </GridItem>
             <GridItem colStart={2} colSpan={large ? 1 : 2}>
+            <Box display='flex' alignItems='center'>
               <TopTitle Talign='left' color={theme.colors.subTitle}>
                 Modo de Preparo
               </TopTitle>
-              <div>
+              <Image
+                boxSize='25px'
+                objectFit='cover'
+                src={Arrow}
+                alt='Voltar'
+                cursor='pointer'
+                borderRadius='2rem'                    ml='20px'
+                transition='all .3s ease'
+                transform={rotates3}
+                onClick={() => {
+                  setPreparation(!preparation)
+                  rotateArrow(preparation, setRotates3)
+                }}
+                    />
+              </Box>
+              <div
+              style={{
+                display: preparation ? 'block' : 'none',
+                transition: 'all 1s ease'
+              }}>
                 {recipe.preparation.map((preparation, index) => (
                   <Flex key={preparation.id} align='center' mt='20px' ml='15px'>
                     <Text fontSize='1.7rem' color={theme.colors.title}>
