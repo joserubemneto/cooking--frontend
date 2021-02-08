@@ -39,7 +39,7 @@ const SamplePrevArrow = (props) => {
         ...style,
         display: 'block',
         position: 'relative',
-        top: '308px',
+        top: '468px',
         left: small ? '2%' : '15%',
         padding: '0',
         margin: '0',

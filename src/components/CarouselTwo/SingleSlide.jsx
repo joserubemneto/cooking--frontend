@@ -3,7 +3,6 @@ import useMedia from '../../hooks/useMedia'
 import { Box, Image, Flex, Text, Button, Link } from '@chakra-ui/react'
 import { Link as ReactLink } from 'react-router-dom'
 import { ThemeContext } from 'styled-components'
-import Picture from '../../assets/Image1.jpg'
 import { useRequest } from '../../context/Request'
 
 const SingleSlide = ({ data }) => {
@@ -17,10 +16,12 @@ const SingleSlide = ({ data }) => {
         bg='#F1F1F1'
         borderRadius='16px'
         ml='1.25rem'
-        h='240px'
+        h={small ? '400px' : '240px'}
         direction={small && 'column'}
         position='relative'>
-        <Box maxWidth={small ? '100%' : '280px'}>
+        <Box
+          maxWidth={small ? '100%' : '280px'}
+          maxHeight={small ? '50%' : '100%'}>
           <Image
             src={data.img_url}
             alt={data.title || data.name}
@@ -32,7 +33,7 @@ const SingleSlide = ({ data }) => {
             borderTopLeftRadius='16px'
           />
         </Box>
-        <Flex direction='column' justifyContent='space-around' m='2rem'>
+        <Flex direction='column' justifyContent='space-around' p='1rem 1.5rem'>
           <Text fontSize='1.375rem' color={colors.subTitle} fontWeight='bold'>
             {data && data.title}
           </Text>
