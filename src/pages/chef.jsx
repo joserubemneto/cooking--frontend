@@ -66,7 +66,7 @@ const Chef = () => {
                       boxSize='35px'
                       objectFit='cover'
                       src={Back}
-                      alt='Dan Abramov'
+                      alt='Voltar'
                       zIndex='-1'
                       cursor='pointer'
                       borderRadius='2rem'
