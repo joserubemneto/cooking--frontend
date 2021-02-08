@@ -25,16 +25,9 @@ const About = () => {
         <Heading fontSize='1.625rem' color={colors.subTitle}>
           Quem Somos
         </Heading>
+
         <Text fontSize='1.125rem' mt='2rem' lineHeight='27px'>
-          Olá! Somos <span style={{fontWeight: '700', color: '#333'}}>José Rubem</span> e <span style={{fontWeight: '700', color: '#333'}}>Lucas Melo</span>, dois desenvolvedores que idealizaram esse projeto para estudar e aprimorar habilidades.
-        </Text>
-      </Box>
-      <Box mt='3rem'>
-        <Heading fontSize='1.625rem' color={colors.subTitle}>
-          Termos de uso e política de privacidade
-        </Heading>
-        <Text fontSize='1.125rem' mt='2rem'>
-          para de picuinha belho
+          Olá! Somos <span style={{fontWeight: '700', color: '#F73C2C'}}><a href="https://github.com/Joserubemn31" target="_blank">José Rubem</a></span> e <span style={{fontWeight: '700', color: '#F73C2C'}}><a href="https://github.com/lucasgmelo" target="_blank">Lucas Melo</a></span>, dois desenvolvedores que idealizaram esse projeto para estudar e aprimorar habilidades. Você pode encontrar mais informações técnicas sobre o projeto acessando nosso <span style={{fontWeight: '700', color: '#F73C2C'}}><a href="https://github.com/Joserubemn31/cooking--frontend" target="_blank">repositório.</a></span>
         </Text>
       </Box>
       <Box mt='3rem'>
@@ -42,8 +35,7 @@ const About = () => {
           Contato
         </Heading>
         <Text fontSize='1.125rem' mt='2rem'>
-          textinho p/ contato textinho p/ contato textinho p/ contato textinho
-          p/ contato textinho p/ contato
+          Para mais informações técnicas sobre o Cooking, entre em contato conosco. Feedbacks, comentários e avaliações são sempre bem vindos!
         </Text>
       </Box>
       <Flex alignSelf='flex-start' mt='2rem'>
