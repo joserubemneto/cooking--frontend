@@ -82,7 +82,8 @@ export default class MultipleItems extends Component {
             <ReachLink
             to={`/receita/${data.id}`}
             >
-              <SingleSlide titleSlide={data.title} mode="true" img={data.img_url} />
+              <SingleSlide
+              titleSlide={data.title || data.name} mode="true" img={data.img_url} />
             </ReachLink>
           ))}
         </Slider>

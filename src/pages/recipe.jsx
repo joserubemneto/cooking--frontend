@@ -6,7 +6,7 @@ import Back from '../assets/back.svg'
 import Elipse from '../assets/Ellipse75.svg'
 import CarouselOne from '../components/CarouselOne'
 import { Link, useParams } from 'react-router-dom'
-import { getRecipe, getRecipes } from '../services/api'
+import { getRecipe, getRecipes, getRecipesByCategory } from '../services/api'
 import { useRequest } from '../context/Request'
 import Loading from '../components/Loading'
 import Error from '../components/Error'
@@ -15,6 +15,7 @@ import useMedia from '../hooks/useMedia'
 const Recipe = () => {
   const [recipes, setRecipes] = useState([])
   const [recipe, setRecipe] = useState([])
+  const [recipeMobile, setRecipeMobile] = useState([]);
   const { id } = useParams()
   const { loading, setLoading, error, setError } = useRequest()
   const large = useMedia('(min-width: 62.5rem)')
@@ -24,8 +25,10 @@ const Recipe = () => {
       setLoading(true)
       const { data: recipesData } = await getRecipes()
       const { data: recipeData } = await getRecipe(id)
+      const { data: recipeMobileData } = await getRecipesByCategory('799a68b3-2fe7-4a4d-b169-ef89a369b1d7')
       setRecipes(recipesData)
       setRecipe(recipeData)
+      setRecipeMobile(recipeMobileData)
       setLoading(false)
     } catch (error) {
       setError(true)
@@ -140,7 +143,7 @@ const Recipe = () => {
               </div>
             </GridItem>
           </Grid>
-          <CarouselOne title='Outras Receitas' data={recipes} />
+          <CarouselOne title='Outras Receitas' data={large ? recipes : recipeMobile} />
         </>
       )}
       {loading && !error && <Loading />}

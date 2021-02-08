@@ -46,7 +46,7 @@ const Banner = () => {
             </Text>
           </GridItem>
           <GridItem colStart={2} rowStart={4} mt='30px' mb='20px'>
-            <Link to='/'>
+            <Link to='/receitas'>
               <Btn>acessar receitas</Btn>
             </Link>
           </GridItem>

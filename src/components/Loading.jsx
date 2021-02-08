@@ -13,9 +13,9 @@ const Loading = () => {
     },
   }
   return (
-    <Flex justify='center' align='center' direction='column'>
-      <Box maxWidth='100vh'>
-        <Lottie width='100%' options={options} />
+    <Flex justify='center' align='center' direction='column' height='40vh'>
+      <Box maxWidth='100vh' >
+        <Lottie width='70%' options={options} />
       </Box>
     </Flex>
   )

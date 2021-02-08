@@ -26,11 +26,7 @@ const About = () => {
           Quem Somos
         </Heading>
         <Text fontSize='1.125rem' mt='2rem' lineHeight='27px'>
-          texto sobre nós texto sobre nós texto sobre nós texto sobre nós texto
-          sobre nós texto sobre nós texto sobre nós texto sobre nós texto sobre
-          nós texto sobre nós texto sobre nós texto sobre nós texto sobre nós
-          texto sobre nós texto sobre nós texto sobre nós texto sobre nós texto
-          sobre nós texto sobre nós texto sobre nós texto sobre nós
+          Olá! Somos <span style={{fontWeight: '700', color: '#333'}}>José Rubem</span> e <span style={{fontWeight: '700', color: '#333'}}>Lucas Melo</span>, dois desenvolvedores que idealizaram esse projeto para estudar e aprimorar habilidades.
         </Text>
       </Box>
       <Box mt='3rem'>
@@ -38,12 +34,7 @@ const About = () => {
           Termos de uso e política de privacidade
         </Heading>
         <Text fontSize='1.125rem' mt='2rem'>
-          texto sobre nós texto sobre nós texto sobre nós texto sobre nós texto
-          sobre nós texto sobre nós texto sobre nós texto sobre nós texto sobre
-          nós texto sobre nós texto sobre nós texto OU LISTA DESORDENADA nós
-          texto sobre nós texto sobre nós texto sobre nós texto sobre nós texto
-          sobre nós texto sobre nós texto sobre nós texto sobre nós texto sobre
-          nós
+          para de picuinha belho
         </Text>
       </Box>
       <Box mt='3rem'>

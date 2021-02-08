@@ -8,7 +8,7 @@ const Error = () => {
   return (
     <Flex justify='center' align='center' direction='column'>
       <Box>
-        Algo correu mal,
+        Algo correu errado,
         <Link
           color='#D64D27'
           as={ReactLink}
