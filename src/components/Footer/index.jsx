@@ -30,7 +30,10 @@ const Footer = () => {
     <Box
       boxShadow={mobile ? '' : `0 -5px 5px -5px #C3C3C3`}
       pt={'2.75rem'}
-      mt={'7rem'}>
+      mt={'7rem'}
+      position={'relative'}
+      bottom={'0px'}
+      >
       {!mobile ? (
         <Flex flexDirection='column' m={'1.625rem 4rem'}>
           <Flex justifyContent='space-between'>
@@ -95,7 +98,7 @@ const Footer = () => {
           </Flex>
           <Box pt='30px'>
             <Text fontSize={'0.75rem'}>
-              © Cooking™, 2021. All rights reserved.
+              © Cooking™, 2021. Todos os direitos reservados.
             </Text>
           </Box>
         </Flex>
@@ -116,7 +119,7 @@ const Footer = () => {
               Cooking
             </Logo>
           </Box>
-          <Text color='#FFF'>© Cooking™, 2021. All rights reserved.</Text>
+          <Text color='#FFF'>© Cooking™, 2021. Todos os direitos reservados.</Text>
         </Flex>
       )}
     </Box>

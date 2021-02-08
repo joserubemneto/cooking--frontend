@@ -10,7 +10,8 @@ const Highlights = ({ data }) => {
       align='center'
       direction='column'
       mt='12.5rem'
-      mb='5rem'
+      mb='3rem'
+      pb='2.5rem'
       borderRadius='0 150px'
       bgGradient='linear(262.91deg, #F73C2C -32.44%, #EE6737 136.54%)'>
       <Heading mt='4rem' pl='0.6rem' pr='0.6rem' fontSize='2rem' color='#FFF'>
@@ -22,7 +23,7 @@ const Highlights = ({ data }) => {
         mt='3rem'
         columns={{ sm: 1, md: 1, lg: 2 }}
         gap='5rem'>
-        {data.map((highlight) => (
+        {data.map((highlight, index) => (
           <Flex
             maxWidth='400px'
             direction='column'

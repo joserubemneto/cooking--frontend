@@ -27,11 +27,23 @@ const Select = styled.select`
   color: white;
   border: 2px solid transparent;
 
+
   * {
     font-family: 'Inter', sans-serif;
     font-weight: 300;
     border: none;
     border-radius: 10px;
+  }
+
+  &:after{
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
   }
 
   &:focus,
@@ -50,10 +62,6 @@ const Select = styled.select`
     padding: 0 6px;
     margin: 0;
     border: none;
-  }
-
-  option li:hover {
-    background: #f73c2c;
   }
 
 `

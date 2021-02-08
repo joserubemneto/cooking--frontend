@@ -6,7 +6,7 @@ import { useRequest } from '../context/Request'
 const Error = () => {
   const { setError } = useRequest()
   return (
-    <Flex justify='center' align='center' direction='column'>
+    <Flex justify='center' align='center' direction='column' textAlign='center' minHeight='50vh'>
       <Box>
         Algo correu errado,
         <Link
@@ -19,10 +19,10 @@ const Error = () => {
           {' '}
           clique aqui!
         </Link>
-      </Box>
-      <Text mt='1rem'>
-        Caso o erro persista pedimos sua compreensão e vamos resolver em breve.
+      <Text mt='1rem' maxWidth="400px">
+        Caso o erro persista pedimos sua compreensão e resolveremos em breve.
       </Text>
+      </Box>
     </Flex>
   )
 }
