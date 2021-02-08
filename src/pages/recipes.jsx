@@ -41,7 +41,7 @@ const Recipes = () => {
           <>
             <CarouselOne
               title='Receitas mais acessadas'
-              page='receitas'
+              url='receita'
               data={recipes}
             />
             <RecipesComponent data={categories} />
